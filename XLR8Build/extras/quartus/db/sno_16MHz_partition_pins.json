@@ -1,0 +1,217 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "PIN13LED",
+					"strict" : false
+				},
+				{
+					"name" : "ANA_UP",
+					"strict" : false
+				},
+				{
+					"name" : "I2C_ENABLE",
+					"strict" : false
+				},
+				{
+					"name" : "SCL",
+					"strict" : false
+				},
+				{
+					"name" : "SDA",
+					"strict" : false
+				},
+				{
+					"name" : "D13",
+					"strict" : false
+				},
+				{
+					"name" : "D12",
+					"strict" : false
+				},
+				{
+					"name" : "D11",
+					"strict" : false
+				},
+				{
+					"name" : "D10",
+					"strict" : false
+				},
+				{
+					"name" : "D9",
+					"strict" : false
+				},
+				{
+					"name" : "D8",
+					"strict" : false
+				},
+				{
+					"name" : "D7",
+					"strict" : false
+				},
+				{
+					"name" : "D6",
+					"strict" : false
+				},
+				{
+					"name" : "D5",
+					"strict" : false
+				},
+				{
+					"name" : "D4",
+					"strict" : false
+				},
+				{
+					"name" : "D3",
+					"strict" : false
+				},
+				{
+					"name" : "D2",
+					"strict" : false
+				},
+				{
+					"name" : "D1",
+					"strict" : false
+				},
+				{
+					"name" : "D0",
+					"strict" : false
+				},
+				{
+					"name" : "RX",
+					"strict" : false
+				},
+				{
+					"name" : "TX",
+					"strict" : false
+				},
+				{
+					"name" : "D22",
+					"strict" : false
+				},
+				{
+					"name" : "D23",
+					"strict" : false
+				},
+				{
+					"name" : "D24",
+					"strict" : false
+				},
+				{
+					"name" : "D25",
+					"strict" : false
+				},
+				{
+					"name" : "D26",
+					"strict" : false
+				},
+				{
+					"name" : "D27",
+					"strict" : false
+				},
+				{
+					"name" : "D28",
+					"strict" : false
+				},
+				{
+					"name" : "D29",
+					"strict" : false
+				},
+				{
+					"name" : "D30",
+					"strict" : false
+				},
+				{
+					"name" : "D31",
+					"strict" : false
+				},
+				{
+					"name" : "D32",
+					"strict" : false
+				},
+				{
+					"name" : "D33",
+					"strict" : false
+				},
+				{
+					"name" : "D34",
+					"strict" : false
+				},
+				{
+					"name" : "D35",
+					"strict" : false
+				},
+				{
+					"name" : "D36",
+					"strict" : false
+				},
+				{
+					"name" : "D37",
+					"strict" : false
+				},
+				{
+					"name" : "D38",
+					"strict" : false
+				},
+				{
+					"name" : "D39",
+					"strict" : false
+				},
+				{
+					"name" : "A5",
+					"strict" : false
+				},
+				{
+					"name" : "A4",
+					"strict" : false
+				},
+				{
+					"name" : "A3",
+					"strict" : false
+				},
+				{
+					"name" : "A2",
+					"strict" : false
+				},
+				{
+					"name" : "A1",
+					"strict" : false
+				},
+				{
+					"name" : "A0",
+					"strict" : false
+				},
+				{
+					"name" : "JT9",
+					"strict" : false
+				},
+				{
+					"name" : "JT7",
+					"strict" : false
+				},
+				{
+					"name" : "JT5",
+					"strict" : false
+				},
+				{
+					"name" : "JT3",
+					"strict" : false
+				},
+				{
+					"name" : "JT1",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_N",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,5 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,avr_core:avr_core_inst|avr_mul_max10:mul_is_used.avr_mul_Inst|alt_lpm_mult9sx9s:u_mult9sx9s|lpm_mult:lpm_mult_component|mult_jgm:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,xlr8_adc:adc_inst|alt_lpm_mult12ux12u:adc_mult|lpm_mult:lpm_mult_component|mult_jdq:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,avr_i2c:i2c_top_inst|alt_lpm_mult51x9u:mult51_inst|lpm_mult:lpm_mult_component|mult_3qs:auto_generated|mac_out2,
+PORT_SWAPPING,PORT_SWAPPING_FINISHED,avr_core:avr_core_inst|avr_mul_max10:mul_is_used.avr_mul_Inst|alt_lpm_mult9sx9s:u_mult9sx9s|lpm_mult:lpm_mult_component|mult_jgm:auto_generated|mac_mult1,

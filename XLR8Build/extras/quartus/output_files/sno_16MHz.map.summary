@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Fri Aug 14 08:44:26 2020
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : sno_16MHz
+Top-level Entity Name : xlr8_alorium_top
+Family : MAX 10
+Total logic elements : 11,139
+    Total combinational functions : 10,067
+    Dedicated logic registers : 3,431
+Total registers : 3431
+Total pins : 65
+Total virtual pins : 0
+Total memory bits : 411,392
+Embedded Multiplier 9-bit elements : 4
+Total PLLs : 1
+UFM blocks : 1
+ADC blocks : 1

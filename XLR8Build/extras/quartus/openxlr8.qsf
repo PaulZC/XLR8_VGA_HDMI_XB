@@ -1,0 +1,84 @@
+#==============================================================================
+# Copyright (c) 2016 Alorium Technology.  All right reserved.
+#==============================================================================
+#
+# File Name  : openxlr8.qsf
+# Author     : Steve Phillips
+# Contact    : support@aloriumtech.com
+# Description:
+#
+# This is the file that the OpenXLR8 user should use to set all the
+# Quartus settings specific to the OpenXLR8 being developed. This is
+# typically used to include the RTL files needed.
+#
+
+# The following list shows the settings files in the order they are
+# read. Indentation indicates which files are sources by parent
+# files. The [board]_[clock].qsf file is called automatically based on
+# the design revision selected in Quartus. Use the menu item
+# Project->Revisions to selct a revision.
+#
+# +- XLR8Build/extras/quartus/[board]_[clock].qsf
+#    +- XLR8Core/extras/quartus/[board]_top_core.qsf
+#    |  +- XLR8Core/extras/quartus/xlr8_top_core.tcl
+#    |  +- XLR8Core/extras/quartus/xlr8_top.sdc
+#    |     +- XLR8Buildextras/quartus/openxlr8.sdc
+#    +- XLR8Core/extras/quartus/xlr8_base.qsf
+#       +- XLR8Build/extras/quartus/openxlr8.qsf
+#       +- XLR8Build/extras/quartus/openxlr8_builtin.qsf
+
+# Quartus settings for XLR8 project
+#  http://www.aloriumtech.com/xlr8
+#  https://github.com/AloriumTechnology
+#==============================================================================
+
+#==============================================================================
+# Set paths to specifc source files as need here
+
+# Load settings specific to this OpenXLR8 module
+
+# Remix of: Alorium Technology's xlr8_wrap_template
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/xlr8_hdmi.v
+
+# Remix of: HDMI Demo by Sameer Puri
+# https://github.com/hdl-util/hdmi-demo
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv
+
+# Remix of: HDMI by Sameer Puri (with a little help from James Bowman)
+# https://github.com/hdl-util/hdmi
+#set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/top.sv
+#set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/altera_gpio_lite.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/audio_clock_regeneration_packet.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/audio_info_frame.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/audio_sample_packet.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/auxiliary_video_information_info_frame.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/hdmi.sv
+#set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/OBUFDS.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/packet_assembler.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/packet_picker.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/source_product_description_info_frame.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_hdmi/tmds_channel.sv
+
+# Remix of: KAMAMI maXimator HDMI Test example by Michał Kozioł
+# https://maximator-fpga.org/wp-content/uploads/2017/03/maXimator-HDMI-test.zip
+#set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/kamami_hdmi-test/HDMI.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/kamami_hdmi-test/DifferentialSignal.sv
+#set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/kamami_hdmi-test/ShiftRegister.sv
+#set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/kamami_hdmi-test/TMDSEncoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/kamami_hdmi-test/CLKDivider.sv
+#set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/kamami_hdmi-test/Video.sv
+
+# Remix of: VGA Text Mode by Sameer Puri
+# https://github.com/hdl-util/vga-text-mode
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_vga-text-mode/attributemap.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_vga-text-mode/console.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_vga-text-mode/glyphmap.v
+
+# Remix of: Sound by Sameer Puri
+# https://github.com/hdl-util/sound
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/hdl-util_sound/sawtooth.sv
+
+# RAM 2-PORT from the Intel IP Library
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../XLR8Build/extras/rtl/RAM_2-PORT/ram.v
+
+#==============================================================================

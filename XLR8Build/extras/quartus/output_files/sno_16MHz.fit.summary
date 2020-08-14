@@ -1,0 +1,18 @@
+Fitter Status : Successful - Fri Aug 14 08:46:56 2020
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : sno_16MHz
+Top-level Entity Name : xlr8_alorium_top
+Family : MAX 10
+Device : 10M16SAU169C8G
+Timing Models : Final
+Total logic elements : 10,565 / 15,840 ( 67 % )
+    Total combinational functions : 10,072 / 15,840 ( 64 % )
+    Dedicated logic registers : 3,413 / 15,840 ( 22 % )
+Total registers : 3421
+Total pins : 65 / 130 ( 50 % )
+Total virtual pins : 0
+Total memory bits : 411,392 / 562,176 ( 73 % )
+Embedded Multiplier 9-bit elements : 4 / 90 ( 4 % )
+Total PLLs : 1 / 1 ( 100 % )
+UFM blocks : 1 / 1 ( 100 % )
+ADC blocks : 1 / 1 ( 100 % )

@@ -1,0 +1,139 @@
+/*
+	This project generates 640x480 60Hz video.
+*/
+module HDMI
+(
+	input logic clk,
+	output logic [2:0] datap,
+	output logic [2:0] datan,
+	output logic clkp,
+	output logic clkn
+);
+
+logic clkPixel;
+logic clkClock;
+logic hSync, vSync, drawArea;
+logic [7:0] red, green, blue;
+logic [9:0] TMDSRed, TMDSGreen, TMDSBlue;
+logic [9:0] TMDSShiftRed, TMDSShiftGreen, TMDSShiftBlue;
+
+/*
+	HDMI requires two clocks to work properly. The first one is clkClock and it runs at 25 MHz and it's used as TMDS Clock.
+	The second one is clkPixel which must be 10 times higher than clkClock, cause we have to send 10 bits (8 bits are changed to 10 bits by TMDSEncoder).
+	So we use PLL to get 250 MHz and then we use CLKDivider module to get 25 MHz. 
+	More information you can find in HDMI specification.
+*/
+PLL U1
+(
+	.inclk0(clk),
+	.c0(clkPixel)
+);
+
+CLKDivider
+#(.N(10))
+U2
+(
+	.in(clkPixel),
+	.out(clkClock)
+);
+
+Video Vid
+(
+	.clk(clkClock),
+	.vSync(vSync),
+	.hSync(hSync),
+	.drawArea(drawArea),
+	.red(red),
+	.green(green),
+	.blue(blue)
+);
+
+///////////////////////////
+
+TMDSEncoder TMDSR
+(
+	.clk(clkClock), 
+	.VD(red), 
+	.CD(2'b00), 
+	.VDE(drawArea), 
+	.TMDS(TMDSRed)
+);
+
+TMDSEncoder TMDSG
+(
+	.clk(clkClock), 
+	.VD(green), 
+	.CD(2'b00), 
+	.VDE(drawArea), 
+	.TMDS(TMDSGreen)
+);
+
+TMDSEncoder TMDSB
+(
+	.clk(clkClock), 
+	.VD(blue), 
+	.CD({vSync, hSync}), 
+	.VDE(drawArea), 
+	.TMDS(TMDSBlue)
+);
+
+///////////////////////////
+
+ShiftRegister
+#(.N(10))
+SR0
+(
+	.clk(clkPixel),
+	.in(TMDSRed),
+	.out(TMDSShiftRed)
+);
+
+ShiftRegister
+#(.N(10))
+SR1
+(
+	.clk(clkPixel),
+	.in(TMDSGreen),
+	.out(TMDSShiftGreen)
+);
+
+ShiftRegister
+#(.N(10))
+SR2
+(
+	.clk(clkPixel),
+	.in(TMDSBlue),
+	.out(TMDSShiftBlue)
+);
+
+///////////////////////////
+
+DifferentialSignal DS0
+(
+	.in(clkClock),
+	.p(clkp),
+	.n(clkn)
+);
+
+DifferentialSignal DS1
+(
+	.in(TMDSShiftRed[0]),
+	.p(datap[2]),
+	.n(datan[2])
+);
+
+DifferentialSignal DS2
+(
+	.in(TMDSShiftGreen[0]),
+	.p(datap[1]),
+	.n(datan[1])
+);
+
+DifferentialSignal DS3
+(
+	.in(TMDSShiftBlue[0]),
+	.p(datap[0]),
+	.n(datan[0])
+);
+
+endmodule 

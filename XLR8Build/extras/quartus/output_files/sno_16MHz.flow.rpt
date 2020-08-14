@@ -1,0 +1,178 @@
+Flow report for sno_16MHz
+Fri Aug 14 08:47:25 2020
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Fri Aug 14 08:47:25 2020       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; sno_16MHz                                   ;
+; Top-level Entity Name              ; xlr8_alorium_top                            ;
+; Family                             ; MAX 10                                      ;
+; Device                             ; 10M16SAU169C8G                              ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 10,565 / 15,840 ( 67 % )                    ;
+;     Total combinational functions  ; 10,072 / 15,840 ( 64 % )                    ;
+;     Dedicated logic registers      ; 3,413 / 15,840 ( 22 % )                     ;
+; Total registers                    ; 3421                                        ;
+; Total pins                         ; 65 / 130 ( 50 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 411,392 / 562,176 ( 73 % )                  ;
+; Embedded Multiplier 9-bit elements ; 4 / 90 ( 4 % )                              ;
+; Total PLLs                         ; 1 / 1 ( 100 % )                             ;
+; UFM blocks                         ; 1 / 1 ( 100 % )                             ;
+; ADC blocks                         ; 1 / 1 ( 100 % )                             ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 08/14/2020 08:43:36 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; sno_16MHz           ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                    ;
++--------------------------------------+------------------------------------------------------------------------------------------+---------------+------------------+----------------+
+; Assignment Name                      ; Value                                                                                    ; Default Value ; Entity Name      ; Section Id     ;
++--------------------------------------+------------------------------------------------------------------------------------------+---------------+------------------+----------------+
+; COMPILER_SIGNATURE_ID                ; 123926594935551.159739101605132                                                          ; --            ; --               ; --             ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                                       ; --            ; --               ; xlr8_tb        ;
+; EDA_EXTRA_ELAB_OPTION                ; modelsim=-sv_lib ../../../../../XLR8Core/extras/modelsim_windows/uc_top_wrap_64          ; --            ; --               ; eda_simulation ;
+; EDA_MAINTAIN_DESIGN_HIERARCHY        ; On                                                                                       ; --            ; --               ; eda_simulation ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; xlr8_tb                                                                                  ; --            ; --               ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                                                              ; --            ; --               ; eda_simulation ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)                                                                ; <None>        ; --               ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                                                          ; --            ; --               ; eda_simulation ;
+; EDA_TEST_BENCH_FILE                  ; ../../../XLR8Core/extras/rtl/avr_adr_pack.vh                                             ; --            ; --               ; xlr8_tb        ;
+; EDA_TEST_BENCH_FILE                  ; ../../../XLR8Core/extras/modelsim_windows/xlr8_board.v                                   ; --            ; --               ; xlr8_tb        ;
+; EDA_TEST_BENCH_FILE                  ; ../../../XLR8Core/extras/modelsim_windows/xlr8_sim_support.sv                            ; --            ; --               ; xlr8_tb        ;
+; EDA_TEST_BENCH_FILE                  ; ../../../XLR8Core/extras/modelsim_windows/xlr8_tb.sv                                     ; --            ; --               ; xlr8_tb        ;
+; EDA_TEST_BENCH_FILE                  ; ../../../XLR8Core/extras/modelsim_windows/uc_top_wrap_dpi.sv                             ; --            ; --               ; xlr8_tb        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; xlr8_tb                                                                                  ; --            ; --               ; xlr8_tb        ;
+; EDA_TEST_BENCH_NAME                  ; xlr8_tb                                                                                  ; --            ; --               ; eda_simulation ;
+; EDA_TIME_SCALE                       ; 1 ps                                                                                     ; --            ; --               ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                                                                       ; --            ; --               ; --             ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                                                                        ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/synthesis/../int_osc.cmp                 ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/synthesis/../../int_osc.qsys             ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/simulation/../../int_osc.qsys            ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/simulation/int_osc.v                     ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/simulation/submodules/altera_int_osc.v   ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/simulation/submodules/altera_int_osc.sdc ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/pll16/pll16_bb.v                                         ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/pll16/pll16.ppf                                          ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/ram2p16384x16/ram2p16384x16_bb.v                         ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/ram2p16384x16/ram2p16384x16_syn.v                        ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/ram2p32768x16/ram2p32768x16_inst.v                       ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/ram2p32768x16/ram2p32768x16_bb.v                         ; --            ; --               ; --             ;
+; MISC_FILE                            ; ../../../XLR8Core/extras/rtl/ip/ram2p32768x16/ram2p32768x16_syn.v                        ; --            ; --               ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS       ; Half Signal Swing                                                                        ; --            ; --               ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS       ; Half Signal Swing                                                                        ; --            ; --               ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS      ; Half Vccio                                                                               ; --            ; --               ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS      ; Half Vccio                                                                               ; --            ; --               ; --             ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)                                                   ; --            ; xlr8_alorium_top ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                                                   ; --            ; xlr8_alorium_top ; Top            ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                                                   ; --            ; xlr8_alorium_top ; Top            ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                                                      ; --            ; --               ; --             ;
+; POWER_DEFAULT_INPUT_IO_TOGGLE_RATE   ; 12.5 %                                                                                   ; 12.5%         ; --               ; --             ;
+; POWER_DEFAULT_TOGGLE_RATE            ; 12.5 %                                                                                   ; 12.5%         ; --               ; --             ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                    ; --            ; --               ; --             ;
+; POWER_USE_PVA                        ; Off                                                                                      ; On            ; --               ; --             ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                                                                             ; --            ; --               ; --             ;
+; SEARCH_PATH                          ; ../../../XLR8Core/extras/rtl                                                             ; --            ; --               ; --             ;
+; SLD_FILE                             ; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/synthesis/int_osc.debuginfo              ; --            ; --               ; --             ;
+; SLD_INFO                             ; QSYS_NAME int_osc HAS_SOPCINFO 1 GENERATION_ID 1519246112                                ; --            ; int_osc          ; --             ;
+; SOPCINFO_FILE                        ; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/synthesis/../../int_osc.sopcinfo         ; --            ; --               ; --             ;
+; SPD_FILE                             ; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/simulation/../int_osc.spd                ; --            ; --               ; --             ;
+; SYNTHESIS_ONLY_QIP                   ; On                                                                                       ; --            ; --               ; --             ;
+; TOP_LEVEL_ENTITY                     ; xlr8_alorium_top                                                                         ; sno_16MHz     ; --               ; --             ;
+; VCCA_USER_VOLTAGE                    ; 3.3V                                                                                     ; --            ; --               ; --             ;
+; VERILOG_INPUT_VERSION                ; SystemVerilog_2005                                                                       ; Verilog_2001  ; --               ; --             ;
+; VERILOG_MACRO                        ; SNO_BOARD=1                                                                              ; --            ; --               ; --             ;
+; VERILOG_SHOW_LMF_MAPPING_MESSAGES    ; Off                                                                                      ; --            ; --               ; --             ;
++--------------------------------------+------------------------------------------------------------------------------------------+---------------+------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:49     ; 1.0                     ; 4874 MB             ; 00:00:59                           ;
+; Fitter                    ; 00:02:29     ; 1.2                     ; 5798 MB             ; 00:03:15                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4715 MB             ; 00:00:02                           ;
+; Power Analyzer            ; 00:00:09     ; 1.9                     ; 4948 MB             ; 00:00:16                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 2.1                     ; 4930 MB             ; 00:00:17                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 4800 MB             ; 00:00:03                           ;
+; Total                     ; 00:03:41     ; --                      ; --                  ; 00:04:52                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-VVBO33I  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; DESKTOP-VVBO33I  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-VVBO33I  ; Windows 10 ; 10.0       ; x86_64         ;
+; Power Analyzer            ; DESKTOP-VVBO33I  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-VVBO33I  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-VVBO33I  ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off sno_top -c sno_16MHz
+quartus_fit --read_settings_files=off --write_settings_files=off sno_top -c sno_16MHz
+quartus_asm --read_settings_files=off --write_settings_files=off sno_top -c sno_16MHz
+quartus_pow --read_settings_files=off --write_settings_files=off sno_top -c sno_16MHz
+quartus_sta sno_top -c sno_16MHz
+quartus_eda --read_settings_files=off --write_settings_files=off sno_top -c sno_16MHz
+
+
+
