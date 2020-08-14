@@ -4,6 +4,8 @@ An XLR8 XB which will run on the Alorium Technology Snō board and produce a VGA
 
 ![random_pattern.gif](img/random_pattern.gif)
 
+![clock_demo.gif](img/clock_demo.gif)
+
 ![hardware](img/hardware.jpg)
 
 ## Overview

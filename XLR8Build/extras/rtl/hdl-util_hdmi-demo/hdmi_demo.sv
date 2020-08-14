@@ -86,8 +86,6 @@ hdmi #(.VIDEO_ID_CODE(1), .VIDEO_REFRESH_RATE(60.00), .DDRIO(0), .AUDIO_RATE(AUD
 //    end
 //end
 
-//assign RAM_RE = CLK_PIXEL;
-
 // Bodge the RAM Read Enables - this needs more work!
 CLKDivider
 #(.N(8), .R(2))
@@ -99,8 +97,14 @@ U3
 assign RAM_CHAR_RE = RAM_RE;
 assign RAM_ATTR_RE = RAM_RE;
 
-assign RAM_ADDRESS = {cy[9:4], cx[9:3]};
+// Bodge the RAM address - this needs more work!
+logic [9:0] cxp1;
+always @(posedge clk_pixel)
+begin
+	cxp1 <= cx + 10'h001; // Pre-fetch the character and attribute data by one clock cycle
+	RAM_ADDRESS <= {cy[9:4], cxp1[9:3]};
+end
 
 //console console(.clk_pixel(clk_pixel), .codepoint(character), .attribute({cx[9], cy[8:6], cx[8:5]}), .cx(cx), .cy(cy), .rgb(rgb));
-console console(.clk_pixel(clk_pixel), .codepoint(RAM_CHAR_DATA), .attribute(RAM_ATTR_DATA), .cx(cx), .cy(cy), .rgb(rgb)); // White text, black background, no blink
+console console(.clk_pixel(clk_pixel), .codepoint(RAM_CHAR_DATA), .attribute(RAM_ATTR_DATA), .cx(cx), .cy(cy), .rgb(rgb));
 endmodule
