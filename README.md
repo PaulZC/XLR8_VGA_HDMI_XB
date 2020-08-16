@@ -6,6 +6,8 @@ An XLR8 XB which will run on the Alorium Technology Snō board and produce a VGA
 
 ![clock_demo.gif](img/clock_demo.gif)
 
+![game_of_life.gif](img/game_of_life.gif)
+
 ![hardware](img/hardware.jpg)
 
 ## Overview
@@ -29,7 +31,7 @@ CLKDivider and DifferentialSignal are taken from the KAMAMI maXimator HDMI Test 
 
 Once you have programmed the Snō with the XLR8Build 'bootloader', the blue status LED (D13) will blink a heartbeat at 1Hz.
 
-The [examples](./XLR8Build/examples) folder contains two .ino examples which will display: random character codes and attributes; a digital clock with chasing graphic surround.
+The [examples](./XLR8Build/examples) folder contains example Arduino code which will display: random character codes and attributes; a digital clock with chasing graphic surround; Conway's Game of Life.
 
 ## Resources
 
