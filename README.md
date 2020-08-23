@@ -15,7 +15,7 @@ An XLR8 XB which will run on the Alorium Technology Snō board and produce a VGA
 This Xcelerator Block will run on the [Alorium Technology Snō](https://www.mouser.co.uk/ProductDetail/Alorium/SnoR20M16V3/?qs=sGAEpiMZZMve4%2FbfQkoj%252bCt7XfrcUv5s%2FrtyQWYQt6w=)
 FPGA board and will produce a configurable VGA text display over HDMI at 640x480 pixels (60Hz). Two dual-port RAM blocks act as video memory for the character codes and attributes.
 
-The dual-port video memory was added by Paul. The read- and write-enable methodology works, but isn't elegant and needs refining...
+The dual-port video memory was added by Paul. The RAM addressing methodology works, but isn't elegant and needs refining...
 
 The Verilog for the HDMI video, audio and VGA text generator is a remix of the HDL Utils written by Sameer Puri:
 - https://github.com/hdl-util
@@ -29,9 +29,15 @@ CLKDivider and DifferentialSignal are taken from the KAMAMI maXimator HDMI Test 
 - https://maximator-fpga.org/wp-content/uploads/2017/03/maXimator-HDMI-test.zip
 - https://youtu.be/agKPjtTc7_g
 
+[INSTALLATION.md](./INSTALLATION.md) contains abbreviated instructions on how to install the XLR8Build bootloader on the Snō.
+
 Once you have programmed the Snō with the XLR8Build 'bootloader', the blue status LED (D13) will blink a heartbeat at 1Hz.
 
-The [examples](./XLR8Build/examples) folder contains example Arduino code which will display: random character codes and attributes; a digital clock with chasing graphic surround; Conway's Game of Life.
+The [examples](./XLR8Build/examples) folder contains example Arduino code which will display:
+- random character codes and attributes
+- a digital clock with chasing graphic surround
+- an alignment pattern
+- Conway's Game of Life
 
 ## Resources
 

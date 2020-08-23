@@ -66,17 +66,23 @@
   To keep things easy, we use 13 bit addressing ({cy[9:4], cx[9:3]}) = 8K of dual port RAM
 
   The screen area starts at: cx = 160; cy = 45
-  So the first full character (top left) appears at the RAM address for column 20 row 3
+  hdmi_demo.sv removes the cx and cy offset
+  So the first full character (top left) appears at RAM address 0
   Each row in memory is 2^7 bytes wide = 128
-  So the first fully-visible character occupies RAM address (20 + (3 * 128)) = 404
-  The last character on the first visible row occupies RAM address (404 + 79) = 483
-  The first character on the second row occupies RAM address (404 + 128) = 532
+  The last character on the first visible row occupies RAM address 79
+  The first character on the second row occupies RAM address 128
+
+  spawn uses true column and row numbering:
+  spawn(column, row)
+  spawn(0, 0) will spawn the first cell on the first line (top left)
+  spawn(1, 0) will spawn the second cell on the first line
+  spawn(0, 1) will spawn the first cell on the second line
 
 */
 
 #include "XLR8_HDMI.h"
 
-#define first_char_addr 404
+#define first_char_addr 0
 #define row_offset 128
 #define num_rows 30
 #define num_columns 80
@@ -111,6 +117,17 @@ void setup()
 //  spawn(42, 16);
 //  spawn(42, 17);
 //  spawn(42, 18);
+
+//  // Lightweight Spaceship
+//  spawn(2,14);
+//  spawn(3,14);
+//  spawn(4,14);
+//  spawn(5,14);
+//  spawn(1,15);
+//  spawn(5,15);
+//  spawn(5,16);
+//  spawn(1,17);
+//  spawn(4,17);
 
 //  // Gosper Glider Gun
 //  spawn(1, 10);

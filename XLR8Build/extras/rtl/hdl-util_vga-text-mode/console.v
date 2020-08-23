@@ -26,7 +26,8 @@ reg [5:0] blink_timer = 0;
 
 always @(posedge clk_pixel)
 begin
-    if (cx == 0 && cy == 0)
+    //if (cx == 0 && cy == 0)
+	 if (cx == 160 && cy == 45) // Paul changed this to align vindex and hindex with video memory
     begin
         prevcy <= 0;
         vindex <= 0;

@@ -70,6 +70,7 @@ logic [23:0] rgb;
 logic [9:0] cx, cy;
 hdmi #(.VIDEO_ID_CODE(1), .VIDEO_REFRESH_RATE(60.00), .DDRIO(0), .AUDIO_RATE(AUDIO_RATE), .AUDIO_BIT_WIDTH(AUDIO_BIT_WIDTH)) hdmi(.clk_pixel_x10(clk_pixel_x10), .clk_pixel(clk_pixel), .clk_audio(clk_audio), .rgb(rgb), .audio_sample_word('{audio_sample_word_dampened, audio_sample_word_dampened}), .tmds_p(HDMI_TX), .tmds_clock_p(HDMI_CLK), .tmds_n(HDMI_TX_N), .tmds_clock_n(HDMI_CLK_N), .cx(cx), .cy(cy));
 
+////Original Character Generator
 //logic [7:0] character = 8'h30;
 //logic [5:0] prevcy = 6'd0;
 //always @(posedge clk_pixel)
@@ -86,7 +87,7 @@ hdmi #(.VIDEO_ID_CODE(1), .VIDEO_REFRESH_RATE(60.00), .DDRIO(0), .AUDIO_RATE(AUD
 //    end
 //end
 
-// Bodge the RAM Read Enables - this needs more work!
+// Create the RAM Read Enables. This probably needs refining!
 CLKDivider
 #(.N(8), .R(2))
 U3
@@ -97,14 +98,16 @@ U3
 assign RAM_CHAR_RE = RAM_RE;
 assign RAM_ATTR_RE = RAM_RE;
 
-// Bodge the RAM address - this needs more work!
-logic [9:0] cxp1;
+// Calculate the RAM address. This probably needs refining!
+logic [9:0] cx_mem;
+logic [9:0] cy_mem;
 always @(posedge clk_pixel)
 begin
-	cxp1 <= cx + 10'h001; // Pre-fetch the character and attribute data by one clock cycle
-	RAM_ADDRESS <= {cy[9:4], cxp1[9:3]};
+	cx_mem <= cx + 10'd864; // Offset cx_mem by 160
+	cy_mem <= cy + 10'd980; // Offset cy_mem by 45
 end
+assign RAM_ADDRESS = {cy_mem[9:4], cx_mem[9:3]}; // Construct RAM_ADDRESS using an assign to save a clock cycle
 
-//console console(.clk_pixel(clk_pixel), .codepoint(character), .attribute({cx[9], cy[8:6], cx[8:5]}), .cx(cx), .cy(cy), .rgb(rgb));
-console console(.clk_pixel(clk_pixel), .codepoint(RAM_CHAR_DATA), .attribute(RAM_ATTR_DATA), .cx(cx), .cy(cy), .rgb(rgb));
+//console console(.clk_pixel(clk_pixel), .codepoint(character), .attribute({cx[9], cy[8:6], cx[8:5]}), .cx(cx), .cy(cy), .rgb(rgb)); // Original code
+console console(.clk_pixel(clk_pixel), .codepoint(RAM_CHAR_DATA), .attribute(RAM_ATTR_DATA), .cx(cx), .cy(cy), .rgb(rgb)); // VGA HDMI
 endmodule

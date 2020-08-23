@@ -48,17 +48,23 @@
   To keep things easy, we use 13 bit addressing ({cy[9:4], cx[9:3]}) = 8K of dual port RAM
 
   The screen area starts at: cx = 160; cy = 45
-  So the first full character (top left) appears at the RAM address for column 20 row 3
+  hdmi_demo.sv removes the cx and cy offset
+  So the first full character (top left) appears at RAM address 0
   Each row in memory is 2^7 bytes wide = 128
-  So the first fully-visible character occupies RAM address (20 + (3 * 128)) = 404
-  The last character on the first visible row occupies RAM address (404 + 79) = 483
-  The first character on the second row occupies RAM address (404 + 128) = 532
+  The last character on the first visible row occupies RAM address 79
+  The first character on the second row occupies RAM address 128
+
+  print_at and attr_at use true column and row numbering:
+  print_at(column, row, character)
+  print_at(0, 0, n) will print character n at the first character on the first line (top left)
+  print_at(1, 0, n) will print at the second character on the first line
+  print_at(0, 1, n) will print at the first character on the second line
 
 */
 
 #include "XLR8_HDMI.h"
 
-#define first_char_addr 404
+#define first_char_addr 0
 #define row_offset 128
 #define num_rows 30
 #define num_columns 80
@@ -73,23 +79,42 @@ void setup()
 
   clear_video_memory(); // Clear the whole video memory
 
-  // Print the border (skip two columns and one row)
+  // Print the double border
   // Corners
-  print_at(2,1,201);
-  print_at(77,1,187);
-  print_at(77,28,188);
-  print_at(2,28,200);
+  print_at(0,0,201);
+  print_at(79,0,187);
+  print_at(79,29,188);
+  print_at(0,29,200);
   // Top and bottom edges
-  for (int col = 3; col < 77; col++)
+  for (int col = 1; col < 79; col++)
   {
-    print_at(col,1,205);
-    print_at(col,28,205);
+    print_at(col,0,205);
+    print_at(col,29,205);
+  }
+  // Left and right edges
+  for (int row = 1; row < 29; row++)
+  {
+    print_at(0,row,186);
+    print_at(79,row,186);
+  }
+  
+  // Print the single border (skip one column and one row)
+  // Corners
+  print_at(1,1,218);
+  print_at(78,1,191);
+  print_at(78,28,217);
+  print_at(1,28,192);
+  // Top and bottom edges
+  for (int col = 2; col < 78; col++)
+  {
+    print_at(col,1,196);
+    print_at(col,28,196);
   }
   // Left and right edges
   for (int row = 2; row < 28; row++)
   {
-    print_at(2,row,186);
-    print_at(77,row,186);
+    print_at(1,row,179);
+    print_at(78,row,179);
   }
 }
 
