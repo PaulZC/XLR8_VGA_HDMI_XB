@@ -30,6 +30,7 @@ CLKDivider and DifferentialSignal are taken from the KAMAMI maXimator HDMI Test 
 - https://youtu.be/agKPjtTc7_g
 
 <br/>
+
 [INSTALLATION.md](./INSTALLATION.md) contains abbreviated instructions on how to install the XLR8Build bootloader on the Snō.
 
 Once you have programmed the Snō with the XLR8Build 'bootloader', the blue status LED (D13) will blink a heartbeat at 1Hz and your screen will display a blank VGA image.
