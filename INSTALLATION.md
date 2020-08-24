@@ -40,11 +40,12 @@ To install and use the VGA HDMI XB:
 - Leave the Upload Action set to **Send sketch to Snō Board (USB)**
 - Check you have the correct Port selected for your FTDI cable
 - Click **Burn Bootloader** to program the FPGA with the XLR8Build (VGA HDMI) XB. This takes a while...
-- The Snō should start generating a blank VGA image
-- Now open one of the examples from the [Examples folder](./XLR8Build/examples)
-- Click the right-arrow symbol to upload the example code to the FPGA
 
 ![bootloader](img/bootloader.jpg)
+
+- The Snō's blue LED should start flashing at 1Hz and you should see a blank VGA image on your HDMI display
+- Now open one of the examples from the [Examples folder](./XLR8Build/examples)
+- Click the right-arrow symbol to upload the example code to the FPGA
 
 
 Enjoy!
