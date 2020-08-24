@@ -34,6 +34,7 @@
 #define XLR8_HDMI_CHAR_ADDR_HI _SFR_MEM8(0xE2)
 #define XLR8_HDMI_CHAR_DATA    _SFR_MEM8(0xE3)
 #define XLR8_HDMI_ATTR_DATA    _SFR_MEM8(0xE4)
+#define XLR8_HDMI_ROW_OFFSET   _SFR_MEM8(0xE5)
 
 class XLR8_HDMIClass {
 
@@ -51,12 +52,12 @@ public:
     XLR8_HDMI_VOLUME = val;
 	}
 
-	// Lo Byte of the RAM 2-PORT video memory address
+	// Set the Lo Byte of the RAM 2-PORT video memory address
 	void __attribute__ ((noinline)) set_char_addr_lo(uint8_t val) {
 	 XLR8_HDMI_CHAR_ADDR_LO = val;
 	}
 		
-	// Hi Byte of the RAM 2-PORT video memory address
+	// Set the Hi Byte of the RAM 2-PORT video memory address
 	void __attribute__ ((noinline)) set_char_addr_hi(uint8_t val) {
 	 XLR8_HDMI_CHAR_ADDR_HI = val;
 	}
@@ -79,6 +80,16 @@ public:
 	// Read the attribute val back from video memory
 	uint8_t __attribute__ ((noinline)) get_attr_data() {
     return XLR8_HDMI_ATTR_DATA;
+	}
+		
+	// Set the video memory row offset to val
+	void __attribute__ ((noinline)) set_row_offset(uint8_t val) {
+	 XLR8_HDMI_ROW_OFFSET = val;
+	}
+	
+	// Read the video memory row offset
+	uint8_t __attribute__ ((noinline)) get_row_offset() {
+    return XLR8_HDMI_ROW_OFFSET;
 	}
 		
 private:

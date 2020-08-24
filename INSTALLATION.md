@@ -1,6 +1,6 @@
 # XLR8 VGA HDMI XB - Installation
 
-Alorium Technology have put together a comprehensive set of resources showing how to work with the Snō and Xcelerator Blocks (XBs).
+Alorium Technology have put together a comprehensive set of resources showing how to work with the Snō and Xcelerator Blocks (XBs):
 
 - https://www.aloriumtech.com/sno-quickstart/
 - https://www.aloriumtech.com/documents/Sno_Pin_Map.pdf
@@ -43,6 +43,8 @@ To install and use the VGA HDMI XB:
 - The Snō should start generating a blank VGA image
 - Now open one of the examples from the [Examples folder](./XLR8Build/examples)
 - Click the right-arrow symbol to upload the example code to the FPGA
+
+![bootloader](img/bootloader.jpg)
 
 
 Enjoy!

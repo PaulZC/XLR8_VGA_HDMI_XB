@@ -18,7 +18,8 @@ module hdmi_demo
   input [7:0] RAM_CHAR_DATA,
   input [7:0] RAM_ATTR_DATA,
   output RAM_CHAR_RE,
-  output RAM_ATTR_RE
+  output RAM_ATTR_RE,
+  input [7:0] RAM_ROW_OFFSET // RAM row offset for fast display updates
 );
 
 wire clk_pixel_x10;
@@ -103,10 +104,11 @@ logic [9:0] cx_mem;
 logic [9:0] cy_mem;
 always @(posedge clk_pixel)
 begin
-	cx_mem <= cx + 10'd864; // Offset cx_mem by 160
-	cy_mem <= cy + 10'd980; // Offset cy_mem by 45
+	cx_mem <= cx + 10'd865; // Offset cx_mem
+	cy_mem <= cy + 10'd980 + (RAM_ROW_OFFSET << 4); // Offset cy_mem. Add the row offset
+	RAM_ADDRESS <= {cy_mem[9:4], cx_mem[9:3]}; // Construct RAM_ADDRESS
 end
-assign RAM_ADDRESS = {cy_mem[9:4], cx_mem[9:3]}; // Construct RAM_ADDRESS using an assign to save a clock cycle
+//assign RAM_ADDRESS = {cy_mem[9:4], cx_mem[9:3]}; // Construct RAM_ADDRESS using an assign to save a clock cycle
 
 //console console(.clk_pixel(clk_pixel), .codepoint(character), .attribute({cx[9], cy[8:6], cx[8:5]}), .cx(cx), .cy(cy), .rgb(rgb)); // Original code
 console console(.clk_pixel(clk_pixel), .codepoint(RAM_CHAR_DATA), .attribute(RAM_ATTR_DATA), .cx(cx), .cy(cy), .rgb(rgb)); // VGA HDMI

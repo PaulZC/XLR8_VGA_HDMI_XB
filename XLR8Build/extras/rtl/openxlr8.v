@@ -221,6 +221,7 @@ module openxlr8
 		  .RAM_ADDRESS_HI (RAM_Address_Hi),
 		  .RAM_CHAR_DATA (RAM_Char_Data),
 		  .RAM_ATTR_DATA (RAM_Attr_Data),
+		  .RAM_ROW_OFFSET (RAM_Row_Offset),
         .WIDTH          (8)
         )
     hdmi_inst

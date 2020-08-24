@@ -29,15 +29,18 @@ CLKDivider and DifferentialSignal are taken from the KAMAMI maXimator HDMI Test 
 - https://maximator-fpga.org/wp-content/uploads/2017/03/maXimator-HDMI-test.zip
 - https://youtu.be/agKPjtTc7_g
 
+<br/>
 [INSTALLATION.md](./INSTALLATION.md) contains abbreviated instructions on how to install the XLR8Build bootloader on the Snō.
 
-Once you have programmed the Snō with the XLR8Build 'bootloader', the blue status LED (D13) will blink a heartbeat at 1Hz.
+Once you have programmed the Snō with the XLR8Build 'bootloader', the blue status LED (D13) will blink a heartbeat at 1Hz and your screen will display a blank VGA image.
 
 The [examples](./XLR8Build/examples) folder contains example Arduino code which will display:
 - random character codes and attributes
 - a digital clock with chasing graphic surround
 - an alignment pattern
 - Conway's Game of Life
+- slow row shifting (using video memory reads and writes)
+- fast row shifting (using the new set_row_offset function)
 
 ## Resources
 

@@ -12,6 +12,7 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 	 parameter RAM_ADDRESS_HI = 0,   // Address of the register that will hold the RAM address (hi byte)
 	 parameter RAM_CHAR_DATA = 0,		// Address of the register that will hold the RAM character data
 	 parameter RAM_ATTR_DATA = 0,		// Address of the register that will hold the RAM attribute data
+	 parameter RAM_ROW_OFFSET = 0,	// Address of the register that will hold the RAM row offset (for fast display updates)
     parameter WIDTH = 8
     )
    (
@@ -70,6 +71,11 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 	logic ram_char_attr_re;
 	logic [7:0] ram_attr_q_reg;
 	
+	logic ram_row_offset_sel;
+	logic ram_row_offfset_we;
+	logic ram_row_offset_re;
+	logic [WIDTH-1:0] ram_row_offset_reg; // The register that will hold the ram row offset
+
 	logic [7:0] hdmi_ram_char_data;
 	logic [7:0] hdmi_ram_attr_data;
 	logic [12:0] hdmi_ram_address;
@@ -103,18 +109,24 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
    assign ram_attr_data_we  = ram_attr_data_sel && ramwe;
    assign ram_attr_data_re  = ram_attr_data_sel && ramre;
 	
+   assign ram_row_offset_sel = dm_sel && (ramadr == RAM_ROW_OFFSET);
+   assign ram_row_offset_we  = ram_row_offset_sel && ramwe;
+   assign ram_row_offset_re  = ram_row_offset_sel && ramre;
+	
 	// Mux the data and enable outputs
    assign dbus_out =  ({8{  volume_sel }} &  volume_reg ) |
 							 ({8{  ram_address_lo_sel }} &  ram_address_lo_reg ) |
 							 ({8{  ram_address_hi_sel }} &  ram_address_hi_reg ) |
 							 ({8{  ram_char_data_sel }} &  ram_char_q_reg ) |
-							 ({8{  ram_attr_data_sel }} &  ram_attr_q_reg );
+							 ({8{  ram_attr_data_sel }} &  ram_attr_q_reg ) |
+							 ({8{  ram_row_offset_sel }} &  ram_row_offset_reg );
 
    assign io_out_en = volume_re ||
 							 ram_address_lo_re ||
 							 ram_address_hi_re ||
 							 ram_char_data_re ||
-							 ram_attr_data_re;
+							 ram_attr_data_re ||
+							 ram_row_offset_re;
 
    // End, Control Select
    //----------------------------------------------------------------------
@@ -142,6 +154,12 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
    always @(posedge clk_pixel) begin
 		if (clken && ram_address_hi_we) begin
         ram_address_hi_reg <= dbus_in[WIDTH-1:0];
+      end
+   end
+   
+   always @(posedge clk_pixel) begin
+		if (clken && ram_row_offset_we) begin
+        ram_row_offset_reg <= dbus_in[WIDTH-1:0];
       end
    end
    
@@ -209,7 +227,8 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 						  .RAM_CHAR_DATA	(hdmi_ram_char_data),
 						  .RAM_ATTR_DATA	(hdmi_ram_attr_data),
 						  .RAM_CHAR_RE		(hdmi_ram_char_re),
-						  .RAM_ATTR_RE		(hdmi_ram_attr_re)
+						  .RAM_ATTR_RE		(hdmi_ram_attr_re),
+						  .RAM_ROW_OFFSET (ram_row_offset_reg)
                     );
    
    // End, Instantiate user module
