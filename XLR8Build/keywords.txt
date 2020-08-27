@@ -1,15 +1,34 @@
 #######################################
 # Syntax Coloring Map For XLR8BuildTemplate
-####################################### 
-# Class
 #######################################
 
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+XLR8_HDMI	KEYWORD1
 
 #######################################
-# Methods and Functions 
-#######################################	
+# Methods and Functions (KEYWORD2)
+#######################################
+
+set_volume_attenuation	KEYWORD2
+set_char_addr_lo	KEYWORD2
+set_char_addr_hi	KEYWORD2
+set_char_data	KEYWORD2
+set_attr_data	KEYWORD2
+get_char_data	KEYWORD2
+get_attr_data	KEYWORD2
+set_row_offset	KEYWORD2
+get_row_offset	KEYWORD2
 
 #######################################
-# Constants
+# Constants (LITERAL1)
 #######################################
- 
+
+XLR8_HDMI_VOLUME	LITERAL1
+XLR8_HDMI_CHAR_ADDR_LO	LITERAL1
+XLR8_HDMI_CHAR_ADDR_HI	LITERAL1
+XLR8_HDMI_CHAR_DATA	LITERAL1
+XLR8_HDMI_ATTR_DATA	LITERAL1
+XLR8_HDMI_ROW_OFFSET	LITERAL1
