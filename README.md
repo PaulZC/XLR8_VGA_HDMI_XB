@@ -15,7 +15,7 @@ An XLR8 XB which will run on the Alorium Technology Snō board and produce a VGA
 This Xcelerator Block will run on the [Alorium Technology Snō](https://www.mouser.co.uk/ProductDetail/Alorium/SnoR20M16V3/?qs=sGAEpiMZZMve4%2FbfQkoj%252bCt7XfrcUv5s%2FrtyQWYQt6w=)
 FPGA board and will produce a configurable VGA text display over HDMI at 640x480 pixels (60Hz). Two dual-port RAM blocks act as video memory for the character codes and attributes.
 
-The dual-port video memory was added by Paul. The RAM addressing methodology works, but isn't elegant and needs refining...
+The dual-port video memory was added by Paul.
 
 The Verilog for the HDMI video, audio and VGA text generator is a remix of the HDL Utils written by Sameer Puri:
 - https://github.com/hdl-util
@@ -42,6 +42,7 @@ The [examples](./XLR8Build/examples) folder contains example Arduino code which 
 - Conway's Game of Life
 - slow row shifting (using video memory reads and writes)
 - fast row shifting (using the new set_row_offset function)
+- Breakout (based on the Atari game from the 1970s)
 
 ## Resources
 
