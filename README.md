@@ -43,6 +43,7 @@ The [examples](./XLR8Build/examples) folder contains example Arduino code which 
 - slow row shifting (using video memory reads and writes)
 - fast row shifting (using the new set_row_offset function)
 - Breakout (based on the Atari game from the 1970s)
+- Tetris Time (based on [Tobias Blum's Tetris Animation](https://github.com/toblum/TetrisAnimation))
 
 ## Resources
 
