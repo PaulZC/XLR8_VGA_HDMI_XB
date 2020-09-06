@@ -8,7 +8,7 @@
 
   This example contains a remix of Tobias Blum's Tetris Animation:
   https://github.com/toblum/TetrisAnimation
-  Tobias' work (under the GNU General Public License v3.0) is gratefully acknowledged
+  Tobias' work (shared under the GNU General Public License v3.0) is gratefully acknowledged
 
   Tetris-style time is dropped into position.
 
@@ -28,8 +28,10 @@ volatile int timer1_counter;
 ISR(TIMER1_OVF_vect)
 {
   TCNT1 = timer1_counter;   // preload timer
-  tetris.drawNumbers(24, 26, true, true); // Scale 1: Display numbers with blinking colon. Start at column 24. Stop at row 26.
-  //tetris.drawNumbers(10, 14, true, true); // Scale 2: Display double-size numbers with blinking colon. Start at column 10. Stop at row 14.
+  if (tetris.scale == 1)
+    tetris.drawNumbers(24, 26, true, true); // Scale 1: Display numbers with blinking colon. Start at column 24. Stop at row 26.
+  else // if (tetris.scale == 2)
+    tetris.drawNumbers(10, 14, true, true); // Scale 2: Display double-size numbers with blinking colon. Start at column 10. Stop at row 14.
 }
 
 int8_t old_secs = 0; // Store the previous time second
@@ -60,7 +62,8 @@ void setup()
   interrupts();             // enable all interrupts
 
   
-  //tetris.scale = 2; // Use double-size digits
+  //tetris.scale = 2; // Uncomment this line to display double-size digits
+  
   updateTime(0,0); // Zero the clock
 }
 

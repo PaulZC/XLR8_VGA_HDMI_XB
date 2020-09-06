@@ -785,14 +785,14 @@ bool TetrisMatrixDraw::drawNumbers(int x, int yFinish, bool displayColon, bool b
             drawShape(fallen_block.blocktype, 
                       this->tetrisColors[fallen_block.color], 
                       x + fallen_block.x_pos + numstates[numpos].x_shift, 
-                      yFinish + fallen_block.y_stop - 1, 
+                      yFinish + fallen_block.y_stop - scaledYOffset, 
                       fallen_block.num_rot);
           } else {
             drawLargerShape(this->scale, 
                             fallen_block.blocktype, 
                             this->tetrisColors[fallen_block.color], 
                             x + (fallen_block.x_pos * this->scale) + numstates[numpos].x_shift, 
-                            yFinish + (fallen_block.y_stop * scaledYOffset) - scaledYOffset, 
+                            ((yFinish + fallen_block.y_stop) * scaledYOffset) - scaledYOffset, 
                             fallen_block.num_rot);
           }
         }
@@ -802,7 +802,7 @@ bool TetrisMatrixDraw::drawNumbers(int x, int yFinish, bool displayColon, bool b
 
   if (displayColon)
   {
-    this->drawColon(x, yFinish, this->tetrisWHITE, blinkingColon);
+    this->drawColon(x, (yFinish * scaledYOffset), this->tetrisWHITE, blinkingColon);
   }
 
   return finishedAnimating;
