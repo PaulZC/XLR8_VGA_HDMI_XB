@@ -44,6 +44,7 @@ The [examples](./XLR8Build/examples) folder contains example Arduino code which 
 - fast row shifting (using the new set_row_offset function)
 - Breakout (based on the Atari game from the 1970s)
 - Tetris Time (based on [Tobias Blum's Tetris Animation](https://github.com/toblum/TetrisAnimation))
+- GNSS latitude, longitude and altitude using the SparkFun u-blox library over I2C
 
 ## Resources
 
