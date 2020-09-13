@@ -11,7 +11,7 @@
 
   This example talks to a u-blox module over Qwiic / I2C and displays latitude, longitude and altitude.
 
-  The vga_print functions are currently limited to:
+  The vga_print functions used in this example are:
   vga_print(const __FlashStringHelper *ifsh)    E.g.: vga_print(F("VGA HDMI SparkFun ublox Example"));
   vga_print(long n)                             E.g.: vga_print(latitude);
   vga_println()                                 Uses fast_vertical_shift() to scroll the display up by one row

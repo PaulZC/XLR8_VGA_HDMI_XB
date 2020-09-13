@@ -51,6 +51,7 @@ The [examples](./XLR8Build/examples) folder contains example Arduino code which 
 - Breakout (based on the Atari game from the 1970s)
 - Tetris Time (based on [Tobias Blum's Tetris Animation](https://github.com/toblum/TetrisAnimation))
 - GNSS latitude, longitude and altitude using the SparkFun u-blox library over I2C
+- vga_print and vga_println examples
 
 ## Resources
 

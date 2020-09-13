@@ -142,13 +142,31 @@ public:
   // Clear the visible characters - leave the attributes unchanged
   void clear_screen(void);
 
-  // Print decimal long
-  void vga_print(long n = 0);
+  // Print functions
+  void vga_print(const __FlashStringHelper *);
+  void vga_print(const String &);
+  // void vga_print(const char[]);
+  void vga_print(char);
+  void vga_print(unsigned char, int = DEC);
+  void vga_print(int, int = DEC);
+  void vga_print(unsigned int, int = DEC);
+  void vga_print(long, int = DEC);
+  void vga_print(unsigned long, int = DEC);
+  void vga_print(double, int = 2);
+  // void vga_print(const Printable&);
 
-  // Print Flash Helper String (E.g. )
-  void vga_print(const __FlashStringHelper *ifsh);
-
-  // 'Move' the display up by one row (by incrementing the row_offset) and clear the next row
+  // Println functions
+  void vga_println(const __FlashStringHelper *);
+  void vga_println(const String &s);
+  // void vga_println(const char[]);
+  void vga_println(char);
+  void vga_println(unsigned char, int = DEC);
+  void vga_println(int, int = DEC);
+  void vga_println(unsigned int, int = DEC);
+  void vga_println(long, int = DEC);
+  void vga_println(unsigned long, int = DEC);
+  void vga_println(double, int = 2);
+  // void vga_println(const Printable&);
   void vga_println(void);
 
   // Appear to shift both characters and attributes up by one row by incrementing the row offset
@@ -200,6 +218,9 @@ private:
 
 	// Read the attribute val back from video memory
 	uint8_t __attribute__ ((noinline)) get_attr_data();
+
+  // Line Feed
+  void vga_lf(void);
 
 };
 

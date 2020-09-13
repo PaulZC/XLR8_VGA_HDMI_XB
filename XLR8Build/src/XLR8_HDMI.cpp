@@ -157,26 +157,105 @@ void XLR8_HDMI::clear_screen(void)
   }
 }
 
-// Print decimal long
-void XLR8_HDMI::vga_print(long n = 0)
+// Print Flash Helper String
+void XLR8_HDMI::vga_print(const __FlashStringHelper *ifsh)
+{
+  PGM_P p = reinterpret_cast<PGM_P>(ifsh);
+  uint8_t offset = get_row_offset(); // Get the row offset
+  while (1) {
+    unsigned char c = pgm_read_byte(p++);
+    if (c == 0) break;
+    else if (c == 0x0D) // CR
+    {
+      current_column = 0; // Reset current_column
+    }
+    else if (c == 0x0A) // LF
+    {
+      vga_lf(); // Shift up by one line, don't reset current_column
+      offset = get_row_offset(); // Update the row offset
+    }
+    else
+    {
+      set_char_at(current_column, offset + XLR8_HDMI_NUM_ROWS - 1, c); // Print the character at the current_column on the bottom row
+      current_column++;
+    }
+  }
+}
+
+void XLR8_HDMI::vga_print(const String &s)
+{
+  int len = s.length();
+  if (len == 0) return;
+  uint8_t offset = get_row_offset(); // Get the row offset
+  const char* payload = s.c_str();
+  for (int i = 0; i < len; i++)
+  {
+    if (payload[i] == 0x0D) // CR
+    {
+      current_column = 0; // Reset current_column
+    }
+    else if (payload[i] == 0x0A) // LF
+    {
+      vga_lf(); // Shift up by one line, don't reset current_column
+      offset = get_row_offset(); // Update the row offset
+    }
+    else
+    {
+      set_char_at(current_column, offset + XLR8_HDMI_NUM_ROWS - 1, payload[i]); // Print the character at the current_column on the bottom row
+      current_column++;
+    }
+  }
+}
+
+void XLR8_HDMI::vga_print(char c)
 {
   uint8_t offset = get_row_offset(); // Get the row offset
-
-  if (n < 0)
+  if (c == 0x0D) // CR
   {
-    set_char_at(current_column, offset + XLR8_HDMI_NUM_ROWS - 1, '-');
-    current_column++;
-    n = -n;
+    current_column = 0; // Reset current_column
   }
+  else if (c == 0x0A) // LF
+  {
+    vga_lf(); // Shift up by one line, don't reset current_column
+    offset = get_row_offset(); // Update the row offset
+  }
+  else
+  {
+    set_char_at(current_column, offset + XLR8_HDMI_NUM_ROWS - 1, c); // Print the character at the current_column on the bottom row
+    current_column++;
+  }
+}
+
+void XLR8_HDMI::vga_print(unsigned char b, int base)
+{
+  vga_print((unsigned long) b, base);
+}
+
+void XLR8_HDMI::vga_print(int n, int base)
+{
+  vga_print((long) n, base);
+}
+
+void XLR8_HDMI::vga_print(unsigned int n, int base)
+{
+  vga_print((unsigned long) n, base);
+}
+
+// Print Unsigned Long
+void XLR8_HDMI::vga_print(unsigned long n, int base)
+{
+  uint8_t offset = get_row_offset(); // Get the row offset
 
   char buf[8 * sizeof(long) + 1]; // Assumes 8-bit chars plus zero byte.
   char *str = &buf[sizeof(buf) - 1];
   *str = '\0';
 
+  if (base < 2) base = 10;
+
   do {
-    char c = n % 10;
-    n /= 10;
-    *--str = c + '0';
+    char c = n % base;
+    n /= base;
+    *--str = c < 10 ? c + '0' : c + 'A' - 10;
   } while (n);
 
   while (*str)
@@ -188,17 +267,22 @@ void XLR8_HDMI::vga_print(long n = 0)
   }
 }
 
-// Print Flash Helper String
-void XLR8_HDMI::vga_print(const __FlashStringHelper *ifsh)
+void XLR8_HDMI::vga_print(long n, int base)
 {
-  PGM_P p = reinterpret_cast<PGM_P>(ifsh);
   uint8_t offset = get_row_offset(); // Get the row offset
-  while (1) {
-    unsigned char c = pgm_read_byte(p++);
-    if (c == 0) break;
-    set_char_at(current_column, offset + XLR8_HDMI_NUM_ROWS - 1, c); // Print the character at the current_column on the bottom row
+
+  if ((base == 10) && (n < 0))
+  {
+    set_char_at(current_column, offset + XLR8_HDMI_NUM_ROWS - 1, '-');
     current_column++;
   }
+
+  if (n < 0)
+  {
+    n = -n;
+  }
+
+  vga_print((unsigned long)n, base);
 }
 
 // 'Move' the display up by one row (by incrementing the row_offset) and clear the next row
@@ -211,6 +295,130 @@ void XLR8_HDMI::vga_println(void)
     set_char_at(column, offset + XLR8_HDMI_NUM_ROWS - 1, 0x20); // Fill the next row with spaces
   }
   current_column = 0; // Reset current_column
+}
+
+// Line Feed:
+// 'Move' the display up by one row (by incrementing the row_offset) and clear the next row
+// Don't reset current_column
+void XLR8_HDMI::vga_lf(void)
+{
+  fast_vertical_shift();
+  uint8_t offset = get_row_offset(); // Get the row offset
+  for (int column = 0; column < XLR8_HDMI_NUM_COLUMNS; column++)
+  {
+    set_char_at(column, offset + XLR8_HDMI_NUM_ROWS - 1, 0x20); // Fill the next row with spaces
+  }
+}
+
+void XLR8_HDMI::vga_print(double number, int digits)
+{
+  if (isnan(number))
+  {
+    vga_print("nan");
+    return;
+  }
+  if (isinf(number))
+  {
+    vga_print("inf");
+    return;
+  }
+  if (number > 4294967040.0)
+  {
+    vga_print("ovf");  // constant determined empirically
+    return;
+  }
+  if (number <-4294967040.0)
+  {
+    vga_print("ovf");  // constant determined empirically
+    return;
+  }
+
+  // Handle negative numbers
+  if (number < 0.0)
+  {
+     vga_print('-');
+     number = -number;
+  }
+
+  // Round correctly so that print(1.999, 2) prints as "2.00"
+  double rounding = 0.5;
+  for (uint8_t i=0; i<digits; ++i)
+    rounding /= 10.0;
+
+  number += rounding;
+
+  // Extract the integer part of the number and print it
+  unsigned long int_part = (unsigned long)number;
+  double remainder = number - (double)int_part;
+  vga_print(int_part);
+
+  // Print the decimal point, but only if there are digits beyond
+  if (digits > 0) {
+    vga_print('.');
+  }
+
+  // Extract digits from the remainder one at a time
+  while (digits-- > 0)
+  {
+    remainder *= 10.0;
+    unsigned int toPrint = (unsigned int)(remainder);
+    vga_print(toPrint);
+    remainder -= toPrint;
+  }
+}
+
+void XLR8_HDMI::vga_println(const __FlashStringHelper *ifsh)
+{
+  vga_print(ifsh);
+  vga_println();
+}
+
+void XLR8_HDMI::vga_println(const String &s)
+{
+  vga_print(s);
+  vga_println();
+}
+
+void XLR8_HDMI::vga_println(char c)
+{
+  vga_print(c);
+  vga_println();
+}
+
+void XLR8_HDMI::vga_println(unsigned char b, int base)
+{
+  vga_print(b, base);
+  vga_println();
+}
+
+void XLR8_HDMI::vga_println(int num, int base)
+{
+  vga_print(num, base);
+  vga_println();
+}
+
+void XLR8_HDMI::vga_println(unsigned int num, int base)
+{
+  vga_print(num, base);
+  vga_println();
+}
+
+void XLR8_HDMI::vga_println(long num, int base)
+{
+  vga_print(num, base);
+  vga_println();
+}
+
+void XLR8_HDMI::vga_println(unsigned long num, int base)
+{
+  vga_print(num, base);
+  vga_println();
+}
+
+void XLR8_HDMI::vga_println(double number, int digits)
+{
+  vga_print(number, digits);
+  vga_println();
 }
 
 // Appear to shift both characters and attributes up by one row by incrementing the row offset
