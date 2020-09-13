@@ -4,7 +4,7 @@
   Runs on the Alorium Technologies Sno board
 
   Written by: Paul Clark
-  Date: September 6th 2020
+  Date: September 13th 2020
 
   This example contains a remix of Tobias Blum's Tetris Animation:
   https://github.com/toblum/TetrisAnimation
@@ -19,8 +19,6 @@
 
 #include "TetrisMatrixDraw.h"
 TetrisMatrixDraw tetris;
-
-#include <Time.h>
 
 volatile int timer1_counter;
 
@@ -39,7 +37,7 @@ int8_t old_secs = 0; // Store the previous time second
 void setup()
 {
   Serial.begin(115200);
-  Serial.println(F("VGA HDMI Tetris Time"));
+  Serial.println(F("HDMI VGA Tetris Time"));
 
 
   // Initialize timer1 to provide ticks for drawNumbers
@@ -69,15 +67,19 @@ void setup()
 
 void loop()
 {
-  time_t timeNow = millis() / 1000; // Convert millis into time
-  struct tm* tm_now = localtime(&timeNow);
+  unsigned long now = millis(); // Get the current time in millis
+  uint8_t hour, min, sec;
+  int time = (now / 1000) % (24 * 60 * 60); // Convert time into hour,min,sec
+  hour = (time / 3600) % 24;
+  min = (time / 60) % 60;
+  sec = time % 60;
 
-  if (tm_now->tm_sec != old_secs) // Have the seconds changed?
+  if (sec != old_secs) // Have the seconds changed?
   {
-    old_secs = tm_now->tm_sec; // Update old_secs
-    if (tm_now->tm_sec == 0) // Have the minutes rolled over?
+    old_secs = sec; // Update old_secs
+    if (sec == 0) // Have the minutes rolled over?
     {
-      updateTime(tm_now->tm_hour, tm_now->tm_min); // Update the tetris time
+      updateTime(hour, min); // Update the tetris time
     }
   }
 }
@@ -86,6 +88,7 @@ void updateTime(int8_t hour, int8_t minute) // Update the tetris time
 {
   char timestr[6];
   sprintf(timestr, "%02d:%02d", hour, minute);
+  Serial.println(timestr);
   tetris.clear_screen();
   tetris.setTime(timestr, true); // Update the time, force a refresh of all digits
 }

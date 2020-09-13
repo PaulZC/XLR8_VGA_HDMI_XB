@@ -12,15 +12,25 @@ XLR8_HDMI	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
+begin	KEYWORD2
 set_volume_attenuation	KEYWORD2
-set_char_addr_lo	KEYWORD2
-set_char_addr_hi	KEYWORD2
-set_char_data	KEYWORD2
-set_attr_data	KEYWORD2
-get_char_data	KEYWORD2
-get_attr_data	KEYWORD2
+clear_video_memory	KEYWORD2
+clear_screen	KEYWORD2
+
+vga_print	KEYWORD2
+vga_println	KEYWORD2
+
+fast_vertical_shift	KEYWORD2
+vertical_shift	KEYWORD2
+vertical_shift_char_only	KEYWORD2
+reset_row_offset	KEYWORD2
+
 set_row_offset	KEYWORD2
 get_row_offset	KEYWORD2
+set_char_at	KEYWORD2
+get_char_at	KEYWORD2
+set_attr_at	KEYWORD2
+get_attr_at	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
@@ -32,3 +42,8 @@ XLR8_HDMI_CHAR_ADDR_HI	LITERAL1
 XLR8_HDMI_CHAR_DATA	LITERAL1
 XLR8_HDMI_ATTR_DATA	LITERAL1
 XLR8_HDMI_ROW_OFFSET	LITERAL1
+
+XLR8_HDMI_FIRST_CHAR_ADDR	LITERAL1
+XLR8_HDMI_ROW_LENGTH	LITERAL1
+XLR8_HDMI_NUM_ROWS	LITERAL1
+XLR8_HDMI_NUM_COLUMNS	LITERAL1

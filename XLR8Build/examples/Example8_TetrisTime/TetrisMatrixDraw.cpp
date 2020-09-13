@@ -24,15 +24,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 TetrisMatrixDraw::TetrisMatrixDraw()	{
     intialiseColors();
     resetNumStates();
-
-    //Set the volume attenuation for the sawtooth sound in the hdmi_demo
-    //0 = no attenuation (this will be REALLY loud!)
-    //9 = sensible attenuation
-    //16 = maximum attenuation (mute)
-    set_volume_attenuation(16); // Set the volume attenuation
-  
-    clear_video_memory(); // Clear the whole video memory
-
+    tetrisHDMI.begin();
 }
 
 //void TetrisMatrixDraw::drawChar(String letter, uint8_t x, uint8_t y, uint16_t color)
@@ -459,13 +451,12 @@ void TetrisMatrixDraw::drawLargerShape(int scale, int blocktype, uint16_t color,
 
 void TetrisMatrixDraw::setNumState(int index, int value, int x_shift)
 {
-    if(index < TETRIS_MAX_NUMBERS) {
-      Serial.println(value);
-        this->numstates[index].num_to_draw = value;
-        this->numstates[index].x_shift = x_shift;
-        this->numstates[index].fallindex = 0;
-        this->numstates[index].blockindex = 0;
-    }
+  if(index < TETRIS_MAX_NUMBERS) {
+    this->numstates[index].num_to_draw = value;
+    this->numstates[index].x_shift = x_shift;
+    this->numstates[index].fallindex = 0;
+    this->numstates[index].blockindex = 0;
+  }
 }
 
 void TetrisMatrixDraw::setTime(String time, bool forceRefresh)
@@ -491,7 +482,8 @@ void TetrisMatrixDraw::setTime(String time, bool forceRefresh)
 void TetrisMatrixDraw::setNumbers(int value, bool forceRefresh)
 {
   String strValue = String(value);
-  if(strValue.length() <= TETRIS_MAX_NUMBERS){
+  if(strValue.length() <= TETRIS_MAX_NUMBERS)
+  {
     this->sizeOfValue = strValue.length();
     int currentXShift = 0;
     for (uint8_t pos = 0; pos < this->sizeOfValue; pos++)
@@ -506,9 +498,11 @@ void TetrisMatrixDraw::setNumbers(int value, bool forceRefresh)
         this->numstates[pos].x_shift = currentXShift;
       }
     }
-  } else {
-    Serial.println("Number too long");
   }
+//  else
+//  {
+//    Serial.println("Number too long!");
+//  }
 }
 
 //void TetrisMatrixDraw::setText(String txt, bool forceRefresh)
@@ -876,87 +870,15 @@ void TetrisMatrixDraw::resetNumStates(){
     }
 }
 
-void TetrisMatrixDraw::set_volume_attenuation(uint8_t attenuation){
-  XLR8_HDMI.set_volume_attenuation(attenuation); // Set the volume attenuation
-}
-
-void TetrisMatrixDraw::clear_video_memory()
-{
-  // Clear the whole of the video memory: set the character codes to 0x20 (space) and the attributes to 0x0F (white text on black background)
-  // (The character and attribute RAM blocks are 8K in size but in reality only 2400 bytes are needed)
-  for (int addr = 0; addr < 8192; addr++)
-  {
-    XLR8_HDMI.set_char_addr_hi(addr >> 8); // Set up the address
-    XLR8_HDMI.set_char_addr_lo(addr & 0xFF);
-    XLR8_HDMI.set_char_data(0x20); // Set the character code to 0x20 (space)
-    XLR8_HDMI.set_attr_data(0x0F); // Set the attribute to 0x0F (white text on black background)
-  }
-}
-
-void TetrisMatrixDraw::clear_screen()
-{
-  // Clear the visible characters - leave the attributes unchanged
-  for (int row = 0; row < num_rows; row++)
-  {
-    for (int column = 0; column < num_columns; column++)
-    {
-      int addr = first_char_addr + (row * row_offset) + column;
-      XLR8_HDMI.set_char_addr_hi(addr >> 8); // Set up the address
-      XLR8_HDMI.set_char_addr_lo(addr & 0xFF);
-      XLR8_HDMI.set_char_data(0x20); // Set the character code to 0x20 (space)
-    }
-  }
-}
-
-void TetrisMatrixDraw::reset_row_offset()
-{
-  XLR8_HDMI.set_row_offset(0); // Set the row offset to zero
-}
-
-void TetrisMatrixDraw::fast_vertical_shift()
-{
-  // Appear to shift both characters and attributes up by one row by incrementing the row offset
-  uint8_t offset = XLR8_HDMI.get_row_offset(); // Get the row offset
-  offset++; // Increment the row offset by one
-  XLR8_HDMI.set_row_offset(offset); // Set the row offset
-}
-
 void TetrisMatrixDraw::drawPixel(int x_pos, int y_pos, uint16_t color, bool blinking)
 {
   uint8_t col = (uint8_t)color;
   if (blinking) col |= 0x80;
-  set_char_at((int) x_pos, (int) y_pos, brick_char);
-  set_attr_at((int) x_pos, (int) y_pos, col);
+  tetrisHDMI.set_char_at((int) x_pos, (int) y_pos, brick_char);
+  tetrisHDMI.set_attr_at((int) x_pos, (int) y_pos, col);
 }
 
-void TetrisMatrixDraw::set_char_at(int column, int row, uint8_t chr) // Print chr at (column,row)
+void TetrisMatrixDraw::clear_screen(void)
 {
-  int addr = first_char_addr + (row * row_offset) + column;
-  XLR8_HDMI.set_char_addr_hi(addr >> 8); // Set up the address
-  XLR8_HDMI.set_char_addr_lo(addr & 0xFF);
-  XLR8_HDMI.set_char_data(chr); // Set the character code
-}
-
-uint8_t TetrisMatrixDraw::get_char_at(int column, int row) // Read the chr at (column,row)
-{
-  int addr = first_char_addr + (row * row_offset) + column;
-  XLR8_HDMI.set_char_addr_hi(addr >> 8); // Set up the address
-  XLR8_HDMI.set_char_addr_lo(addr & 0xFF);
-  return(XLR8_HDMI.get_char_data()); // Read and return the character code
-}
-
-void TetrisMatrixDraw::set_attr_at(int column, int row, uint8_t attr) // Change the attributes at (column,row)
-{
-  int addr = first_char_addr + (row * row_offset) + column;
-  XLR8_HDMI.set_char_addr_hi(addr >> 8); // Set up the address
-  XLR8_HDMI.set_char_addr_lo(addr & 0xFF);
-  XLR8_HDMI.set_attr_data(attr); // Set the character attributes
-}
-
-uint8_t TetrisMatrixDraw::get_attr_at(int column, int row) // Read the attr at (column,row)
-{
-  int addr = first_char_addr + (row * row_offset) + column;
-  XLR8_HDMI.set_char_addr_hi(addr >> 8); // Set up the address
-  XLR8_HDMI.set_char_addr_lo(addr & 0xFF);
-  return(XLR8_HDMI.get_attr_data()); // Read and return the attribute
+  tetrisHDMI.clear_screen();
 }

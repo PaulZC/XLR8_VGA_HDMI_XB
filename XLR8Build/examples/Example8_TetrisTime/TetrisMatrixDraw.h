@@ -87,12 +87,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #define TETRIS_DISTANCE_BETWEEN_DIGITS 7
 
-// Definitions for the XLR8 HDMI VGA XB
-#define first_char_addr 0
-#define row_offset 128
-#define num_rows 30
-#define num_columns 80
-
 // Type that describes the current state of a drawn number
 typedef struct
 {
@@ -121,6 +115,8 @@ class TetrisMatrixDraw
         int scale = 1;
         uint16_t outLineColour = 0x0000;
 
+        XLR8_HDMI tetrisHDMI;
+
         uint16_t tetrisColors[9];
         uint16_t tetrisRED;
         uint16_t tetrisGREEN;
@@ -132,17 +128,9 @@ class TetrisMatrixDraw
         uint16_t tetrisORANGE;
         uint16_t tetrisBLACK;
 
-        void set_volume_attenuation(uint8_t attenuation);
-        void clear_video_memory();
-        void clear_screen();
-        void reset_row_offset();
-        void fast_vertical_shift();
-        void set_char_at(int column, int row, uint8_t chr);
-        uint8_t get_char_at(int column, int row);
-        void set_attr_at(int column, int row, uint8_t attr);
-        uint8_t get_attr_at(int column, int row);
-
         const uint8_t brick_char = 219;
+
+        void clear_screen(void);
 
     private:
         void intialiseColors();
