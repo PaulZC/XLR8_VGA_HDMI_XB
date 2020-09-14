@@ -11,10 +11,10 @@
 
   This example talks to a u-blox module over Qwiic / I2C and displays latitude, longitude and altitude.
 
-  The vga_print functions used in this example are:
-  vga_print(const __FlashStringHelper *ifsh)    E.g.: vga_print(F("VGA HDMI SparkFun ublox Example"));
-  vga_print(long n)                             E.g.: vga_print(latitude);
-  vga_println()                                 Uses fast_vertical_shift() to scroll the display up by one row
+  The print functions used in this example are:
+  print(const __FlashStringHelper *ifsh)    E.g.: print(F("VGA HDMI SparkFun ublox Example"));
+  print(long n)                             E.g.: print(latitude);
+  println()                                 Uses fast_vertical_shift() to scroll the display up by one row
 
 */
 
@@ -40,8 +40,8 @@ void setup()
     while(1);
   }  
   
-  myHDMI.vga_print(F("HDMI VGA SparkFun ublox Example"));
-  myHDMI.vga_println();
+  myHDMI.print(F("HDMI VGA SparkFun ublox Example"));
+  myHDMI.println();
 
   Wire.begin();
 
@@ -50,10 +50,10 @@ void setup()
   if (myGPS.begin() == false) //Connect to the Ublox module using Wire port
   {
     Serial.println(F("Ublox GPS not detected at default I2C address. Please check wiring. Freezing."));
-    myHDMI.vga_print(F("Ublox GPS not detected at default I2C address."));
-    myHDMI.vga_println();
-    myHDMI.vga_print(F("Please check wiring. Freezing."));
-    myHDMI.vga_println();
+    myHDMI.print(F("Ublox GPS not detected at default I2C address."));
+    myHDMI.println();
+    myHDMI.print(F("Please check wiring. Freezing."));
+    myHDMI.println();
     while (1);
   }
 
@@ -70,19 +70,19 @@ void loop()
     lastTime = millis(); //Update the timer
     
     long latitude = myGPS.getLatitude();
-    myHDMI.vga_print(F("Lat: "));
-    myHDMI.vga_print(latitude);
+    myHDMI.print(F("Lat: "));
+    myHDMI.print(latitude);
 
     long longitude = myGPS.getLongitude();
-    myHDMI.vga_print(F(" Long: "));
-    myHDMI.vga_print(longitude);
-    myHDMI.vga_print(F(" (degrees * 10^-7)"));
+    myHDMI.print(F(" Long: "));
+    myHDMI.print(longitude);
+    myHDMI.print(F(" (degrees * 10^-7)"));
 
     long altitude = myGPS.getAltitude();
-    myHDMI.vga_print(F(" Alt: "));
-    myHDMI.vga_print(altitude);
-    myHDMI.vga_print(F(" (mm)"));
+    myHDMI.print(F(" Alt: "));
+    myHDMI.print(altitude);
+    myHDMI.print(F(" (mm)"));
 
-    myHDMI.vga_println();
+    myHDMI.println();
   }
 }

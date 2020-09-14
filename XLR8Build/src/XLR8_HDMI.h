@@ -109,6 +109,8 @@ the first starting at row 0 and the second starting at row 30 or 32, and switch 
 
 #include <Arduino.h>
 
+#include <Print.h> // Inherit the print functions
+
 #define XLR8_HDMI_VOLUME    	 _SFR_MEM8(0xE0)
 #define XLR8_HDMI_CHAR_ADDR_LO _SFR_MEM8(0xE1)
 #define XLR8_HDMI_CHAR_ADDR_HI _SFR_MEM8(0xE2)
@@ -121,11 +123,12 @@ the first starting at row 0 and the second starting at row 30 or 32, and switch 
 #define XLR8_HDMI_NUM_ROWS        30
 #define XLR8_HDMI_NUM_COLUMNS     80
 
-class XLR8_HDMI {
+class XLR8_HDMI : public Print {
 
 public:
 
-  uint8_t current_column; // Column used by the vga_print functions
+  uint8_t current_column; // Column used by the print functions. You can change this to implement e.g. delete or backspace.
+  uint8_t current_attr; // Character attribute used by the print functions.
 
   // Returns true if video memory is detected
   boolean begin(void);
@@ -136,38 +139,17 @@ public:
 	// 16 = maximum attenuation (mute)
 	void __attribute__ ((noinline)) set_volume_attenuation(uint8_t val = 16);
 
-  // Clear the whole video memory
-  void clear_video_memory(void);
+  // Clear the whole video memory. Default to white text on black background.
+  void clear_video_memory(uint8_t attr = 0x0F);
 
   // Clear the visible characters - leave the attributes unchanged
   void clear_screen(void);
 
-  // Print functions
-  void vga_print(const __FlashStringHelper *);
-  void vga_print(const String &);
-  // void vga_print(const char[]);
-  void vga_print(char);
-  void vga_print(unsigned char, int = DEC);
-  void vga_print(int, int = DEC);
-  void vga_print(unsigned int, int = DEC);
-  void vga_print(long, int = DEC);
-  void vga_print(unsigned long, int = DEC);
-  void vga_print(double, int = 2);
-  // void vga_print(const Printable&);
+  using Print::print; // Inherit the print functions
+  using Print::println; // Inherit the print functions
 
-  // Println functions
-  void vga_println(const __FlashStringHelper *);
-  void vga_println(const String &s);
-  // void vga_println(const char[]);
-  void vga_println(char);
-  void vga_println(unsigned char, int = DEC);
-  void vga_println(int, int = DEC);
-  void vga_println(unsigned int, int = DEC);
-  void vga_println(long, int = DEC);
-  void vga_println(unsigned long, int = DEC);
-  void vga_println(double, int = 2);
-  // void vga_println(const Printable&);
-  void vga_println(void);
+  // HDMI VGA write
+  size_t write(uint8_t) override;   // Overriding base functionality
 
   // Appear to shift both characters and attributes up by one row by incrementing the row offset
   void fast_vertical_shift(void);
@@ -186,6 +168,9 @@ public:
 
 	// Read the video memory row offset
 	uint8_t __attribute__ ((noinline)) get_row_offset();
+
+  // Change the character and attributes at (column,row) to chr and attr
+  void set_char_attr_at(int column, int row, uint8_t chr, uint8_t attr);
 
   // Change the character at (column,row) to chr
   void set_char_at(int column, int row, uint8_t chr);
