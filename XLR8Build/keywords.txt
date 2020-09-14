@@ -17,16 +17,17 @@ set_volume_attenuation	KEYWORD2
 clear_video_memory	KEYWORD2
 clear_screen	KEYWORD2
 
-vga_print	KEYWORD2
-vga_println	KEYWORD2
+print	KEYWORD2
+println	KEYWORD2
+write	KEYWORD2
 
 fast_vertical_shift	KEYWORD2
 vertical_shift	KEYWORD2
 vertical_shift_char_only	KEYWORD2
 reset_row_offset	KEYWORD2
-
 set_row_offset	KEYWORD2
 get_row_offset	KEYWORD2
+set_char_attr_at	KEYWORD2
 set_char_at	KEYWORD2
 get_char_at	KEYWORD2
 set_attr_at	KEYWORD2
