@@ -6,15 +6,10 @@
   
 
   Written by: Paul Clark
-  Date: September 13th 2020
+  Date: September 19th 2020
 
 
   This example talks to a u-blox module over Qwiic / I2C and displays latitude, longitude and altitude.
-
-  The print functions used in this example are:
-  print(const __FlashStringHelper *ifsh)    E.g.: print(F("VGA HDMI SparkFun ublox Example"));
-  print(long n)                             E.g.: print(latitude);
-  println()                                 Uses fast_vertical_shift() to scroll the display up by one row
 
 */
 
@@ -40,8 +35,7 @@ void setup()
     while(1);
   }  
   
-  myHDMI.print(F("HDMI VGA SparkFun ublox Example"));
-  myHDMI.println();
+  myHDMI.println(F("HDMI VGA SparkFun ublox Example"));
 
   Wire.begin();
 
@@ -49,11 +43,9 @@ void setup()
 
   if (myGPS.begin() == false) //Connect to the Ublox module using Wire port
   {
-    Serial.println(F("Ublox GPS not detected at default I2C address. Please check wiring. Freezing."));
-    myHDMI.print(F("Ublox GPS not detected at default I2C address."));
-    myHDMI.println();
-    myHDMI.print(F("Please check wiring. Freezing."));
-    myHDMI.println();
+    Serial.println(F("Ublox GPS not detected at default I2C address. Please check wiring. Freezing..."));
+    myHDMI.println(F("Ublox GPS not detected at default I2C address."));
+    myHDMI.println(F("Please check wiring. Freezing..."));
     while (1);
   }
 
@@ -81,8 +73,6 @@ void loop()
     long altitude = myGPS.getAltitude();
     myHDMI.print(F(" Alt: "));
     myHDMI.print(altitude);
-    myHDMI.print(F(" (mm)"));
-
-    myHDMI.println();
+    myHDMI.println(F(" (mm)"));
   }
 }
