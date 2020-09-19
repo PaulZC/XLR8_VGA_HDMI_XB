@@ -6594,7 +6594,7 @@ x_irq_ack[2] => xifr.IN1
 
 
 |xlr8_alorium_top|openxlr8:xb_openxlr8_inst
-clk => ~NO_FANOUT~
+clk => clk.IN1
 rstn => rstn.IN1
 clk_64mhz => ~NO_FANOUT~
 clk_32mhz => ~NO_FANOUT~
@@ -7106,6 +7106,7 @@ xb_irq <= <GND>
 |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst
 clk_pixel => clk_pixel.IN3
 clk_audio => clk_audio.IN1
+clk_core => clk_core.IN1
 rstn => ~NO_FANOUT~
 clken => always0.IN1
 clken => always1.IN1
@@ -8064,8 +8065,24 @@ wren_b => ram_block1a7.PORTBWE
 
 
 |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst
-CLK_PIXEL => clk_pixel_x10.IN3
-CLK_AUDIO => clk_audio.IN1
+CLOCK_PIXEL => CLOCK_PIXEL.IN3
+CLOCK_AUDIO => CLOCK_AUDIO.IN1
+CLOCK_CORE => audio_sample_word_dampened[0].CLK
+CLOCK_CORE => audio_sample_word_dampened[1].CLK
+CLOCK_CORE => audio_sample_word_dampened[2].CLK
+CLOCK_CORE => audio_sample_word_dampened[3].CLK
+CLOCK_CORE => audio_sample_word_dampened[4].CLK
+CLOCK_CORE => audio_sample_word_dampened[5].CLK
+CLOCK_CORE => audio_sample_word_dampened[6].CLK
+CLOCK_CORE => audio_sample_word_dampened[7].CLK
+CLOCK_CORE => audio_sample_word_dampened[8].CLK
+CLOCK_CORE => audio_sample_word_dampened[9].CLK
+CLOCK_CORE => audio_sample_word_dampened[10].CLK
+CLOCK_CORE => audio_sample_word_dampened[11].CLK
+CLOCK_CORE => audio_sample_word_dampened[12].CLK
+CLOCK_CORE => audio_sample_word_dampened[13].CLK
+CLOCK_CORE => audio_sample_word_dampened[14].CLK
+CLOCK_CORE => audio_sample_word_dampened[15].CLK
 HDMI_TX[0] <= hdmi:hdmi.tmds_p[0]
 HDMI_TX[1] <= hdmi:hdmi.tmds_p[1]
 HDMI_TX[2] <= hdmi:hdmi.tmds_p[2]

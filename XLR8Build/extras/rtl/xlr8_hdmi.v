@@ -20,8 +20,9 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
     // while other ports could be added, these are required.
     //  
     // Clock and Reset
-    input        clk_pixel, // Pixel Clock
-	 input        clk_audio, // Audio Clock
+    input        clk_pixel, // 252MHz Pixel Clock
+	 input        clk_audio, // 48kHz Audio Clock
+	 input        clk_core,  // 16MHz core clock
     input        rstn, //      Reset
     input        clken, //     Clock Enable
 	 
@@ -139,25 +140,25 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
    // want to register the value here so that it is held for reference
    // until the net update in value
 
-   always @(posedge clk_pixel) begin
+   always @(posedge clk_core) begin
 		if (clken && volume_we) begin
         volume_reg <= dbus_in[WIDTH-1:0];
       end
    end
    
-   always @(posedge clk_pixel) begin
+   always @(posedge clk_core) begin
 		if (clken && ram_address_lo_we) begin
         ram_address_lo_reg <= dbus_in[WIDTH-1:0];
       end
    end
    
-   always @(posedge clk_pixel) begin
+   always @(posedge clk_core) begin
 		if (clken && ram_address_hi_we) begin
         ram_address_hi_reg <= dbus_in[WIDTH-1:0];
       end
    end
    
-   always @(posedge clk_pixel) begin
+   always @(posedge clk_core) begin
 		if (clken && ram_row_offset_we) begin
         ram_row_offset_reg <= dbus_in[WIDTH-1:0];
       end
@@ -215,8 +216,9 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
    // connected.
    
    hdmi_demo hdmi_inst (
-                    .CLK_PIXEL   	(clk_pixel),
-						  .CLK_AUDIO		(clk_audio),
+                    .CLOCK_PIXEL   	(clk_pixel),
+						  .CLOCK_AUDIO		(clk_audio),
+						  .CLOCK_CORE     (clk_core),
 						  .HDMI_TX     	(datap),
 	                 .HDMI_TX_N		(datan),
 						  .HDMI_CLK			(clkp),

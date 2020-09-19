@@ -227,8 +227,9 @@ module openxlr8
     hdmi_inst
       (// Clock and Reset
        .rstn        (rstn),
-       .clk_pixel   (clk_option4),
-		 .clk_audio   (clk_option2),
+       .clk_pixel   (clk_option4), // 252MHz from PLL
+		 .clk_audio   (clk_option2), // 48kHz from PLL
+		 .clk_core    (clk),         // 16MHz core clock
        .clken       (1'b1),
 		 
        // I/O

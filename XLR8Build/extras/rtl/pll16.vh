@@ -87,10 +87,10 @@ localparam XLR8_PLL_CLK2_PHASE_SHIFT = "0";
 //localparam XLR8_PLL_CLK4_PHASE_SHIFT = "1953";
 
 // Create the clock called "clk_option4"
-// The following creates a 252MHz clock with a 0 degree phase shift
+// The following creates a 252MHz clock with a 45 degree phase shift
 localparam XLR8_PLL_CLK4_DIVIDE_BY = 4;
 localparam XLR8_PLL_CLK4_DUTY_CYCLE = 50;
 localparam XLR8_PLL_CLK4_MULTIPLY_BY = 63;
-localparam XLR8_PLL_CLK4_PHASE_SHIFT = "0";
+localparam XLR8_PLL_CLK4_PHASE_SHIFT = "496";
 
 
