@@ -53,6 +53,8 @@ The [examples](./XLR8Build/examples) folder contains example Arduino code which 
 - GNSS latitude, longitude and altitude using the SparkFun u-blox library over I2C
 - print and println examples
 
+Also included is an example which demonstrates the XB's sound-making capabilities.
+
 ## Resources
 
 - https://www.aloriumtech.com/sno-quickstart/
