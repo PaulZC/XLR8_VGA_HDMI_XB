@@ -7211,6 +7211,7 @@ ramre => ram_char_data_re.IN1
 ramre => ram_attr_data_re.IN1
 ramre => ram_row_offset_re.IN1
 ramre => wave_rate_re.IN1
+ramre => wave_duration_re.IN1
 ramwe => volume_we.IN1
 ramwe => ram_address_lo_we.IN1
 ramwe => ram_address_hi_we.IN1

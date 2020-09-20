@@ -25,12 +25,12 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
     input        clk_pixel, // 252MHz Pixel Clock
 	 input        clk_audio, // 48kHz Audio Clock
 	 input        clk_core,  // 16MHz core clock
-    input        rstn, //      Reset
-    input        clken, //     Clock Enable
+    input        rstn,      // Reset
+    input        clken,     // Clock Enable
 	 
     // I/O 
-    input [7:0]  dbus_in, //   Data Bus Input
-    output [7:0] dbus_out, //  Data Bus Output
+    input [7:0]  dbus_in,   // Data Bus Input
+    output [7:0] dbus_out,  // Data Bus Output
     output       io_out_en, // IO Output Enable
 	 
     output [2:0] datap,			// HDMI RGB Data Pins (+ve)
@@ -41,9 +41,9 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 	 
     // DM
     input [7:0]  ramadr, //    RAM Address
-    input        ramre, //     RAM Read Enable
-    input        ramwe, //     RAM Write Enable
-    input        dm_sel //    DM Select
+    input        ramre,  //     RAM Read Enable
+    input        ramwe,  //     RAM Write Enable
+    input        dm_sel  //    DM Select
     );
    
    //======================================================================
@@ -83,6 +83,7 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 	logic wave_rate_we;
 	logic wave_rate_re;
 	logic [WIDTH-1:0] wave_rate_reg; // The register that will hold the wave rate for sound generation
+	logic [WIDTH-1:0] wave_in_progress; // Indicates if a sound is still in progress
 	
 	logic [7:0] hdmi_ram_char_data;
 	logic [7:0] hdmi_ram_attr_data;
@@ -127,6 +128,7 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 	
    assign wave_duration_sel = dm_sel && (ramadr == WAVE_DURATION);
    assign wave_duration_we  = wave_duration_sel && ramwe;
+	assign wave_duration_re  = wave_duration_sel && ramre;
  	
 	// Mux the data and enable outputs
    assign dbus_out =  ({8{  volume_sel }} &  volume_reg ) |
@@ -135,7 +137,8 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 							 ({8{  ram_char_data_sel }} &  ram_char_q_reg ) |
 							 ({8{  ram_attr_data_sel }} &  ram_attr_q_reg ) |
 							 ({8{  ram_row_offset_sel }} &  ram_row_offset_reg ) |
-							 ({8{  wave_rate_sel }} &  wave_rate_reg );
+							 ({8{  wave_rate_sel }} &  wave_rate_reg ) |
+							 ({8{  wave_duration_sel }} &  wave_in_progress );
 
    assign io_out_en = volume_re ||
 							 ram_address_lo_re ||
@@ -143,7 +146,8 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 							 ram_char_data_re ||
 							 ram_attr_data_re ||
 							 ram_row_offset_re ||
-							 wave_rate_re;
+							 wave_rate_re ||
+							 wave_duration_re;
 
    // End, Control Select
    //----------------------------------------------------------------------
@@ -280,10 +284,12 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 			begin
 			wave_duration_count <= wave_duration_count - 1;
 			wave_enable = 1'b1;
+			wave_in_progress = 8'b1;
 			end
 		else
 			begin
       	wave_enable = 1'b0;
+			wave_in_progress = 8'b0;
 			end
 	end
    

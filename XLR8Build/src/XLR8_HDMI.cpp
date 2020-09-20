@@ -364,3 +364,10 @@ void XLR8_HDMI::set_sound_duration(uint8_t duration) {
   XLR8_HDMI_WAVE_DURATION = duration;
 }
 
+// Sound In Progress
+// Returns true if a sound is in progress
+boolean XLR8_HDMI::sound_in_progress() {
+  return (XLR8_HDMI_WAVE_DURATION == 1);
+}
+
+

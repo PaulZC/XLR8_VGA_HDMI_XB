@@ -39,6 +39,7 @@ get_attr_at	KEYWORD2
 set_sound_freq	KEYWORD2
 get_sound_freq	KEYWORD2
 set_sound_duration	KEYWORD2
+sound_in_progress	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

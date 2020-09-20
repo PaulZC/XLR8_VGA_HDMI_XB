@@ -206,6 +206,10 @@ public:
   // i.e. the XB can generate sound durations of 0.0625 to 16 seconds
   void __attribute__ ((noinline)) set_sound_duration(uint8_t duration);
 
+  // Sound In Progress
+  // Returns true if a sound is in progress
+  boolean __attribute__ ((noinline)) sound_in_progress();
+
 private:
 
   // Set the Lo Byte of the RAM 2-PORT video memory address

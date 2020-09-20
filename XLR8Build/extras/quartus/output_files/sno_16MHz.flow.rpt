@@ -1,5 +1,5 @@
 Flow report for sno_16MHz
-Sun Sep 20 15:04:44 2020
+Sun Sep 20 18:48:06 2020
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Sep 20 15:04:44 2020       ;
+; Flow Status                        ; Successful - Sun Sep 20 18:48:06 2020       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; sno_16MHz                                   ;
 ; Top-level Entity Name              ; xlr8_alorium_top                            ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M16SAU169C8G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 12,137 / 15,840 ( 77 % )                    ;
-;     Total combinational functions  ; 11,635 / 15,840 ( 73 % )                    ;
+; Total logic elements               ; 12,165 / 15,840 ( 77 % )                    ;
+;     Total combinational functions  ; 11,652 / 15,840 ( 74 % )                    ;
 ;     Dedicated logic registers      ; 3,523 / 15,840 ( 22 % )                     ;
 ; Total registers                    ; 3531                                        ;
 ; Total pins                         ; 65 / 130 ( 50 % )                           ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/20/2020 15:01:39 ;
+; Start date & time ; 09/20/2020 18:44:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; sno_16MHz           ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+------------------------------------------------------------------------------------------+---------------+------------------+----------------+
 ; Assignment Name                      ; Value                                                                                    ; Default Value ; Entity Name      ; Section Id     ;
 +--------------------------------------+------------------------------------------------------------------------------------------+---------------+------------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 153951938618228.160061049905712                                                          ; --            ; --               ; --             ;
+; COMPILER_SIGNATURE_ID                ; 153951938618228.160062389210544                                                          ; --            ; --               ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                                       ; --            ; --               ; xlr8_tb        ;
 ; EDA_EXTRA_ELAB_OPTION                ; modelsim=-sv_lib ../../../../../XLR8Core/extras/modelsim_windows/uc_top_wrap_64          ; --            ; --               ; eda_simulation ;
 ; EDA_MAINTAIN_DESIGN_HIERARCHY        ; On                                                                                       ; --            ; --               ; eda_simulation ;
@@ -140,13 +140,13 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:08     ; 1.0                     ; 4916 MB             ; 00:01:22                           ;
-; Fitter                    ; 00:01:19     ; 1.5                     ; 6019 MB             ; 00:02:49                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4717 MB             ; 00:00:02                           ;
-; Power Analyzer            ; 00:00:11     ; 2.4                     ; 4986 MB             ; 00:00:23                           ;
-; TimeQuest Timing Analyzer ; 00:00:11     ; 2.6                     ; 4965 MB             ; 00:00:23                           ;
-; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 4816 MB             ; 00:00:04                           ;
-; Total                     ; 00:02:56     ; --                      ; --                  ; 00:05:03                           ;
+; Analysis & Synthesis      ; 00:01:09     ; 1.0                     ; 4914 MB             ; 00:01:23                           ;
+; Fitter                    ; 00:01:25     ; 1.5                     ; 6021 MB             ; 00:02:54                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4719 MB             ; 00:00:02                           ;
+; Power Analyzer            ; 00:00:11     ; 2.3                     ; 4983 MB             ; 00:00:23                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 2.6                     ; 4963 MB             ; 00:00:23                           ;
+; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 4815 MB             ; 00:00:05                           ;
+; Total                     ; 00:03:03     ; --                      ; --                  ; 00:05:10                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
