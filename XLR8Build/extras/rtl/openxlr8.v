@@ -222,6 +222,8 @@ module openxlr8
 		  .RAM_CHAR_DATA (RAM_Char_Data),
 		  .RAM_ATTR_DATA (RAM_Attr_Data),
 		  .RAM_ROW_OFFSET (RAM_Row_Offset),
+		  .WAVE_RATE (WAVE_Rate),
+		  .WAVE_DURATION (WAVE_Duration),
         .WIDTH          (8)
         )
     hdmi_inst

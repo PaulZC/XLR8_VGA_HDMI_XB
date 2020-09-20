@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sno_16MHz
-Sat Sep 19 13:12:56 2020
+Sun Sep 20 15:02:48 2020
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -65,28 +65,32 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  57. Parameter Settings for User Entity Instance: openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel
  58. Parameter Settings for User Entity Instance: openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U3
  59. Parameter Settings for User Entity Instance: openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console
- 60. altpll Parameter Settings by Entity Instance
- 61. altsyncram Parameter Settings by Entity Instance
- 62. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console"
- 63. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|audio_sample_packet:audio_sample_packet"
- 64. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi"
- 65. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:attr_ram_inst"
- 66. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:char_ram_inst"
- 67. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst"
- 68. Port Connectivity Checks: "xlr8_pcint:sno_pcint_inst"
- 69. Port Connectivity Checks: "xlr8_avr_port:pport_g_inst"
- 70. Port Connectivity Checks: "xlr8_avr_port:pport_e_inst"
- 71. Port Connectivity Checks: "xlr8_avr_port:pport_a_inst"
- 72. Port Connectivity Checks: "xlr8_gpio:gpio_inst"
- 73. Port Connectivity Checks: "xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst"
- 74. Port Connectivity Checks: "xlr8_p_mem:p_mem_inst"
- 75. Port Connectivity Checks: "xlr8_iomux328:iomux328_inst"
- 76. Port Connectivity Checks: "xlr8_xb_pinmux:xb_pinmux_inst"
- 77. Port Connectivity Checks: "xlr8_clocks:clocks_inst"
- 78. Post-Synthesis Netlist Statistics for Top Partition
- 79. Elapsed Time Per Partition
- 80. Analysis & Synthesis Messages
- 81. Analysis & Synthesis Suppressed Messages
+ 60. Parameter Settings for Inferred Entity Instance: openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div1
+ 61. Parameter Settings for Inferred Entity Instance: openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div0
+ 62. Parameter Settings for Inferred Entity Instance: openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0
+ 63. altpll Parameter Settings by Entity Instance
+ 64. altsyncram Parameter Settings by Entity Instance
+ 65. lpm_mult Parameter Settings by Entity Instance
+ 66. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console"
+ 67. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|audio_sample_packet:audio_sample_packet"
+ 68. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi"
+ 69. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:attr_ram_inst"
+ 70. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:char_ram_inst"
+ 71. Port Connectivity Checks: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst"
+ 72. Port Connectivity Checks: "xlr8_pcint:sno_pcint_inst"
+ 73. Port Connectivity Checks: "xlr8_avr_port:pport_g_inst"
+ 74. Port Connectivity Checks: "xlr8_avr_port:pport_e_inst"
+ 75. Port Connectivity Checks: "xlr8_avr_port:pport_a_inst"
+ 76. Port Connectivity Checks: "xlr8_gpio:gpio_inst"
+ 77. Port Connectivity Checks: "xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst"
+ 78. Port Connectivity Checks: "xlr8_p_mem:p_mem_inst"
+ 79. Port Connectivity Checks: "xlr8_iomux328:iomux328_inst"
+ 80. Port Connectivity Checks: "xlr8_xb_pinmux:xb_pinmux_inst"
+ 81. Port Connectivity Checks: "xlr8_clocks:clocks_inst"
+ 82. Post-Synthesis Netlist Statistics for Top Partition
+ 83. Elapsed Time Per Partition
+ 84. Analysis & Synthesis Messages
+ 85. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -112,15 +116,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 19 13:12:56 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 20 15:02:48 2020       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; sno_16MHz                                   ;
 ; Top-level Entity Name              ; xlr8_alorium_top                            ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 11,212                                      ;
-;     Total combinational functions  ; 10,123                                      ;
-;     Dedicated logic registers      ; 3,465                                       ;
-; Total registers                    ; 3465                                        ;
+; Total logic elements               ; 12,735                                      ;
+;     Total combinational functions  ; 11,630                                      ;
+;     Dedicated logic registers      ; 3,541                                       ;
+; Total registers                    ; 3541                                        ;
 ; Total pins                         ; 65                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 411,392                                     ;
@@ -321,6 +325,39 @@ refer to the applicable agreement for further details.
 ; xlr8_avr_port.v                                                                        ; yes             ; Auto-Found Verilog HDL File      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Core/extras/rtl/xlr8_avr_port.v                                          ;            ;
 ; xlr8_pcint.v                                                                           ; yes             ; Auto-Found Verilog HDL File      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Core/extras/rtl/xlr8_pcint.v                                             ;            ;
 ; db/altsyncram_i2h2.tdf                                                                 ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/altsyncram_i2h2.tdf                              ;            ;
+; lpm_divide.tdf                                                                         ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                   ;            ;
+; abs_divider.inc                                                                        ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc                                                  ;            ;
+; sign_div_unsign.inc                                                                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                              ;            ;
+; db/lpm_divide_vco.tdf                                                                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/lpm_divide_vco.tdf                               ;            ;
+; db/abs_divider_4dg.tdf                                                                 ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/abs_divider_4dg.tdf                              ;            ;
+; db/alt_u_div_ske.tdf                                                                   ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/alt_u_div_ske.tdf                                ;            ;
+; db/add_sub_t3c.tdf                                                                     ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/add_sub_t3c.tdf                                  ;            ;
+; db/add_sub_u3c.tdf                                                                     ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/add_sub_u3c.tdf                                  ;            ;
+; db/lpm_abs_8b9.tdf                                                                     ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/lpm_abs_8b9.tdf                                  ;            ;
+; db/lpm_divide_6vl.tdf                                                                  ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/lpm_divide_6vl.tdf                               ;            ;
+; db/sign_div_unsign_8nh.tdf                                                             ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/sign_div_unsign_8nh.tdf                          ;            ;
+; db/alt_u_div_qke.tdf                                                                   ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/alt_u_div_qke.tdf                                ;            ;
+; lpm_mult.tdf                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                     ;            ;
+; lpm_add_sub.inc                                                                        ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                  ;            ;
+; multcore.inc                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.inc                                                     ;            ;
+; bypassff.inc                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/bypassff.inc                                                     ;            ;
+; altshift.inc                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.inc                                                     ;            ;
+; multcore.tdf                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.tdf                                                     ;            ;
+; csa_add.inc                                                                            ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/csa_add.inc                                                      ;            ;
+; mpar_add.inc                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.inc                                                     ;            ;
+; muleabz.inc                                                                            ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/muleabz.inc                                                      ;            ;
+; mul_lfrg.inc                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mul_lfrg.inc                                                     ;            ;
+; mul_boothc.inc                                                                         ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mul_boothc.inc                                                   ;            ;
+; alt_ded_mult.inc                                                                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_ded_mult.inc                                                 ;            ;
+; alt_ded_mult_y.inc                                                                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                                               ;            ;
+; dffpipe.inc                                                                            ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/dffpipe.inc                                                      ;            ;
+; mpar_add.tdf                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf                                                     ;            ;
+; lpm_add_sub.tdf                                                                        ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                                                  ;            ;
+; addcore.inc                                                                            ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/addcore.inc                                                      ;            ;
+; look_add.inc                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/look_add.inc                                                     ;            ;
+; alt_stratix_add_sub.inc                                                                ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                          ;            ;
+; db/add_sub_erg.tdf                                                                     ; yes             ; Auto-Generated Megafunction      ; C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/add_sub_erg.tdf                                  ;            ;
+; altshift.tdf                                                                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.tdf                                                     ;            ;
 ; ../ip/max10flash_10M16/max10flash/synthesis/submodules/rtl/altera_onchip_flash_block.v ; yes             ; Encrypted User Verilog HDL File  ; ../ip/max10flash_10M16/max10flash/synthesis/submodules/rtl/altera_onchip_flash_block.v                                  ; max10flash ;
 ; ../ip/dualconfig_10M16/dualconfig/synthesis/submodules/rtl/alt_dual_boot_avmm.v        ; yes             ; Encrypted User Verilog HDL File  ; ../ip/dualconfig_10M16/dualconfig/synthesis/submodules/rtl/alt_dual_boot_avmm.v                                         ; dualconfig ;
 ; ../ip/dualconfig_10M16/dualconfig/synthesis/submodules/rtl/alt_dual_boot.v             ; yes             ; Encrypted User Verilog HDL File  ; ../ip/dualconfig_10M16/dualconfig/synthesis/submodules/rtl/alt_dual_boot.v                                              ; dualconfig ;
@@ -332,20 +369,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 11,212      ;
+; Estimated Total logic elements              ; 12,735      ;
 ;                                             ;             ;
-; Total combinational functions               ; 10123       ;
+; Total combinational functions               ; 11630       ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 6646        ;
-;     -- 3 input functions                    ; 2206        ;
-;     -- <=2 input functions                  ; 1271        ;
+;     -- 4 input functions                    ; 6993        ;
+;     -- 3 input functions                    ; 3080        ;
+;     -- <=2 input functions                  ; 1557        ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 9489        ;
-;     -- arithmetic mode                      ; 634         ;
+;     -- normal mode                          ; 10369       ;
+;     -- arithmetic mode                      ; 1261        ;
 ;                                             ;             ;
-; Total registers                             ; 3465        ;
-;     -- Dedicated logic registers            ; 3465        ;
+; Total registers                             ; 3541        ;
+;     -- Dedicated logic registers            ; 3541        ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 65          ;
@@ -358,9 +395,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; Clock~input ;
-; Maximum fan-out                             ; 2812        ;
-; Total fan-out                               ; 49441       ;
-; Average fan-out                             ; 3.56        ;
+; Maximum fan-out                             ; 2857        ;
+; Total fan-out                               ; 54178       ;
+; Average fan-out                             ; 3.50        ;
 +---------------------------------------------+-------------+
 
 
@@ -369,25 +406,38 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                                                      ; Entity Name                                          ; Library Name ;
 +------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+--------------+
-; |xlr8_alorium_top                                                                                                ; 10123 (86)          ; 3465 (0)                  ; 411392      ; 1          ; 4            ; 2       ; 1         ; 65   ; 0            ; 0          ; |xlr8_alorium_top                                                                                                                                                                                                                                                                                                                                                                                        ; xlr8_alorium_top                                     ; work         ;
-;    |openxlr8:xb_openxlr8_inst|                                                                                   ; 3669 (0)            ; 662 (0)                   ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst                                                                                                                                                                                                                                                                                                                                                              ; openxlr8                                             ; work         ;
-;       |xlr8_hdmi:hdmi_inst|                                                                                      ; 3669 (22)           ; 662 (32)                  ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst                                                                                                                                                                                                                                                                                                                                          ; xlr8_hdmi                                            ; work         ;
-;          |hdmi_demo:hdmi_inst|                                                                                   ; 3647 (86)           ; 630 (42)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst                                                                                                                                                                                                                                                                                                                      ; hdmi_demo                                            ; work         ;
+; |xlr8_alorium_top                                                                                                ; 11630 (95)          ; 3541 (0)                  ; 411392      ; 1          ; 4            ; 2       ; 1         ; 65   ; 0            ; 0          ; |xlr8_alorium_top                                                                                                                                                                                                                                                                                                                                                                                        ; xlr8_alorium_top                                     ; work         ;
+;    |openxlr8:xb_openxlr8_inst|                                                                                   ; 5168 (0)            ; 738 (0)                   ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst                                                                                                                                                                                                                                                                                                                                                              ; openxlr8                                             ; work         ;
+;       |xlr8_hdmi:hdmi_inst|                                                                                      ; 5168 (64)           ; 738 (69)                  ; 131072      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst                                                                                                                                                                                                                                                                                                                                          ; xlr8_hdmi                                            ; work         ;
+;          |hdmi_demo:hdmi_inst|                                                                                   ; 5060 (87)           ; 669 (50)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst                                                                                                                                                                                                                                                                                                                      ; hdmi_demo                                            ; work         ;
 ;             |CLKDivider:U1|                                                                                      ; 60 (60)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U1                                                                                                                                                                                                                                                                                                        ; CLKDivider                                           ; work         ;
 ;             |CLKDivider:U2|                                                                                      ; 46 (46)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U2                                                                                                                                                                                                                                                                                                        ; CLKDivider                                           ; work         ;
 ;             |CLKDivider:U3|                                                                                      ; 45 (45)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U3                                                                                                                                                                                                                                                                                                        ; CLKDivider                                           ; work         ;
-;             |console:console|                                                                                    ; 2405 (626)          ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console                                                                                                                                                                                                                                                                                                      ; console                                              ; work         ;
+;             |console:console|                                                                                    ; 2446 (343)          ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console                                                                                                                                                                                                                                                                                                      ; console                                              ; work         ;
 ;                |attributemap:attributemap|                                                                       ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|attributemap:attributemap                                                                                                                                                                                                                                                                            ; attributemap                                         ; work         ;
-;                |glyphmap:glyphmap|                                                                               ; 1774 (1774)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|glyphmap:glyphmap                                                                                                                                                                                                                                                                                    ; glyphmap                                             ; work         ;
-;             |hdmi:hdmi|                                                                                          ; 989 (105)           ; 448 (92)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi                                                                                                                                                                                                                                                                                                            ; hdmi                                                 ; work         ;
+;                |glyphmap:glyphmap|                                                                               ; 2098 (2098)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|glyphmap:glyphmap                                                                                                                                                                                                                                                                                    ; glyphmap                                             ; work         ;
+;             |hdmi:hdmi|                                                                                          ; 990 (105)           ; 448 (92)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi                                                                                                                                                                                                                                                                                                            ; hdmi                                                 ; work         ;
 ;                |packet_assembler:true_hdmi_output.packet_assembler|                                              ; 304 (304)           ; 45 (45)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler                                                                                                                                                                                                                                                         ; packet_assembler                                     ; work         ;
 ;                |packet_picker:true_hdmi_output.packet_picker|                                                    ; 317 (250)           ; 269 (230)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker                                                                                                                                                                                                                                                               ; packet_picker                                        ; work         ;
 ;                   |audio_clock_regeneration_packet:audio_clock_regeneration_packet|                              ; 41 (41)             ; 39 (39)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|audio_clock_regeneration_packet:audio_clock_regeneration_packet                                                                                                                                                                                               ; audio_clock_regeneration_packet                      ; work         ;
 ;                   |audio_sample_packet:audio_sample_packet|                                                      ; 26 (26)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|audio_sample_packet:audio_sample_packet                                                                                                                                                                                                                       ; audio_sample_packet                                  ; work         ;
-;                |tmds_channel:tmds_gen[0].tmds_channel|                                                           ; 95 (95)             ; 14 (14)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[0].tmds_channel                                                                                                                                                                                                                                                                      ; tmds_channel                                         ; work         ;
+;                |tmds_channel:tmds_gen[0].tmds_channel|                                                           ; 96 (96)             ; 14 (14)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[0].tmds_channel                                                                                                                                                                                                                                                                      ; tmds_channel                                         ; work         ;
 ;                |tmds_channel:tmds_gen[1].tmds_channel|                                                           ; 85 (85)             ; 14 (14)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel                                                                                                                                                                                                                                                                      ; tmds_channel                                         ; work         ;
 ;                |tmds_channel:tmds_gen[2].tmds_channel|                                                           ; 83 (83)             ; 14 (14)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel                                                                                                                                                                                                                                                                      ; tmds_channel                                         ; work         ;
-;             |sawtooth:sawtooth|                                                                                  ; 16 (16)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth                                                                                                                                                                                                                                                                                                    ; sawtooth                                             ; work         ;
+;             |sawtooth:sawtooth|                                                                                  ; 1386 (78)           ; 46 (46)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth                                                                                                                                                                                                                                                                                                    ; sawtooth                                             ; work         ;
+;                |lpm_divide:Div0|                                                                                 ; 163 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div0                                                                                                                                                                                                                                                                                    ; lpm_divide                                           ; work         ;
+;                   |lpm_divide_6vl:auto_generated|                                                                ; 163 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div0|lpm_divide_6vl:auto_generated                                                                                                                                                                                                                                                      ; lpm_divide_6vl                                       ; work         ;
+;                      |sign_div_unsign_8nh:divider|                                                               ; 163 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div0|lpm_divide_6vl:auto_generated|sign_div_unsign_8nh:divider                                                                                                                                                                                                                          ; sign_div_unsign_8nh                                  ; work         ;
+;                         |alt_u_div_qke:divider|                                                                  ; 163 (163)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div0|lpm_divide_6vl:auto_generated|sign_div_unsign_8nh:divider|alt_u_div_qke:divider                                                                                                                                                                                                    ; alt_u_div_qke                                        ; work         ;
+;                |lpm_divide:Div1|                                                                                 ; 1145 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div1                                                                                                                                                                                                                                                                                    ; lpm_divide                                           ; work         ;
+;                   |lpm_divide_vco:auto_generated|                                                                ; 1145 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div1|lpm_divide_vco:auto_generated                                                                                                                                                                                                                                                      ; lpm_divide_vco                                       ; work         ;
+;                      |abs_divider_4dg:divider|                                                                   ; 1145 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div1|lpm_divide_vco:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                                              ; abs_divider_4dg                                      ; work         ;
+;                         |alt_u_div_ske:divider|                                                                  ; 1145 (1145)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div1|lpm_divide_vco:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider                                                                                                                                                                                                        ; alt_u_div_ske                                        ; work         ;
+;          |lpm_mult:Mult0|                                                                                        ; 44 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0                                                                                                                                                                                                                                                                                                                           ; lpm_mult                                             ; work         ;
+;             |multcore:mult_core|                                                                                 ; 44 (26)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0|multcore:mult_core                                                                                                                                                                                                                                                                                                        ; multcore                                             ; work         ;
+;                |mpar_add:padder|                                                                                 ; 18 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                                                                                                                                                                                                                                        ; mpar_add                                             ; work         ;
+;                   |lpm_add_sub:adder[0]|                                                                         ; 18 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                                                                                                                                                                                                                                   ; lpm_add_sub                                          ; work         ;
+;                      |add_sub_erg:auto_generated|                                                                ; 18 (18)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_erg:auto_generated                                                                                                                                                                                                                                        ; add_sub_erg                                          ; work         ;
 ;          |ram:attr_ram_inst|                                                                                     ; 0 (0)               ; 0 (0)                     ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:attr_ram_inst                                                                                                                                                                                                                                                                                                                        ; ram                                                  ; work         ;
 ;             |altsyncram:altsyncram_component|                                                                    ; 0 (0)               ; 0 (0)                     ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:attr_ram_inst|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                        ; altsyncram                                           ; work         ;
 ;                |altsyncram_i2h2:auto_generated|                                                                  ; 0 (0)               ; 0 (0)                     ; 65536       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:attr_ram_inst|altsyncram:altsyncram_component|altsyncram_i2h2:auto_generated                                                                                                                                                                                                                                                         ; altsyncram_i2h2                                      ; work         ;
@@ -586,7 +636,7 @@ refer to the applicable agreement for further details.
 ;                |decode_c7a:decode2|                                                                              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst|altsyncram:altsyncram_component|altsyncram_ehh2:auto_generated|decode_c7a:decode2                                                                                                                                                                                                                              ; decode_c7a                                           ; work         ;
 ;                |mux_b3b:mux4|                                                                                    ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst|altsyncram:altsyncram_component|altsyncram_ehh2:auto_generated|mux_b3b:mux4                                                                                                                                                                                                                                    ; mux_b3b                                              ; work         ;
 ;                |mux_b3b:mux5|                                                                                    ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst|altsyncram:altsyncram_component|altsyncram_ehh2:auto_generated|mux_b3b:mux5                                                                                                                                                                                                                                    ; mux_b3b                                              ; work         ;
-;    |xlr8_pcint:sno_pcint_inst|                                                                                   ; 27 (27)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|xlr8_pcint:sno_pcint_inst                                                                                                                                                                                                                                                                                                                                                              ; xlr8_pcint                                           ; work         ;
+;    |xlr8_pcint:sno_pcint_inst|                                                                                   ; 26 (26)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |xlr8_alorium_top|xlr8_pcint:sno_pcint_inst                                                                                                                                                                                                                                                                                                                                                              ; xlr8_pcint                                           ; work         ;
 +------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -639,9 +689,11 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Register name                                                                                                                                                                                                     ; Reason for Removal                                                                                                                                                         ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|full_wave_rate[0..2]                                                                                                                            ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
 ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|control_data[3,5]                                                                                                                     ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
 ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|packet_type[3..6]                                                                        ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
 ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|audio_clock_regeneration_packet:audio_clock_regeneration_packet|cycle_time_stamp[15..19] ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
+; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|FREQUENCY_RATIO[16..31]                                                                                                       ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
 ; xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst|altsyncram:altsyncram_component|altsyncram_ehh2:auto_generated|address_reg_a[1]                                                           ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
 ; xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst|altsyncram:altsyncram_component|altsyncram_ehh2:auto_generated|address_reg_b[1]                                                           ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
 ; xlr8_clocks:clocks_inst|PRADC                                                                                                                                                                                     ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
@@ -1070,7 +1122,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel|acc[0]                                                                                          ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
 ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel|acc[0]                                                                                          ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
 ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[0].tmds_channel|acc[0]                                                                                          ; Stuck at GND due to stuck port data_in                                                                                                                                     ;
-; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|level[0]                                                                                                                      ; Merged with openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|audio_sample_word_transfer_control    ;
 ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U1|counter[0]                                                                                                                        ; Merged with openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U3|counter[0]                                                                     ;
 ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U2|counter[0]                                                                                                                        ; Merged with openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U3|counter[0]                                                                     ;
 ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_control                                                                                                                          ; Merged with openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|cx[0]                                                                              ;
@@ -1079,11 +1130,12 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; xlr8_avr_port:pport_g_inst|synch:Tn_sync[1]|din_flop                                                                                                                                                              ; Merged with xlr8_avr_port:pport_a_inst|synch:Tn_sync[0]|din_flop                                                                                                           ;
 ; xlr8_avr_port:pport_a_inst|synch:Tn_sync[1]|din_flop                                                                                                                                                              ; Merged with xlr8_avr_port:pport_e_inst|synch:Tn_sync[1]|din_flop                                                                                                           ;
 ; xlr8_avr_port:pport_e_inst|synch:Tn_sync[2]|din_flop                                                                                                                                                              ; Merged with xlr8_avr_port:pport_g_inst|synch:Tn_sync[2]|din_flop                                                                                                           ;
+; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|FREQUENCY_RATIO[14,15]                                                                                                        ; Merged with openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|FREQUENCY_RATIO[13]                                                        ;
 ; xlr8_avr_port:pport_e_inst|synch:Tn_sync[0]|dout                                                                                                                                                                  ; Merged with xlr8_avr_port:pport_g_inst|synch:Tn_sync[0]|dout                                                                                                               ;
 ; xlr8_avr_port:pport_g_inst|synch:Tn_sync[1]|dout                                                                                                                                                                  ; Merged with xlr8_avr_port:pport_a_inst|synch:Tn_sync[0]|dout                                                                                                               ;
 ; xlr8_avr_port:pport_a_inst|synch:Tn_sync[1]|dout                                                                                                                                                                  ; Merged with xlr8_avr_port:pport_e_inst|synch:Tn_sync[1]|dout                                                                                                               ;
 ; xlr8_avr_port:pport_e_inst|synch:Tn_sync[2]|dout                                                                                                                                                                  ; Merged with xlr8_avr_port:pport_g_inst|synch:Tn_sync[2]|dout                                                                                                               ;
-; Total Number of Removed Registers = 483                                                                                                                                                                           ;                                                                                                                                                                            ;
+; Total Number of Removed Registers = 503                                                                                                                                                                           ;                                                                                                                                                                            ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1228,12 +1280,12 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3465  ;
-; Number of registers using Synchronous Clear  ; 182   ;
-; Number of registers using Synchronous Load   ; 244   ;
+; Total registers                              ; 3541  ;
+; Number of registers using Synchronous Clear  ; 198   ;
+; Number of registers using Synchronous Load   ; 272   ;
 ; Number of registers using Asynchronous Clear ; 1932  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2166  ;
+; Number of registers using Clock Enable       ; 2202  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1348,48 +1400,50 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 * Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|audio_sample_word_dampened[15]                                                              ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_g_inst|portx[1]                                                                                                                           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_e_inst|portx[1]                                                                                                                           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_a_inst|portx[1]                                                                                                                           ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_clocks:clocks_inst|lock_count[4]                                                                                                                         ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|prevcy[3]                                                                   ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|audio_sample_word_dampened[6]                                                               ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|parity[0][6]                   ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|vindex[3]                                                                   ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|hindex[0]                                                                   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|parity[4][7]                   ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|packet_type[1]                       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|audio_sample_word_dampened[3]                                                               ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel|tmds[8]                                     ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|audio_sample_word_dampened[0]                                                               ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel|tmds[1]                                     ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel|tmds[1]                                     ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|data_island_data[10]                                                              ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel|tmds[4]                                     ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[0].tmds_channel|tmds[2]                                     ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel|tmds[6]                                     ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[0].tmds_channel|tmds[7]                                     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_g_inst|portx[3]                                                                                                                           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_e_inst|portx[4]                                                                                                                           ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_a_inst|portx[2]                                                                                                                           ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|Mux235                               ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel|acc_add[2]                                  ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[0].tmds_channel|acc_add[3]                                  ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel|acc_add[3]                                  ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |xlr8_alorium_top|stgi_xf_io_slv_dbusout[6]                                                                                                                                     ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |xlr8_alorium_top|stgi_xf_io_slv_dbusout[5]                                                                                                                                     ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |xlr8_alorium_top|stgi_xf_io_slv_dbusout[1]                                                                                                                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|Mux10                          ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|audio_sample_word_transfer_mux[0][1] ;
-; 20:1               ; 5 bits    ; 65 LEs        ; 20 LEs               ; 45 LEs                 ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|Mux5                           ;
-; 39:1               ; 2 bits    ; 52 LEs        ; 20 LEs               ; 32 LEs                 ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|Mux1                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|audio_sample_word_dampened[10]                                                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_g_inst|portx[1]                                                                                                                            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_e_inst|portx[1]                                                                                                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_a_inst|portx[1]                                                                                                                            ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_clocks:clocks_inst|lock_count[4]                                                                                                                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|prevcy[4]                                                                    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|wave_duration_count[0]                                                                                           ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|wave_duration_count[27]                                                                                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|audio_sample_word_dampened[5]                                                                ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|parity[1][7]                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|vindex[0]                                                                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|hindex[1]                                                                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|parity[4][4]                    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|packet_type[7]                        ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|audio_sample_word_dampened[2]                                                                ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel|tmds[8]                                      ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|audio_sample_word_dampened[0]                                                                ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel|tmds[7]                                      ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel|tmds[3]                                      ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|data_island_data[11]                                                               ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel|tmds[6]                                      ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[0].tmds_channel|tmds[4]                                      ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel|tmds[4]                                      ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; Yes        ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[0].tmds_channel|tmds[5]                                      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_g_inst|portx[5]                                                                                                                            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_e_inst|portx[5]                                                                                                                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |xlr8_alorium_top|xlr8_avr_port:pport_a_inst|portx[5]                                                                                                                            ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|Mux235                                ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel|acc_add[4]                                   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[0].tmds_channel|acc_add[2]                                   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel|acc_add[4]                                   ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |xlr8_alorium_top|stgi_xf_io_slv_dbusout[7]                                                                                                                                      ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |xlr8_alorium_top|stgi_xf_io_slv_dbusout[5]                                                                                                                                      ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |xlr8_alorium_top|stgi_xf_io_slv_dbusout[1]                                                                                                                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|Mux10                           ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker|audio_sample_word_transfer_mux[0][11] ;
+; 20:1               ; 5 bits    ; 65 LEs        ; 20 LEs               ; 45 LEs                 ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|Mux0                            ;
+; 39:1               ; 2 bits    ; 52 LEs        ; 20 LEs               ; 32 LEs                 ; No         ; |xlr8_alorium_top|openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_assembler:true_hdmi_output.packet_assembler|Mux0                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2716,6 +2770,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; RAM_CHAR_DATA  ; 11100011 ; Unsigned Binary                                                ;
 ; RAM_ATTR_DATA  ; 11100100 ; Unsigned Binary                                                ;
 ; RAM_ROW_OFFSET ; 11100101 ; Unsigned Binary                                                ;
+; WAVE_RATE      ; 11100110 ; Unsigned Binary                                                ;
+; WAVE_DURATION  ; 11100111 ; Unsigned Binary                                                ;
 ; WIDTH          ; 8        ; Signed Integer                                                 ;
 +----------------+----------+----------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -2872,7 +2928,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+---------------------------------------------------------------------------------------------------------+
 ; BIT_WIDTH      ; 16    ; Signed Integer                                                                                          ;
 ; SAMPLE_RATE    ; 48000 ; Signed Integer                                                                                          ;
-; WAVE_RATE      ; 480   ; Signed Integer                                                                                          ;
 +----------------+-------+---------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -3049,6 +3104,87 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div1 ;
++------------------------+----------------+------------------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                                                       ;
++------------------------+----------------+------------------------------------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                                                                    ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                                                                    ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                                                                                    ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                                                                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                                                    ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                                                                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                                                    ;
+; CBXI_PARAMETER         ; lpm_divide_vco ; Untyped                                                                                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                                             ;
++------------------------+----------------+------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div0 ;
++------------------------+----------------+------------------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                                                       ;
++------------------------+----------------+------------------------------------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                                                                                    ;
+; LPM_WIDTHD             ; 11             ; Untyped                                                                                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                                                    ;
+; CBXI_PARAMETER         ; lpm_divide_6vl ; Untyped                                                                                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                                             ;
++------------------------+----------------+------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0 ;
++------------------------------------------------+----------+---------------------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                              ;
++------------------------------------------------+----------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                                    ;
+; LPM_WIDTHA                                     ; 8        ; Untyped                                           ;
+; LPM_WIDTHB                                     ; 20       ; Untyped                                           ;
+; LPM_WIDTHP                                     ; 28       ; Untyped                                           ;
+; LPM_WIDTHR                                     ; 28       ; Untyped                                           ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                                           ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                                           ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                                           ;
+; LATENCY                                        ; 0        ; Untyped                                           ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                                           ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped                                           ;
+; USE_EAB                                        ; OFF      ; Untyped                                           ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                                           ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                                           ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                                           ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                               ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                                           ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                                           ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                                           ;
+; CBXI_PARAMETER                                 ; NOTHING  ; Untyped                                           ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                                           ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                                           ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                                           ;
++------------------------------------------------+----------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                                                   ;
 +-------------------------------+----------------------------------------------------------------+
@@ -3117,6 +3253,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                                    ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                                                                ;
 +-------------------------------------------+---------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                       ;
++---------------------------------------+--------------------------------------------------------------+
+; Name                                  ; Value                                                        ;
++---------------------------------------+--------------------------------------------------------------+
+; Number of entity instances            ; 1                                                            ;
+; Entity Instance                       ; openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 8                                                            ;
+;     -- LPM_WIDTHB                     ; 20                                                           ;
+;     -- LPM_WIDTHP                     ; 28                                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                          ;
+;     -- USE_EAB                        ; OFF                                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                           ;
++---------------------------------------+--------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3293,44 +3449,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+------------------------+
 
 
-+------------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition  ;
-+----------------------------------------------+-------+
-; Type                                         ; Count ;
-+----------------------------------------------+-------+
-; blackbox                                     ; 1     ;
-;     xlr8_atmega328clone:uc_top_wrp_vlog_inst ; 1     ;
-; boundary_port                                ; 65    ;
-; cycloneiii_ff                                ; 817   ;
-;     CLR                                      ; 17    ;
-;     CLR SLD                                  ; 10    ;
-;     ENA                                      ; 331   ;
-;     ENA CLR                                  ; 78    ;
-;     ENA SCLR                                 ; 10    ;
-;     ENA SCLR SLD                             ; 2     ;
-;     ENA SLD                                  ; 16    ;
-;     SCLR                                     ; 12    ;
-;     SCLR SLD                                 ; 4     ;
-;     SLD                                      ; 4     ;
-;     plain                                    ; 333   ;
-; cycloneiii_io_obuf                           ; 57    ;
-; cycloneiii_lcell_comb                        ; 4033  ;
-;     arith                                    ; 235   ;
-;         2 data inputs                        ; 190   ;
-;         3 data inputs                        ; 45    ;
-;     normal                                   ; 3798  ;
-;         0 data inputs                        ; 11    ;
-;         1 data inputs                        ; 38    ;
-;         2 data inputs                        ; 172   ;
-;         3 data inputs                        ; 644   ;
-;         4 data inputs                        ; 2933  ;
-; cycloneiii_pll                               ; 1     ;
-; cycloneiii_ram_block                         ; 56    ;
-; fiftyfivenm_oscillator                       ; 1     ;
-;                                              ;       ;
-; Max LUT depth                                ; 18.00 ;
-; Average LUT depth                            ; 7.36  ;
-+----------------------------------------------+-------+
++-------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition   ;
++----------------------------------------------+--------+
+; Type                                         ; Count  ;
++----------------------------------------------+--------+
+; blackbox                                     ; 1      ;
+;     xlr8_atmega328clone:uc_top_wrp_vlog_inst ; 1      ;
+; boundary_port                                ; 65     ;
+; cycloneiii_ff                                ; 893    ;
+;     CLR                                      ; 17     ;
+;     CLR SLD                                  ; 10     ;
+;     ENA                                      ; 339    ;
+;     ENA CLR                                  ; 78     ;
+;     ENA SCLR                                 ; 10     ;
+;     ENA SCLR SLD                             ; 2      ;
+;     ENA SLD                                  ; 44     ;
+;     SCLR                                     ; 28     ;
+;     SCLR SLD                                 ; 4      ;
+;     SLD                                      ; 4      ;
+;     plain                                    ; 357    ;
+; cycloneiii_io_obuf                           ; 57     ;
+; cycloneiii_lcell_comb                        ; 5540   ;
+;     arith                                    ; 862    ;
+;         2 data inputs                        ; 227    ;
+;         3 data inputs                        ; 635    ;
+;     normal                                   ; 4678   ;
+;         0 data inputs                        ; 53     ;
+;         1 data inputs                        ; 59     ;
+;         2 data inputs                        ; 358    ;
+;         3 data inputs                        ; 928    ;
+;         4 data inputs                        ; 3280   ;
+; cycloneiii_pll                               ; 1      ;
+; cycloneiii_ram_block                         ; 56     ;
+; fiftyfivenm_oscillator                       ; 1      ;
+;                                              ;        ;
+; Max LUT depth                                ; 110.30 ;
+; Average LUT depth                            ; 30.27  ;
++----------------------------------------------+--------+
 
 
 +-------------------------------+
@@ -3338,7 +3494,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:37     ;
+; Top            ; 00:00:51     ;
 +----------------+--------------+
 
 
@@ -3348,7 +3504,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Sep 19 13:12:03 2020
+    Info: Processing started: Sun Sep 20 15:01:38 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sno_top -c sno_16MHz
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -3407,12 +3563,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: ram File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/RAM_2-PORT/ram.v Line: 39
 Warning (10236): Verilog HDL Implicit Net warning at xlr8_alorium_top.v(1144): created implicit net for "sno_pcint_io_slv_dbusout" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Core/extras/rtl/xlr8_alorium_top.v Line: 1144
 Warning (10236): Verilog HDL Implicit Net warning at xlr8_alorium_top.v(1147): created implicit net for "sno_pcint_io_slv_out_en" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Core/extras/rtl/xlr8_alorium_top.v Line: 1147
-Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(109): created implicit net for "ram_attr_data_sel" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 109
-Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(110): created implicit net for "ram_attr_data_we" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 110
-Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(111): created implicit net for "ram_attr_data_re" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 111
-Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(114): created implicit net for "ram_row_offset_we" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 114
-Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(189): created implicit net for "hdmi_ram_char_re" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 189
-Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(205): created implicit net for "hdmi_ram_attr_re" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 205
+Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(116): created implicit net for "ram_attr_data_sel" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 116
+Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(117): created implicit net for "ram_attr_data_we" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 117
+Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(118): created implicit net for "ram_attr_data_re" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 118
+Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(121): created implicit net for "ram_row_offset_we" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 121
+Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(128): created implicit net for "wave_duration_sel" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 128
+Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(129): created implicit net for "wave_duration_we" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 129
+Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(211): created implicit net for "hdmi_ram_char_re" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 211
+Warning (10236): Verilog HDL Implicit Net warning at xlr8_hdmi.v(227): created implicit net for "hdmi_ram_attr_re" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 227
 Warning (10222): Verilog HDL Parameter Declaration warning at openxlr8.v(154): Parameter Declaration in module "openxlr8" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/openxlr8.v Line: 154
 Critical Warning (10846): Verilog HDL Instantiation warning at hdmi.sv(344): instance has no name File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi/hdmi.sv Line: 344
 Critical Warning (10846): Verilog HDL Instantiation warning at hdmi.sv(351): instance has no name File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi/hdmi.sv Line: 351
@@ -3641,8 +3799,9 @@ Warning (10030): Net "xbs_pvov[0][31..29]" at openxlr8.v(168) has no driver or i
 Warning (10030): Net "xbs_pvov[0][25..22]" at openxlr8.v(168) has no driver or initial value, using a default initial value '0' File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/openxlr8.v Line: 168
 Warning (10030): Net "xbs_pvov[0][19..14]" at openxlr8.v(168) has no driver or initial value, using a default initial value '0' File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/openxlr8.v Line: 168
 Warning (10030): Net "xbs_pvov[0][12..0]" at openxlr8.v(168) has no driver or initial value, using a default initial value '0' File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/openxlr8.v Line: 168
-Info (12128): Elaborating entity "xlr8_hdmi" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/openxlr8.v Line: 254
-Info (12128): Elaborating entity "ram" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:char_ram_inst" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 190
+Info (12128): Elaborating entity "xlr8_hdmi" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/openxlr8.v Line: 256
+Warning (10230): Verilog HDL assignment warning at xlr8_hdmi.v(281): truncated value with size 32 to match size of target (28) File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 281
+Info (12128): Elaborating entity "ram" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:char_ram_inst" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 212
 Info (12128): Elaborating entity "altsyncram" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:char_ram_inst|altsyncram:altsyncram_component" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/RAM_2-PORT/ram.v Line: 103
 Info (12130): Elaborated megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:char_ram_inst|altsyncram:altsyncram_component" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/RAM_2-PORT/ram.v Line: 103
 Info (12133): Instantiated megafunction "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:char_ram_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/RAM_2-PORT/ram.v Line: 103
@@ -3675,11 +3834,11 @@ Info (12133): Instantiated megafunction "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdm
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i2h2.tdf
     Info (12023): Found entity 1: altsyncram_i2h2 File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/altsyncram_i2h2.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_i2h2" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|ram:char_ram_inst|altsyncram:altsyncram_component|altsyncram_i2h2:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "hdmi_demo" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 234
-Info (12128): Elaborating entity "CLKDivider" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U1" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 36
-Info (12128): Elaborating entity "CLKDivider" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U2" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 46
-Info (12128): Elaborating entity "sawtooth" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 62
-Info (12128): Elaborating entity "hdmi" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 66
+Info (12128): Elaborating entity "hdmi_demo" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 258
+Info (12128): Elaborating entity "CLKDivider" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U1" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 38
+Info (12128): Elaborating entity "CLKDivider" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U2" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 48
+Info (12128): Elaborating entity "sawtooth" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 78
+Info (12128): Elaborating entity "hdmi" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 103
 Info (12128): Elaborating entity "packet_picker" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|packet_picker:true_hdmi_output.packet_picker" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi/hdmi.sv Line: 225
 Warning (10030): Net "headers[255..133]" at packet_picker.sv(27) has no driver or initial value, using a default initial value '0' File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi/packet_picker.sv Line: 27
 Warning (10030): Net "headers[129..3]" at packet_picker.sv(27) has no driver or initial value, using a default initial value '0' File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi/packet_picker.sv Line: 27
@@ -3700,8 +3859,8 @@ Info (12128): Elaborating entity "tmds_channel" for hierarchy "openxlr8:xb_openx
 Info (12128): Elaborating entity "tmds_channel" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[1].tmds_channel" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi/hdmi.sv Line: 259
 Info (12128): Elaborating entity "tmds_channel" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|tmds_channel:tmds_gen[2].tmds_channel" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi/hdmi.sv Line: 259
 Info (12128): Elaborating entity "DifferentialSignal" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|hdmi:hdmi|DifferentialSignal:comb_651" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi/hdmi.sv Line: 344
-Info (12128): Elaborating entity "CLKDivider" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U3" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 75
-Info (12128): Elaborating entity "console" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 89
+Info (12128): Elaborating entity "CLKDivider" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|CLKDivider:U3" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 112
+Info (12128): Elaborating entity "console" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_hdmi-demo/hdmi_demo.sv Line: 134
 Info (12128): Elaborating entity "glyphmap" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|glyphmap:glyphmap" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_vga-text-mode/console.v Line: 16
 Info (12128): Elaborating entity "attributemap" for hierarchy "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|console:console|attributemap:attributemap" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_vga-text-mode/console.v Line: 20
 Warning (14284): Synthesized away the following node(s):
@@ -3741,6 +3900,58 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst|altsyncram:altsyncram_component|altsyncram_ehh2:auto_generated|ram_block1a61" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/altsyncram_ehh2.tdf Line: 2189
         Warning (14320): Synthesized away node "xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst|altsyncram:altsyncram_component|altsyncram_ehh2:auto_generated|ram_block1a62" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/altsyncram_ehh2.tdf Line: 2224
         Warning (14320): Synthesized away node "xlr8_p_mem:p_mem_inst|ram2p16384x16:notram32k.ram16k.ram2p16384x16_inst|altsyncram:altsyncram_component|altsyncram_ehh2:auto_generated|ram_block1a63" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/altsyncram_ehh2.tdf Line: 2259
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|Div1" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_sound/sawtooth.sv Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|Div0" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_sound/sawtooth.sv Line: 23
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|Mult0" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 277
+Info (12130): Elaborated megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div1" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_sound/sawtooth.sv Line: 24
+Info (12133): Instantiated megafunction "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div1" with the following parameter: File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_sound/sawtooth.sv Line: 24
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_vco.tdf
+    Info (12023): Found entity 1: lpm_divide_vco File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/lpm_divide_vco.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/abs_divider_4dg.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ske.tdf
+    Info (12023): Found entity 1: alt_u_div_ske File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/alt_u_div_ske.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/add_sub_u3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_8b9.tdf
+    Info (12023): Found entity 1: lpm_abs_8b9 File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/lpm_abs_8b9.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div0" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_sound/sawtooth.sv Line: 23
+Info (12133): Instantiated megafunction "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|hdmi_demo:hdmi_inst|sawtooth:sawtooth|lpm_divide:Div0" with the following parameter: File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/hdl-util_sound/sawtooth.sv Line: 23
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "11"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6vl.tdf
+    Info (12023): Found entity 1: lpm_divide_6vl File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/lpm_divide_6vl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8nh File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/sign_div_unsign_8nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qke.tdf
+    Info (12023): Found entity 1: alt_u_div_qke File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/alt_u_div_qke.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 277
+Info (12133): Instantiated megafunction "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0" with the following parameter: File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/rtl/xlr8_hdmi.v Line: 277
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "20"
+    Info (12134): Parameter "LPM_WIDTHP" = "28"
+    Info (12134): Parameter "LPM_WIDTHR" = "28"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
+Info (12131): Elaborated megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
+Info (12131): Elaborated megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_erg.tdf
+    Info (12023): Found entity 1: add_sub_erg File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/add_sub_erg.tdf Line: 22
+Info (12131): Elaborated megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "openxlr8:xb_openxlr8_inst|xlr8_hdmi:hdmi_inst|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "JT9" and its non-tri-state driver. File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Core/extras/rtl/xlr8_alorium_top.v Line: 117
@@ -3799,20 +4010,20 @@ Info (35003): Optimize away 49 nodes that do not fanout to OUTPUT or BIDIR pins
     Info (35004): Node: "xlr8_atmega328clone:uc_top_wrp_vlog_inst|avr_usart:usart_inst|tx_en_current" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Core/extras/quartus/sno_atmega328clone_16MHz.qxp Line: -1
     Info (35004): Node: "xlr8_atmega328clone:uc_top_wrp_vlog_inst|txd" File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Core/extras/quartus/sno_atmega328clone_16MHz.qxp Line: -1
 Warning (15899): PLL "xlr8_clocks:clocks_inst|pll16:pll_inst|altpll:altpll_component|pll16_altpll:auto_generated|pll1" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected File: C:/Users/pc235/Documents/Arduino/libraries/XLR8Build/extras/quartus/db/pll16_altpll.v Line: 45
-Info (21057): Implemented 11669 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 13192 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 3 output pins
     Info (21060): Implemented 60 bidirectional pins
-    Info (21061): Implemented 11510 logic cells
+    Info (21061): Implemented 13033 logic cells
     Info (21064): Implemented 84 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 4 DSP elements
     Info (21070): Implemented 1 User Flash Memory blocks
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 135 warnings
-    Info: Peak virtual memory: 4899 megabytes
-    Info: Processing ended: Sat Sep 19 13:12:56 2020
-    Info: Elapsed time: 00:00:53
-    Info: Total CPU time (on all processors): 00:01:04
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 138 warnings
+    Info: Peak virtual memory: 4916 megabytes
+    Info: Processing ended: Sun Sep 20 15:02:48 2020
+    Info: Elapsed time: 00:01:10
+    Info: Total CPU time (on all processors): 00:01:24
 
 
 +------------------------------------------+

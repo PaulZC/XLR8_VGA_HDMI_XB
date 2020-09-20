@@ -7,12 +7,14 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
   #(
     // Parameter definitions. The ADDR parameters will be defined when
     // this module is instantiated.
-    parameter VOLUME_ADDR = 0,      // Address of the register that will hold the volume attenuation value
-	 parameter RAM_ADDRESS_LO = 0,   // Address of the register that will hold the RAM address (lo byte)
-	 parameter RAM_ADDRESS_HI = 0,   // Address of the register that will hold the RAM address (hi byte)
-	 parameter RAM_CHAR_DATA = 0,		// Address of the register that will hold the RAM character data
-	 parameter RAM_ATTR_DATA = 0,		// Address of the register that will hold the RAM attribute data
-	 parameter RAM_ROW_OFFSET = 0,	// Address of the register that will hold the RAM row offset (for fast display updates)
+    parameter VOLUME_ADDR = 16,     // The register that will hold the volume attenuation value
+	 parameter RAM_ADDRESS_LO = 0,   // The register that will hold the RAM address (lo byte)
+	 parameter RAM_ADDRESS_HI = 0,   // The register that will hold the RAM address (hi byte)
+	 parameter RAM_CHAR_DATA = 0,		// The register that will hold the RAM character data
+	 parameter RAM_ATTR_DATA = 0,		// The register that will hold the RAM attribute data
+	 parameter RAM_ROW_OFFSET = 0,	// The register that will hold the RAM row offset (for fast display updates)
+	 parameter WAVE_RATE = 0,			// The register that will hold the sawtooth wave rate (for sound generation)
+	 parameter WAVE_DURATION = 0,		// The counter that will hold the sawtooth wave duration (for sound generation)
     parameter WIDTH = 8
     )
    (
@@ -77,6 +79,11 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 	logic ram_row_offset_re;
 	logic [WIDTH-1:0] ram_row_offset_reg; // The register that will hold the ram row offset
 
+	logic wave_rate_sel;
+	logic wave_rate_we;
+	logic wave_rate_re;
+	logic [WIDTH-1:0] wave_rate_reg; // The register that will hold the wave rate for sound generation
+	
 	logic [7:0] hdmi_ram_char_data;
 	logic [7:0] hdmi_ram_attr_data;
 	logic [12:0] hdmi_ram_address;
@@ -114,20 +121,29 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
    assign ram_row_offset_we  = ram_row_offset_sel && ramwe;
    assign ram_row_offset_re  = ram_row_offset_sel && ramre;
 	
+   assign wave_rate_sel = dm_sel && (ramadr == WAVE_RATE);
+   assign wave_rate_we  = wave_rate_sel && ramwe;
+   assign wave_rate_re  = wave_rate_sel && ramre;
+	
+   assign wave_duration_sel = dm_sel && (ramadr == WAVE_DURATION);
+   assign wave_duration_we  = wave_duration_sel && ramwe;
+ 	
 	// Mux the data and enable outputs
    assign dbus_out =  ({8{  volume_sel }} &  volume_reg ) |
 							 ({8{  ram_address_lo_sel }} &  ram_address_lo_reg ) |
 							 ({8{  ram_address_hi_sel }} &  ram_address_hi_reg ) |
 							 ({8{  ram_char_data_sel }} &  ram_char_q_reg ) |
 							 ({8{  ram_attr_data_sel }} &  ram_attr_q_reg ) |
-							 ({8{  ram_row_offset_sel }} &  ram_row_offset_reg );
+							 ({8{  ram_row_offset_sel }} &  ram_row_offset_reg ) |
+							 ({8{  wave_rate_sel }} &  wave_rate_reg );
 
    assign io_out_en = volume_re ||
 							 ram_address_lo_re ||
 							 ram_address_hi_re ||
 							 ram_char_data_re ||
 							 ram_attr_data_re ||
-							 ram_row_offset_re;
+							 ram_row_offset_re ||
+							 wave_rate_re;
 
    // End, Control Select
    //----------------------------------------------------------------------
@@ -164,6 +180,12 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
       end
    end
    
+   always @(posedge clk_core) begin
+		if (clken && wave_rate_we) begin
+        wave_rate_reg <= dbus_in[WIDTH-1:0];
+      end
+   end
+	
    // End, Load write data
    //----------------------------------------------------------------------
    
@@ -230,11 +252,40 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 						  .RAM_ATTR_DATA	(hdmi_ram_attr_data),
 						  .RAM_CHAR_RE		(hdmi_ram_char_re),
 						  .RAM_ATTR_RE		(hdmi_ram_attr_re),
-						  .RAM_ROW_OFFSET (ram_row_offset_reg)
+						  .RAM_ROW_OFFSET (ram_row_offset_reg),
+						  .WAVE_RATE      (wave_rate_reg),
+						  .WAVE_ENABLE  	(wave_enable)
                     );
    
    // End, Instantiate user module
    //----------------------------------------------------------------------
+   
+
+   //======================================================================
+   // Sound duration
+   //
+   // Decrement wave_duration_count every 0.0625s
+	// wave_enable is true if wave_duration_count is > 0
+	
+	logic [27:0] wave_duration_count; // Sound duration in clk_core cycles
+	logic wave_enable; // Sound enable (true if wave_duration_count is > 0)
+
+   always @(posedge clk_core)
+	begin
+		if (clken && wave_duration_we)
+			begin
+			wave_duration_count <= dbus_in[WIDTH-1:0] * 28'd1000000; // Convert duration from 0.0625s to clock cycles
+			end
+		else if (wave_duration_count != 28'b0)
+			begin
+			wave_duration_count <= wave_duration_count - 1;
+			wave_enable = 1'b1;
+			end
+		else
+			begin
+      	wave_enable = 1'b0;
+			end
+	end
    
 endmodule
 

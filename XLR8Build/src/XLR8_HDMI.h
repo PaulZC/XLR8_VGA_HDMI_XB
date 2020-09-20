@@ -102,6 +102,10 @@ Think of the row offset as a pointer to the RAM address for the top row of the s
 The video memory is large enough to allow a row offset of 32. So you could implement two display 'frames' or 'pages',
 the first starting at row 0 and the second starting at row 30 or 32, and switch between them instantaneously.
 
+The sound generation is very primitive:
+  Frequencies from 8Hz to 2040Hz can be generated in 8Hz increments.
+  Sound durations can be 0.0625s to 15.9375 seconds in 0.0625s increments.
+ 
 */
 
 #ifndef _XLR8_HDMI_H_INCLUDED
@@ -111,12 +115,14 @@ the first starting at row 0 and the second starting at row 30 or 32, and switch 
 
 #include <Print.h> // Inherit the print functions
 
-#define XLR8_HDMI_VOLUME    	 _SFR_MEM8(0xE0)
-#define XLR8_HDMI_CHAR_ADDR_LO _SFR_MEM8(0xE1)
-#define XLR8_HDMI_CHAR_ADDR_HI _SFR_MEM8(0xE2)
-#define XLR8_HDMI_CHAR_DATA    _SFR_MEM8(0xE3)
-#define XLR8_HDMI_ATTR_DATA    _SFR_MEM8(0xE4)
-#define XLR8_HDMI_ROW_OFFSET   _SFR_MEM8(0xE5)
+#define XLR8_HDMI_VOLUME    	  _SFR_MEM8(0xE0)
+#define XLR8_HDMI_CHAR_ADDR_LO  _SFR_MEM8(0xE1)
+#define XLR8_HDMI_CHAR_ADDR_HI  _SFR_MEM8(0xE2)
+#define XLR8_HDMI_CHAR_DATA     _SFR_MEM8(0xE3)
+#define XLR8_HDMI_ATTR_DATA     _SFR_MEM8(0xE4)
+#define XLR8_HDMI_ROW_OFFSET    _SFR_MEM8(0xE5)
+#define XLR8_HDMI_WAVE_RATE     _SFR_MEM8(0xE6)
+#define XLR8_HDMI_WAVE_DURATION _SFR_MEM8(0xE7)
 
 #define XLR8_HDMI_FIRST_CHAR_ADDR 0
 #define XLR8_HDMI_ROW_LENGTH      128
@@ -134,10 +140,13 @@ public:
   boolean begin(void);
 
   // Set the audio volume attenuation
-	// 0 = no attenuation (LOUD!)
-	// 9 = sensible attenuation
-	// 16 = maximum attenuation (mute)
-	void __attribute__ ((noinline)) set_volume_attenuation(uint8_t val = 16);
+  // 0 = no attenuation (LOUD!)
+  // 9 = sensible attenuation
+  // 16 = maximum attenuation (mute)
+  void __attribute__ ((noinline)) set_volume_attenuation(uint8_t val = 16);
+
+  // Read the current volume attenuation
+  uint8_t __attribute__ ((noinline)) get_volume_attenuation();
 
   // Clear the whole video memory. Default to white text on black background.
   void clear_video_memory(uint8_t attr = 0x0F);
@@ -164,10 +173,10 @@ public:
   void reset_row_offset(void);
 
   // Set the video memory row offset to val
-	void __attribute__ ((noinline)) set_row_offset(uint8_t val);
+  void __attribute__ ((noinline)) set_row_offset(uint8_t val);
 
-	// Read the video memory row offset
-	uint8_t __attribute__ ((noinline)) get_row_offset();
+  // Read the video memory row offset
+  uint8_t __attribute__ ((noinline)) get_row_offset();
 
   // Change the character and attributes at (column,row) to chr and attr
   void set_char_attr_at(int column, int row, uint8_t chr, uint8_t attr);
@@ -183,26 +192,39 @@ public:
 
   // Read the attributes at (column,row)
   uint8_t get_attr_at(int column, int row);
+  
+  // Set the sound frequency
+  // freq is in increments of 8Hz
+  // i.e. the XB can generate frequencies from 0Hz to 2048Hz
+  void __attribute__ ((noinline)) set_sound_freq(uint8_t freq);
+
+  // Get the sound frequency
+  uint8_t __attribute__ ((noinline)) get_sound_freq();
+
+  // Set the sound duration
+  // duration is in increments of 62.5ms
+  // i.e. the XB can generate sound durations of 0.0625 to 16 seconds
+  void __attribute__ ((noinline)) set_sound_duration(uint8_t duration);
 
 private:
 
   // Set the Lo Byte of the RAM 2-PORT video memory address
-	void __attribute__ ((noinline)) set_char_addr_lo(uint8_t val);
+  void __attribute__ ((noinline)) set_char_addr_lo(uint8_t val);
 
-	// Set the Hi Byte of the RAM 2-PORT video memory address
-	void __attribute__ ((noinline)) set_char_addr_hi(uint8_t val);
+  // Set the Hi Byte of the RAM 2-PORT video memory address
+  void __attribute__ ((noinline)) set_char_addr_hi(uint8_t val);
 
-	// Load the video memory address with character val
-	void __attribute__ ((noinline)) set_char_data(uint8_t val);
+  // Load the video memory address with character val
+  void __attribute__ ((noinline)) set_char_data(uint8_t val);
 
-	// Load the video memory address with the attribute val
-	void __attribute__ ((noinline)) set_attr_data(uint8_t val);
+  // Load the video memory address with the attribute val
+  void __attribute__ ((noinline)) set_attr_data(uint8_t val);
 
-	// Read the character val back from video memory
-	uint8_t __attribute__ ((noinline)) get_char_data();
+  // Read the character val back from video memory
+  uint8_t __attribute__ ((noinline)) get_char_data();
 
-	// Read the attribute val back from video memory
-	uint8_t __attribute__ ((noinline)) get_attr_data();
+  // Read the attribute val back from video memory
+  uint8_t __attribute__ ((noinline)) get_attr_data();
 
   // Line Feed
   void vga_lf(void);

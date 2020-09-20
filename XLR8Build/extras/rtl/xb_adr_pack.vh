@@ -51,6 +51,8 @@ localparam RAM_Address_Hi = 8'hE2;    // Address of the register that will hold 
 localparam RAM_Char_Data = 8'hE3;     // Address of the register that will hold the RAM character data
 localparam RAM_Attr_Data = 8'hE4;     // Address of the register that will hold the RAM attribute data
 localparam RAM_Row_Offset = 8'hE5;    // Address of the register that will hold the RAM row offset (for fast display updates)
+localparam WAVE_Rate = 8'hE6;         // Address of the register that will hold the sawtooth wave rate (for sound generation)
+localparam WAVE_Duration = 8'hE7;     // Address of the counter that will hold the sawtooth wave duration (for sound generation)
 
 //
 //----------------------------------------------------------------------

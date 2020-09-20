@@ -20,7 +20,9 @@ module hdmi_demo
   input [7:0] RAM_ATTR_DATA,
   output RAM_CHAR_RE,
   output RAM_ATTR_RE,
-  input [7:0] RAM_ROW_OFFSET // RAM row offset for fast display updates
+  input [7:0] RAM_ROW_OFFSET, // RAM row offset for fast display updates
+  input [7:0] WAVE_RATE, // Wave rate for sound generation
+  input WAVE_ENABLE // Wave enable for sound generation
 );
 
 logic tmds_clock;
@@ -48,22 +50,57 @@ U2
 
 localparam AUDIO_BIT_WIDTH = 16;
 localparam AUDIO_RATE = 48000;
-localparam WAVE_RATE = 480;
+logic [10:0] full_wave_rate;
+
+//assign full_wave_rate = WAVE_RATE << 3; // Multiply WAVE_RATE by 8 to convert to Hz
 
 logic [AUDIO_BIT_WIDTH-1:0] audio_sample_word;
 logic [AUDIO_BIT_WIDTH-1:0] audio_sample_word_dampened; // This is to avoid giving you a heart attack -- it'll be really loud if it uses the full dynamic range.
 
-//assign audio_sample_word_dampened = audio_sample_word >> 9;
 always @(posedge CLOCK_CORE)
 begin
 	audio_sample_word_dampened = audio_sample_word >> VOLUME;
+	full_wave_rate = WAVE_RATE << 3;
 end
 
-sawtooth #(.BIT_WIDTH(AUDIO_BIT_WIDTH), .SAMPLE_RATE(AUDIO_RATE), .WAVE_RATE(WAVE_RATE)) sawtooth (.clk_audio(CLOCK_AUDIO), .level(audio_sample_word));
+// sound
+sawtooth
+#(
+	.BIT_WIDTH(AUDIO_BIT_WIDTH),
+	.SAMPLE_RATE(AUDIO_RATE)
+)
+sawtooth
+(
+	.clk_audio(CLOCK_AUDIO),
+	.level(audio_sample_word),
+	.wave_rate(full_wave_rate),
+	.enable(WAVE_ENABLE)
+);
 
 logic [23:0] rgb;
 logic [9:0] cx, cy;
-hdmi #(.VIDEO_ID_CODE(1), .VIDEO_REFRESH_RATE(60.00), .DDRIO(0), .AUDIO_RATE(AUDIO_RATE), .AUDIO_BIT_WIDTH(AUDIO_BIT_WIDTH)) hdmi(.clk_pixel_x10(CLOCK_PIXEL), .clk_pixel(tmds_clock), .clk_audio(CLOCK_AUDIO), .rgb(rgb), .audio_sample_word('{audio_sample_word_dampened, audio_sample_word_dampened}), .tmds_p(HDMI_TX), .tmds_clock_p(HDMI_CLK), .tmds_n(HDMI_TX_N), .tmds_clock_n(HDMI_CLK_N), .cx(cx), .cy(cy));
+hdmi
+#(
+	.VIDEO_ID_CODE(1),
+	.VIDEO_REFRESH_RATE(60.00),
+	.DDRIO(0),
+	.AUDIO_RATE(AUDIO_RATE),
+	.AUDIO_BIT_WIDTH(AUDIO_BIT_WIDTH)
+)
+hdmi
+(
+	.clk_pixel_x10(CLOCK_PIXEL),
+	.clk_pixel(tmds_clock),
+	.clk_audio(CLOCK_AUDIO),
+	.rgb(rgb),
+	.audio_sample_word('{audio_sample_word_dampened, audio_sample_word_dampened}),
+	.tmds_p(HDMI_TX),
+	.tmds_clock_p(HDMI_CLK),
+	.tmds_n(HDMI_TX_N),
+	.tmds_clock_n(HDMI_CLK_N),
+	.cx(cx),
+	.cy(cy)
+);
 
 // Create the RAM Read Enables. This probably needs refining!
 CLKDivider
@@ -86,5 +123,14 @@ begin
 	RAM_ADDRESS <= {cy_mem[9:4], cx_mem[9:3]}; // Construct RAM_ADDRESS
 end
 
-console console(.clk_pixel(tmds_clock), .codepoint(RAM_CHAR_DATA), .attribute(RAM_ATTR_DATA), .cx(cx), .cy(cy), .rgb(rgb)); // VGA HDMI
+// VGA HDMI
+console console(
+	.clk_pixel(tmds_clock),
+	.codepoint(RAM_CHAR_DATA),
+	.attribute(RAM_ATTR_DATA),
+	.cx(cx),
+	.cy(cy),
+	.rgb(rgb)
+);
+
 endmodule

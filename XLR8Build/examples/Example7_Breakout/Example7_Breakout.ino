@@ -87,6 +87,13 @@ void setup()
   place_ball(); // Place the ball at a random position
 
   delay(2000); // Wait two seconds
+
+  // Set the beep volume attenuation (16 = mute, 5 = sensible, 0 = LOUD!)
+  // Change this to 16 to disable the beeps
+  myHDMI.set_volume_attenuation(5);
+
+  // Set the beep frequency = 57 * 8Hz = 456Hz (Close to the Pong paddle sound of 459Hz)
+  myHDMI.set_sound_freq(57);
 }
 
 void loop()
@@ -329,6 +336,7 @@ void loop()
         if (myHDMI.get_char_at(ball_column + 1, ball_row - 1) == brick_char)
         {
           myHDMI.set_char_at(ball_column + 1, ball_row - 1, space_char); // Erase the brick we hit
+          brickHit = true;
           // Change direction
           new_ball_direction = South_West;
         }
@@ -341,6 +349,7 @@ void loop()
         if (myHDMI.get_char_at(ball_column + 1, ball_row + 1) == brick_char)
         {
           myHDMI.set_char_at(ball_column + 1, ball_row + 1, space_char); // Erase the brick we hit
+          brickHit = true;
           // Change direction
           new_ball_direction = North_West;
         }
@@ -353,6 +362,7 @@ void loop()
         if (myHDMI.get_char_at(ball_column - 1, ball_row - 1) == brick_char)
         {
           myHDMI.set_char_at(ball_column - 1, ball_row - 1, space_char); // Erase the brick we hit
+          brickHit = true;
           // Change direction
           new_ball_direction = South_East;
         }
@@ -365,12 +375,16 @@ void loop()
         if (myHDMI.get_char_at(ball_column - 1, ball_row + 1) == brick_char)
         {
           myHDMI.set_char_at(ball_column - 1, ball_row + 1, space_char); // Erase the brick we hit
+          brickHit = true;
           // Change direction
           new_ball_direction = North_East;
         }
       }
     }
   }
+
+  if (brickHit == true) // Beep if we hit a brick
+    myHDMI.set_sound_duration(2); // Duration = 2 * 0.0625s = 0.125s
 
   // Erase the ball
   myHDMI.set_char_at(ball_column, ball_row, space_char);

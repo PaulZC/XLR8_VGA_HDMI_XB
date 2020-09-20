@@ -102,6 +102,10 @@
  The video memory is large enough to allow a row offset of 32. So you could implement two display 'frames' or 'pages',
  the first starting at row 0 and the second starting at row 30 or 32, and switch between them instantaneously.
 
+ The sound generation is very primitive:
+   Frequencies from 8Hz to 2040Hz can be generated in 8Hz increments.
+	Sound durations can be 0.0625s to 15.9375 seconds in 0.0625s increments.
+ 
  */
 
 #include "XLR8_HDMI.h"
@@ -110,6 +114,8 @@
 // Reset the row_offset
 boolean XLR8_HDMI::begin(void)
 {
+  set_volume_attenuation(16); // Mute the sound
+  set_sound_duration(0); // Disable any ongoing sound
   current_attr = 0x0F; // Default to white text on black background
   clear_video_memory(); // Clear the whole video memory
   current_column = 0; // Reset the current_column
@@ -126,6 +132,10 @@ boolean XLR8_HDMI::begin(void)
 // 16 = maximum attenuation (mute)
 void XLR8_HDMI::set_volume_attenuation(uint8_t val) {
   XLR8_HDMI_VOLUME = val;
+}
+
+uint8_t XLR8_HDMI::get_volume_attenuation() {
+  return XLR8_HDMI_VOLUME;
 }
 
 // Clear the whole video memory
@@ -297,22 +307,22 @@ uint8_t XLR8_HDMI::get_attr_at(int column, int row)
 
 // Set the Lo Byte of the RAM 2-PORT video memory address
 void XLR8_HDMI::set_char_addr_lo(uint8_t val) {
- XLR8_HDMI_CHAR_ADDR_LO = val;
+  XLR8_HDMI_CHAR_ADDR_LO = val;
 }
 
 // Set the Hi Byte of the RAM 2-PORT video memory address
 void XLR8_HDMI::set_char_addr_hi(uint8_t val) {
- XLR8_HDMI_CHAR_ADDR_HI = val;
+  XLR8_HDMI_CHAR_ADDR_HI = val;
 }
 
 // Load the video memory address with character val
 void XLR8_HDMI::set_char_data(uint8_t val) {
- XLR8_HDMI_CHAR_DATA = val;
+  XLR8_HDMI_CHAR_DATA = val;
 }
 
 // Load the video memory address with the attribute val
 void XLR8_HDMI::set_attr_data(uint8_t val) {
- XLR8_HDMI_ATTR_DATA = val;
+  XLR8_HDMI_ATTR_DATA = val;
 }
 
 // Read the character val back from video memory
@@ -327,10 +337,30 @@ uint8_t XLR8_HDMI::get_attr_data() {
 
 // Set the video memory row offset to val
 void XLR8_HDMI::set_row_offset(uint8_t val) {
- XLR8_HDMI_ROW_OFFSET = val;
+  XLR8_HDMI_ROW_OFFSET = val;
 }
 
 // Read the video memory row offset
 uint8_t XLR8_HDMI::get_row_offset() {
   return XLR8_HDMI_ROW_OFFSET;
 }
+
+// Set the sound frequency
+// freq is in increments of 8Hz
+// i.e. the XB can generate frequencies from 0Hz to 2048Hz
+void XLR8_HDMI::set_sound_freq(uint8_t freq) {
+  XLR8_HDMI_WAVE_RATE = freq;
+}
+
+// Get the sound frequency
+uint8_t XLR8_HDMI::get_sound_freq(void) {
+  return XLR8_HDMI_WAVE_RATE;
+}
+
+// Set the sound duration
+// duration is in increments of 62.5ms
+// i.e. the XB can generate sound durations of 0.0625 to 16 seconds
+void XLR8_HDMI::set_sound_duration(uint8_t duration) {
+  XLR8_HDMI_WAVE_DURATION = duration;
+}
+
