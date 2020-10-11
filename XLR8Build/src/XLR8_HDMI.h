@@ -105,7 +105,7 @@ the first starting at row 0 and the second starting at row 30 or 32, and switch 
 The sound generation is very primitive:
   Frequencies from 8Hz to 2040Hz can be generated in 8Hz increments.
   Sound durations can be 0.0625s to 15.9375 seconds in 0.0625s increments.
- 
+
 */
 
 #ifndef _XLR8_HDMI_H_INCLUDED
@@ -192,7 +192,7 @@ public:
 
   // Read the attributes at (column,row)
   uint8_t get_attr_at(int column, int row);
-  
+
   // Set the sound frequency
   // freq is in increments of 8Hz
   // i.e. the XB can generate frequencies from 0Hz to 2048Hz
@@ -209,6 +209,13 @@ public:
   // Sound In Progress
   // Returns true if a sound is in progress
   boolean __attribute__ ((noinline)) sound_in_progress();
+
+  // Beep: a tribute to the ZX Spectrum BEEP statement:
+  // https://worldofspectrum.org/ZXBasicManual/zxmanchap19.html
+  // duration (float) is the beep duration in seconds;
+  // pitch (int) is given in semitones above middle C, in the range +/- 35.
+  // Beep is blocking - it returns when the sound is complete.
+  void beep(float duration, int pitch);
 
 private:
 

@@ -69,23 +69,23 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 -------------------------------------------------------------------------------------------------------------
 GND                          : A1        : gnd    :                   :         :           :                
 D10                          : A2        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
-DIG_IO_OE[1]                 : A3        : bidir  : 3.3-V LVTTL       :         : 8         : N              
-SOIC6                        : A4        : bidir  : 3.3 V Schmitt Trigger :         : 8         : N              
+DIG_IO_OE[2]                 : A3        : bidir  : 3.3-V LVTTL       :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A8        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A9        :        :                   :         : 8         :                
-DIG_IO_OE[0]                 : A10       : bidir  : 3.3-V LVTTL       :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A11       :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 8         :                
+DIG_IO_OE[5]                 : A11       : bidir  : 3.3-V LVTTL       :         : 8         : N              
 D9                           : A12       : bidir  : 3.3-V LVTTL       :         : 6         : Y              
 GND                          : A13       : gnd    :                   :         :           :                
 ~ALTERA_ADC1IN6~             : B1        : input  : 3.3-V LVTTL       :         : 1A        : N              
 D11                          : B2        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 D12                          : B3        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 D13                          : B4        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8         :                
+SOIC6                        : B5        : bidir  : 3.3 V Schmitt Trigger :         : 8         : N              
+DIG_IO_OE[1]                 : B6        : bidir  : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B7        :        :                   :         : 8         :                
 GND                          : B8        : gnd    :                   :         :           :                
 RESET_N                      : B9        : input  : 3.3 V Schmitt Trigger :         : 8         : Y              
@@ -101,7 +101,7 @@ GND                          : C3        : gnd    :                   :         
 VCCIO8                       : C6        : power  :                   : 3.3V    : 8         :                
 VCCIO8                       : C7        : power  :                   : 3.3V    : 8         :                
 VCCIO8                       : C8        : power  :                   : 3.3V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 8         :                
+SOIC2                        : C9        : bidir  : 3.3 V Schmitt Trigger :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C10       :        :                   :         : 8         :                
 D7                           : C11       : bidir  : 3.3-V LVTTL       :         : 6         : Y              
 D6                           : C12       : bidir  : 3.3-V LVTTL       :         : 6         : Y              
@@ -111,22 +111,22 @@ ANAIN1                       : D2        :        :                   :         
 ADC_VREF                     : D3        :        :                   :         :           :                
 VCCA3                        : D4        : power  :                   : 3.0V/3.3V :           :                
 GND                          : D5        : gnd    :                   :         :           :                
-DIG_IO_OE[3]                 : D6        : bidir  : 3.3-V LVTTL       :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8         :                
 ~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : D7        : input  : 3.3-V LVTTL       :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D8        :        :                   :         : 8         :                
+DIG_IO_OE[4]                 : D8        : bidir  : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D9        :        :                   :         : 6         :                
 VCCA2                        : D10       : power  :                   : 3.0V/3.3V :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D11       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 6         :                
-SOIC3                        : D13       : bidir  : 3.3 V Schmitt Trigger :         : 6         : N              
+SOIC7                        : D12       : bidir  : 3.3 V Schmitt Trigger :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 6         :                
 ~ALTERA_ADC1IN8~             : E1        : input  : 3.3-V LVTTL       :         : 1A        : N              
 REFGND                       : E2        :        :                   :         :           :                
 ~ALTERA_ADC1IN3~             : E3        : input  : 3.3-V LVTTL       :         : 1A        : N              
 ~ALTERA_ADC1IN4~             : E4        : input  : 3.3-V LVTTL       :         : 1A        : N              
 ~ALTERA_JTAGEN~ / RESERVED_INPUT : E5        : input  : 3.3-V LVTTL       :         : 1B        : N              
-SOIC1                        : E6        : bidir  : 3.3 V Schmitt Trigger :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8         :                
 ~ALTERA_nCONFIG~ / RESERVED_INPUT : E7        : input  : 3.3 V Schmitt Trigger :         : 8         : N              
-DIG_IO_OE[4]                 : E8        : bidir  : 3.3-V LVTTL       :         : 8         : N              
+DIG_IO_OE[3]                 : E8        : bidir  : 3.3-V LVTTL       :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E10       :        :                   :         : 6         :                
 GND                          : E11       : gnd    :                   :         :           :                
@@ -153,11 +153,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :      
 VCC_ONE                      : G6        : power  :                   : 3.0V/3.3V :           :                
 GND                          : G7        : gnd    :                   :         :           :                
 VCC_ONE                      : G8        : power  :                   : 3.0V/3.3V :           :                
-SOIC2                        : G9        : bidir  : 3.3 V Schmitt Trigger :         : 6         : N              
+ANA_UP                       : G9        : output : 3.3-V LVTTL       :         : 6         : N              
 D0                           : G10       : bidir  : 3.3-V LVTTL       :         : 6         : Y              
 VCCIO6                       : G11       : power  :                   : 3.3V    : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G12       :        :                   :         : 5         :                
-ANA_UP                       : G13       : output : 3.3-V LVTTL       :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G13       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H1        :        :                   :         : 1B        :                
 A5                           : H2        : bidir  : 3.3-V LVTTL       :         : 1B        : Y              
 SCL                          : H3        : bidir  : 3.3 V Schmitt Trigger :         : 1B        : Y              
@@ -178,12 +178,12 @@ GND                          : J4        : gnd    :                   :         
 D31                          : J5        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 D36                          : J6        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J8        :        :                   :         : 3         :                
+DIG_IO_OE[0]                 : J8        : bidir  : 3.3-V LVTTL       :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : J9        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J10       :        :                   :         : 5         :                
 VCCIO5                       : J11       : power  :                   : 3.3V    : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J12       :        :                   :         : 5         :                
-DIG_IO_OE[2]                 : J13       : bidir  : 3.3-V LVTTL       :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J13       :        :                   :         : 5         :                
 A0                           : K1        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 A1                           : K2        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : K3        : power  :                   : 3.3V    : 2         :                
@@ -208,17 +208,17 @@ VCCIO3                       : L8        : power  :                   : 3.3V    
 GND                          : L9        : gnd    :                   :         :           :                
 D23                          : L10       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 D35                          : L11       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-SOIC7                        : L12       : bidir  : 3.3 V Schmitt Trigger :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L12       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L13       :        :                   :         : 5         :                
 A3                           : M1        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 A4                           : M2        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : M3        :        :                   :         : 2         :                
+SOIC3                        : M3        : bidir  : 3.3 V Schmitt Trigger :         : 2         : N              
 D32                          : M4        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 D38                          : M5        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : M6        : gnd    :                   :         :           :                
 D24                          : M7        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 3         :                
-DIG_IO_OE[5]                 : M9        : bidir  : 3.3-V LVTTL       :         : 3         : N              
+I2C_ENABLE                   : M8        : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M9        :        :                   :         : 3         :                
 D29                          : M10       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 D22                          : M11       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 D28                          : M12       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
@@ -231,8 +231,8 @@ D26                          : N5        : bidir  : 3.3-V LVTTL       :         
 D37                          : N6        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 D39                          : N7        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 D33                          : N8        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
-I2C_ENABLE                   : N9        : output : 3.3-V LVTTL       :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N10       :        :                   :         : 3         :                
-SOIC5                        : N11       : bidir  : 3.3 V Schmitt Trigger :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N9        :        :                   :         : 3         :                
+SOIC5                        : N10       : bidir  : 3.3 V Schmitt Trigger :         : 3         : N              
+SOIC1                        : N11       : bidir  : 3.3 V Schmitt Trigger :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N12       :        :                   :         : 3         :                
 GND                          : N13       : gnd    :                   :         :           :                

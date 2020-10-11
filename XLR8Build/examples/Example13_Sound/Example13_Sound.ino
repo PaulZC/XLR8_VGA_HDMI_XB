@@ -13,6 +13,11 @@
   set_volume_attenuation(attenuation) sets the sound attenuation to attenuation: 16 = mute; 5 = sensible; 0 = LOUD!
   The sound will stop automatically when duration has expired.
   You can stop the current sound by calling set_sound_duration(0).
+
+  beep(duration, pitch) is a tribute to the ZX Spectrum BEEP statement:
+  https://worldofspectrum.org/ZXBasicManual/zxmanchap19.html
+  duration (float) is the beep duration in seconds;
+  pitch (int) is given in semitones above middle C, in the range +/- 40.
   
 */
 
@@ -66,49 +71,14 @@ void loop()
   // https://worldofspectrum.org/ZXBasicManual/zxmanchap19.html
   myHDMI.println(F("Funeral march from Mahler's first symphony"));
   
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(293.7 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(311.1 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(293.7 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(293.7 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(311.1 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(293.7 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-
-  myHDMI.set_sound_freq(311.1 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(349.2 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(392.0 / 8); myHDMI.set_sound_duration(2 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-
-  myHDMI.set_sound_freq(311.1 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(349.2 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(392.0 / 8); myHDMI.set_sound_duration(2 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  
-  myHDMI.set_sound_freq(392.0 / 8); myHDMI.set_sound_duration(0.75 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(415.3 / 8); myHDMI.set_sound_duration(0.25 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(392.0 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(349.2 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(311.1 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(293.7 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-
-  myHDMI.set_sound_freq(392.0 / 8); myHDMI.set_sound_duration(0.75 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(415.3 / 8); myHDMI.set_sound_duration(0.25 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(392.0 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(349.2 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(311.1 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(293.7 / 8); myHDMI.set_sound_duration(0.5 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(196.0 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(2 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(196.0 / 8); myHDMI.set_sound_duration(1 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
-  myHDMI.set_sound_freq(261.6 / 8); myHDMI.set_sound_duration(2 / 0.0625); while(myHDMI.sound_in_progress()) delay(5);
+  myHDMI.beep(1,0);   myHDMI.beep(1,2);   myHDMI.beep(.5,3); myHDMI.beep(.5,2); myHDMI.beep(1,0);
+  myHDMI.beep(1,0);   myHDMI.beep(1,2);   myHDMI.beep(.5,3); myHDMI.beep(.5,2); myHDMI.beep(1,0);
+  myHDMI.beep(1,3);   myHDMI.beep(1,5);   myHDMI.beep(2,7);
+  myHDMI.beep(1,3);   myHDMI.beep(1,5);   myHDMI.beep(2,7);
+  myHDMI.beep(.75,7); myHDMI.beep(.25,8); myHDMI.beep(.5,7); myHDMI.beep(.5,5); myHDMI.beep(.5,3); myHDMI.beep(.5,2);  myHDMI.beep(1,0);
+  myHDMI.beep(.75,7); myHDMI.beep(.25,8); myHDMI.beep(.5,7); myHDMI.beep(.5,5); myHDMI.beep(.5,3); myHDMI.beep(.5,2);  myHDMI.beep(1,0);
+  myHDMI.beep(1,0);   myHDMI.beep(1,-5);  myHDMI.beep(2,0);
+  myHDMI.beep(1,0);   myHDMI.beep(1,-5);  myHDMI.beep(2,0);
   
   delay(1000); // Wait and repeat
 }

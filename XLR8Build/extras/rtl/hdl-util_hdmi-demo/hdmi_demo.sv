@@ -1,4 +1,8 @@
 module hdmi_demo
+#(
+  parameter int AUDIO_BIT_WIDTH = 16,
+  parameter int AUDIO_RATE = 48000
+)
 (
   input CLOCK_PIXEL,
   input CLOCK_AUDIO,
@@ -21,8 +25,8 @@ module hdmi_demo
   output RAM_CHAR_RE,
   output RAM_ATTR_RE,
   input [7:0] RAM_ROW_OFFSET, // RAM row offset for fast display updates
-  input [7:0] WAVE_RATE, // Wave rate for sound generation
-  input WAVE_ENABLE // Wave enable for sound generation
+  input WAVE_ENABLE, // Wave enable for sound generation
+  input [AUDIO_BIT_WIDTH-1:0] WAVE_INCREMENT // Increment for the sawtooth wave
 );
 
 logic tmds_clock;
@@ -48,35 +52,29 @@ U2
 );
 
 
-localparam AUDIO_BIT_WIDTH = 16;
-localparam AUDIO_RATE = 48000;
-logic [10:0] full_wave_rate;
-
-//assign full_wave_rate = WAVE_RATE << 3; // Multiply WAVE_RATE by 8 to convert to Hz
-
 logic [AUDIO_BIT_WIDTH-1:0] audio_sample_word;
 logic [AUDIO_BIT_WIDTH-1:0] audio_sample_word_dampened; // This is to avoid giving you a heart attack -- it'll be really loud if it uses the full dynamic range.
 
-always @(posedge CLOCK_CORE)
+// volume
+always @(posedge CLOCK_AUDIO)
 begin
-	audio_sample_word_dampened = audio_sample_word >> VOLUME;
-	full_wave_rate = WAVE_RATE << 3;
+	audio_sample_word_dampened <= audio_sample_word >> VOLUME;
 end
 
 // sound
 sawtooth
 #(
-	.BIT_WIDTH(AUDIO_BIT_WIDTH),
-	.SAMPLE_RATE(AUDIO_RATE)
+	.BIT_WIDTH(AUDIO_BIT_WIDTH)
 )
 sawtooth
 (
 	.clk_audio(CLOCK_AUDIO),
-	.level(audio_sample_word),
-	.wave_rate(full_wave_rate),
-	.enable(WAVE_ENABLE)
+	.enable(WAVE_ENABLE),
+	.wave_increment(WAVE_INCREMENT),
+	.level(audio_sample_word)
 );
 
+// hdmi
 logic [23:0] rgb;
 logic [9:0] cx, cy;
 hdmi
@@ -119,7 +117,7 @@ logic [9:0] cy_mem;
 always @(posedge tmds_clock)
 begin
 	cx_mem <= cx + 10'd865; // Offset cx_mem
-	cy_mem <= cy + 10'd980 + (RAM_ROW_OFFSET << 4); // Offset cy_mem. Add the row offset
+	cy_mem <= cy + 10'd980 + {RAM_ROW_OFFSET[5:0], 4'(0)}; // Offset cy_mem. Add the row offset
 	RAM_ADDRESS <= {cy_mem[9:4], cx_mem[9:3]}; // Construct RAM_ADDRESS
 end
 

@@ -105,7 +105,7 @@
  The sound generation is very primitive:
    Frequencies from 8Hz to 2040Hz can be generated in 8Hz increments.
 	Sound durations can be 0.0625s to 15.9375 seconds in 0.0625s increments.
- 
+
  */
 
 #include "XLR8_HDMI.h"
@@ -370,4 +370,244 @@ boolean XLR8_HDMI::sound_in_progress() {
   return (XLR8_HDMI_WAVE_DURATION == 1);
 }
 
+// Beep: a tribute to the ZX Spectrum BEEP statement:
+// https://worldofspectrum.org/ZXBasicManual/zxmanchap19.html
+// duration (float) is the beep duration in seconds;
+// pitch (int) is given in semitones above middle C, in the range +/- 35.
+// Beep is blocking - it returns when the sound is complete.
+void XLR8_HDMI::beep(float duration, int pitch)
+{
+  // Convert pitch (in semitones) into Hz
+  // https://pages.mtu.edu/~suits/notefreqs.html
+  float frequency;
+  switch (pitch)
+  {
+    case -35:
+      frequency = 34.65; // C#1/Db1
+      break;
+    case -34:
+      frequency = 36.71; // D1
+      break;
+    case -33:
+      frequency = 38.89; // D#1/Eb1
+      break;
+    case -32:
+      frequency = 41.20; // E1
+      break;
+    case -31:
+      frequency = 43.65; // F1
+      break;
+    case -30:
+      frequency = 46.25; // F#1/Gb1
+      break;
+    case -29:
+      frequency = 49.00; // G1
+      break;
+    case -28:
+      frequency = 51.91; // G#1/Ab1
+      break;
+    case -27:
+      frequency = 55.00; // A1
+      break;
+    case -26:
+      frequency = 58.27; // A#1/Bb1
+      break;
+    case -25:
+      frequency = 61.74; // B1
+      break;
+    case -24:
+      frequency = 65.41; // C2
+      break;
+    case -23:
+      frequency = 69.30; // C#2/Db2
+      break;
+    case -22:
+      frequency = 73.42; // D2
+      break;
+    case -21:
+      frequency = 77.78; // D#2/Eb2
+      break;
+    case -20:
+      frequency = 82.41; // E2
+      break;
+    case -19:
+      frequency = 87.31; // F2
+      break;
+    case -18:
+      frequency = 92.50; // F#2/Gb2
+      break;
+    case -17:
+      frequency = 98.00; // G2
+      break;
+    case -16:
+      frequency = 103.83; // G#2/Ab2
+      break;
+    case -15:
+      frequency = 110.00; // A2
+      break;
+    case -14:
+      frequency = 116.54; // A#2/Bb2
+      break;
+    case -13:
+      frequency = 123.47; // B2
+      break;
+    case -12:
+      frequency = 130.81; // C3
+      break;
+    case -11:
+      frequency = 138.59; // C#3/Db3
+      break;
+    case -10:
+      frequency = 146.83; // D3
+      break;
+    case -9:
+      frequency = 155.56; // D#3/Eb3
+      break;
+    case -8:
+      frequency = 164.81; // E3
+      break;
+    case -7:
+      frequency = 174.61; // F3
+      break;
+    case -6:
+      frequency = 185.00; // F#3/Gb3
+      break;
+    case -5:
+      frequency = 196.00; // G3
+      break;
+    case -4:
+      frequency = 207.65; // G#3/Ab3
+      break;
+    case -3:
+      frequency = 220.00; // A3
+      break;
+    case -2:
+      frequency = 233.08; // A#3/Bb3
+      break;
+    case -1:
+      frequency = 246.94; // B3
+      break;
+    case 0:
+      frequency = 261.63; // C4
+      break;
+    case 1:
+      frequency = 277.18; // C#4/Db4
+      break;
+    case 2:
+      frequency = 293.66; // D4
+      break;
+    case 3:
+      frequency = 311.13; // D#4/Eb4
+      break;
+    case 4:
+      frequency = 329.63; // E4
+      break;
+    case 5:
+      frequency = 349.23; // F4
+      break;
+    case 6:
+      frequency = 369.99; // F#4/Gb4
+      break;
+    case 7:
+      frequency = 392.00; // G4
+      break;
+    case 8:
+      frequency = 415.30; // G#4/Ab4
+      break;
+    case 9:
+      frequency = 440.00; // A4
+      break;
+    case 10:
+      frequency = 466.16; //
+      break;
+    case 11:
+      frequency = 493.88; // B4
+      break;
+    case 12:
+      frequency = 523.25; // C5
+      break;
+    case 13:
+      frequency = 554.37; // C#5/Db5
+      break;
+    case 14:
+      frequency = 587.33; // D5
+      break;
+    case 15:
+      frequency = 622.25; // D#5/Eb5
+      break;
+    case 16:
+      frequency = 659.25; // E5
+      break;
+    case 17:
+      frequency = 698.46; // F5
+      break;
+    case 18:
+      frequency = 739.99; // F#5/Gb5
+      break;
+    case 19:
+      frequency = 783.99; // G5
+      break;
+    case 20:
+      frequency = 830.61; // G#5/Ab5
+      break;
+    case 21:
+      frequency = 880.00; // A5
+      break;
+    case 22:
+      frequency = 932.33; // A#5/Bb5
+      break;
+    case 23:
+      frequency = 987.77; // B5
+      break;
+    case 24:
+      frequency = 1046.50; // C6
+      break;
+    case 25:
+      frequency = 1108.73; // C#6/Db6
+      break;
+    case 26:
+      frequency = 1174.66; // D6
+      break;
+    case 27:
+      frequency = 1244.51; // D#6/Eb6
+      break;
+    case 28:
+      frequency = 1318.51; // E6
+      break;
+    case 29:
+      frequency = 1396.91; // F6
+      break;
+    case 30:
+      frequency = 1479.98; // F#6/Gb6
+      break;
+    case 31:
+      frequency = 1567.98; // G6
+      break;
+    case 32:
+      frequency = 1661.22; // G#6/Ab6
+      break;
+    case 33:
+      frequency = 1760.00; // A6
+      break;
+    case 34:
+      frequency = 1864.66; // A#6/Bb6
+      break;
+    case 35:
+      frequency = 1975.53; // B6
+      break;
+    default:
+      frequency = 261.63; // C4
+      break;
+    }
 
+    set_sound_freq(frequency / 8); // Convert frequency
+
+    if (duration < 0)
+      duration = 0;
+    if (duration > 15.9375) // 255 * 0.0625
+      duration = 15.9375;
+    set_sound_duration(duration / 0.0625); // Convert duration
+
+    while(sound_in_progress())
+      delay(5); // Beep is blocking - it returns when the sound is complete
+}

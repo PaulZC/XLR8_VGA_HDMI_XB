@@ -7,14 +7,14 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
   #(
     // Parameter definitions. The ADDR parameters will be defined when
     // this module is instantiated.
-    parameter VOLUME_ADDR = 16,     // The register that will hold the volume attenuation value
-	 parameter RAM_ADDRESS_LO = 0,   // The register that will hold the RAM address (lo byte)
-	 parameter RAM_ADDRESS_HI = 0,   // The register that will hold the RAM address (hi byte)
-	 parameter RAM_CHAR_DATA = 0,		// The register that will hold the RAM character data
-	 parameter RAM_ATTR_DATA = 0,		// The register that will hold the RAM attribute data
-	 parameter RAM_ROW_OFFSET = 0,	// The register that will hold the RAM row offset (for fast display updates)
-	 parameter WAVE_RATE = 0,			// The register that will hold the sawtooth wave rate (for sound generation)
-	 parameter WAVE_DURATION = 0,		// The counter that will hold the sawtooth wave duration (for sound generation)
+    parameter VOLUME_ADDR,		// The address of the register that will hold the volume attenuation value
+	 parameter RAM_ADDRESS_LO,	// The address of the register that will hold the RAM address (lo byte)
+	 parameter RAM_ADDRESS_HI,	// The address of the register that will hold the RAM address (hi byte)
+	 parameter RAM_CHAR_DATA,	// The address of the register that will hold the RAM character data
+	 parameter RAM_ATTR_DATA,	// The address of the register that will hold the RAM attribute data
+	 parameter RAM_ROW_OFFSET,	// The address of the register that will hold the RAM row offset (for fast display updates)
+	 parameter WAVE_RATE,		// The address of the register that will hold the sawtooth wave rate (for sound generation)
+	 parameter WAVE_DURATION,	// The counter that will hold the sawtooth wave duration (for sound generation)
     parameter WIDTH = 8
     )
    (
@@ -84,6 +84,11 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 	logic wave_rate_re;
 	logic [WIDTH-1:0] wave_rate_reg; // The register that will hold the wave rate for sound generation
 	logic [WIDTH-1:0] wave_in_progress; // Indicates if a sound is still in progress
+	
+	localparam AUDIO_BIT_WIDTH = 16;
+	localparam AUDIO_RATE = 48000;
+	
+	logic [AUDIO_BIT_WIDTH-1:0] audio_wave_increment; // Increment for the sawtooth wave - derived from the wave rate
 	
 	logic [7:0] hdmi_ram_char_data;
 	logic [7:0] hdmi_ram_attr_data;
@@ -187,6 +192,8 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
    always @(posedge clk_core) begin
 		if (clken && wave_rate_we) begin
         wave_rate_reg <= dbus_in[WIDTH-1:0];
+		  // Define the sawtooth increment based on the wave rate
+		  audio_wave_increment <= AUDIO_BIT_WIDTH'({(32 - (AUDIO_BIT_WIDTH + 1))'(0), ((AUDIO_BIT_WIDTH + 1)'(2)**(AUDIO_BIT_WIDTH + 1)'(AUDIO_BIT_WIDTH) - 1)} * {(32 - (WIDTH + 3))'(0), dbus_in[WIDTH-1:0], 3'(0)} / AUDIO_RATE);
       end
    end
 	
@@ -241,27 +248,33 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
    // provides just enough I/O to demonstrate how the above logic is
    // connected.
    
-   hdmi_demo hdmi_inst (
-                    .CLOCK_PIXEL   	(clk_pixel),
-						  .CLOCK_AUDIO		(clk_audio),
-						  .CLOCK_CORE     (clk_core),
-						  .HDMI_TX     	(datap),
-	                 .HDMI_TX_N		(datan),
-						  .HDMI_CLK			(clkp),
-						  .HDMI_CLK_N		(clkn),
-						  .VOLUME			(volume_reg),
-						  .heartbeat		(heartbeat),
-						  .RAM_ADDRESS		(hdmi_ram_address),
-						  .RAM_CHAR_DATA	(hdmi_ram_char_data),
-						  .RAM_ATTR_DATA	(hdmi_ram_attr_data),
-						  .RAM_CHAR_RE		(hdmi_ram_char_re),
-						  .RAM_ATTR_RE		(hdmi_ram_attr_re),
-						  .RAM_ROW_OFFSET (ram_row_offset_reg),
-						  .WAVE_RATE      (wave_rate_reg),
-						  .WAVE_ENABLE  	(wave_enable)
-                    );
-   
-   // End, Instantiate user module
+   hdmi_demo
+	#(
+	.AUDIO_BIT_WIDTH (AUDIO_BIT_WIDTH),
+	.AUDIO_RATE (AUDIO_RATE)
+	)
+	hdmi_inst
+	(
+	.CLOCK_PIXEL    (clk_pixel),
+	.CLOCK_AUDIO    (clk_audio),
+	.CLOCK_CORE     (clk_core),
+	.HDMI_TX        (datap),
+	.HDMI_TX_N      (datan),
+	.HDMI_CLK       (clkp),
+	.HDMI_CLK_N     (clkn),
+	.VOLUME         (volume_reg),
+	.heartbeat      (heartbeat),
+	.RAM_ADDRESS    (hdmi_ram_address),
+	.RAM_CHAR_DATA  (hdmi_ram_char_data),
+	.RAM_ATTR_DATA  (hdmi_ram_attr_data),
+	.RAM_CHAR_RE    (hdmi_ram_char_re),
+	.RAM_ATTR_RE    (hdmi_ram_attr_re),
+	.RAM_ROW_OFFSET (ram_row_offset_reg),
+	.WAVE_ENABLE    (wave_enable),
+	.WAVE_INCREMENT (audio_wave_increment)
+	);
+
+	// End, Instantiate user module
    //----------------------------------------------------------------------
    
 
@@ -279,17 +292,17 @@ module xlr8_hdmi  // NOTE: Change the module name to match your design
 		if (clken && wave_duration_we)
 			begin
 			wave_duration_count <= dbus_in[WIDTH-1:0] * 28'd1000000; // Convert duration from 0.0625s to clock cycles
+			wave_enable <= 1'b1;
+			wave_in_progress <= 8'b1;
 			end
 		else if (wave_duration_count != 28'b0)
 			begin
 			wave_duration_count <= wave_duration_count - 1;
-			wave_enable = 1'b1;
-			wave_in_progress = 8'b1;
 			end
 		else
 			begin
-      	wave_enable = 1'b0;
-			wave_in_progress = 8'b0;
+      	wave_enable <= 1'b0;
+			wave_in_progress <= 8'b0;
 			end
 	end
    

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for sno_16MHz
-Sun Sep 20 18:48:00 2020
+Sun Oct 11 19:07:37 2020
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -90,15 +90,15 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 6           ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 2.62        ;
+; Average used               ; 2.61        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;  34.6%      ;
-;     Processor 3            ;  32.8%      ;
-;     Processor 4            ;  31.7%      ;
-;     Processors 5-6         ;  31.2%      ;
+;     Processor 3            ;  32.7%      ;
+;     Processor 4            ;  31.5%      ;
+;     Processors 5-6         ;  31.1%      ;
 +----------------------------+-------------+
 
 
@@ -107,10 +107,10 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                                           ; Status ; Read at                  ;
 +-----------------------------------------------------------------------------------------+--------+--------------------------+
-; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/synthesis/submodules/altera_int_osc.sdc ; OK     ; Sun Sep 20 18:47:51 2020 ;
-; ../../../XLR8Core/extras/quartus/altera_modular_adc_control.sdc                         ; OK     ; Sun Sep 20 18:47:52 2020 ;
-; ../../../XLR8Core/extras/quartus/altera_onchip_flash.sdc                                ; OK     ; Sun Sep 20 18:47:52 2020 ;
-; ../../../XLR8Core/extras/quartus/sno_top.sdc                                            ; OK     ; Sun Sep 20 18:47:52 2020 ;
+; ../../../XLR8Core/extras/rtl/ip/int_osc/int_osc/synthesis/submodules/altera_int_osc.sdc ; OK     ; Sun Oct 11 19:07:27 2020 ;
+; ../../../XLR8Core/extras/quartus/altera_modular_adc_control.sdc                         ; OK     ; Sun Oct 11 19:07:28 2020 ;
+; ../../../XLR8Core/extras/quartus/altera_onchip_flash.sdc                                ; OK     ; Sun Oct 11 19:07:28 2020 ;
+; ../../../XLR8Core/extras/quartus/sno_top.sdc                                            ; OK     ; Sun Oct 11 19:07:28 2020 ;
 +-----------------------------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -137,11 +137,11 @@ refer to the applicable agreement for further details.
 +------------+-----------------+------------------------------------------------------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                       ; Note                                           ;
 +------------+-----------------+------------------------------------------------------------------+------------------------------------------------+
-; 7.32 MHz   ; 7.32 MHz        ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ;                                                ;
-; 16.13 MHz  ; 16.13 MHz       ; Clock                                                            ;                                                ;
-; 16.52 MHz  ; 16.52 MHz       ; clk_scki                                                         ;                                                ;
-; 201.33 MHz ; 201.33 MHz      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ;                                                ;
-; 403.39 MHz ; 402.09 MHz      ; int_osc_clk                                                      ; limit due to minimum period restriction (tmin) ;
+; 7.99 MHz   ; 7.99 MHz        ; Clock                                                            ;                                                ;
+; 16.57 MHz  ; 16.57 MHz       ; clk_scki                                                         ;                                                ;
+; 85.81 MHz  ; 85.81 MHz       ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ;                                                ;
+; 189.72 MHz ; 189.72 MHz      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ;                                                ;
+; 403.23 MHz ; 402.09 MHz      ; int_osc_clk                                                      ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+------------------------------------------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -151,13 +151,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------+---------+---------------+
 ; Clock                                                            ; Slack   ; End Point TNS ;
 +------------------------------------------------------------------+---------+---------------+
-; Clock                                                            ; -63.667 ; -5413.305     ;
-; clk_virtual                                                      ; -63.627 ; -549.017      ;
-; clk_scki                                                         ; -12.667 ; -12.667       ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; -10.861 ; -395.790      ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; -10.429 ; -25.924       ;
-; int_osc_clk                                                      ; 6.141   ; 0.000         ;
-; flash_se_neg_reg                                                 ; 55.419  ; 0.000         ;
+; clk_virtual                                                      ; -65.418 ; -550.808      ;
+; Clock                                                            ; -64.605 ; -5978.696     ;
+; clk_scki                                                         ; -13.605 ; -13.605       ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; -12.472 ; -427.285      ;
+; int_osc_clk                                                      ; 6.140   ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 9.871   ; 0.000         ;
+; flash_se_neg_reg                                                 ; 55.063  ; 0.000         ;
 +------------------------------------------------------------------+---------+---------------+
 
 
@@ -166,13 +166,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------+--------+---------------+
 ; Clock                                                            ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------+--------+---------------+
-; Clock                                                            ; 0.344  ; 0.000         ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 0.362  ; 0.000         ;
-; clk_scki                                                         ; 0.363  ; 0.000         ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; 0.364  ; 0.000         ;
-; int_osc_clk                                                      ; 0.474  ; 0.000         ;
-; flash_se_neg_reg                                                 ; 4.630  ; 0.000         ;
-; clk_virtual                                                      ; 57.319 ; 0.000         ;
+; Clock                                                            ; 0.318  ; 0.000         ;
+; clk_scki                                                         ; 0.361  ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; 0.363  ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 0.364  ; 0.000         ;
+; int_osc_clk                                                      ; 0.473  ; 0.000         ;
+; flash_se_neg_reg                                                 ; 5.159  ; 0.000         ;
+; clk_virtual                                                      ; 57.122 ; 0.000         ;
 +------------------------------------------------------------------+--------+---------------+
 
 
@@ -181,8 +181,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+--------------------+
 ; Clock    ; Slack  ; End Point TNS      ;
 +----------+--------+--------------------+
-; clk_scki ; 6.674  ; 0.000              ;
-; Clock    ; 25.686 ; 0.000              ;
+; clk_scki ; 7.789  ; 0.000              ;
+; Clock    ; 26.043 ; 0.000              ;
 +----------+--------+--------------------+
 
 
@@ -191,8 +191,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+--------------------+
 ; Clock    ; Slack ; End Point TNS      ;
 +----------+-------+--------------------+
-; Clock    ; 1.010 ; 0.000              ;
-; clk_scki ; 2.216 ; 0.000              ;
+; Clock    ; 1.009 ; 0.000              ;
+; clk_scki ; 2.424 ; 0.000              ;
 +----------+-------+--------------------+
 
 
@@ -203,10 +203,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------------------------------------------------------+-----------+---------------+
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; -0.933    ; -134.352      ;
 ; int_osc_clk                                                                                           ; 4.089     ; 0.000         ;
-; Clock                                                                                                 ; 29.185    ; 0.000         ;
-; clk_scki                                                                                              ; 30.956    ; 0.000         ;
-; flash_se_neg_reg                                                                                      ; 60.387    ; 0.000         ;
-; uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; 90.685    ; 0.000         ;
+; Clock                                                                                                 ; 29.046    ; 0.000         ;
+; clk_scki                                                                                              ; 30.929    ; 0.000         ;
+; flash_se_neg_reg                                                                                      ; 60.386    ; 0.000         ;
+; uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; 90.688    ; 0.000         ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]                                      ; 244.781   ; 0.000         ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 10416.394 ; 0.000         ;
 +-------------------------------------------------------------------------------------------------------+-----------+---------------+
@@ -224,11 +224,11 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+------------------------------------------------------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                       ; Note                                           ;
 +------------+-----------------+------------------------------------------------------------------+------------------------------------------------+
-; 7.94 MHz   ; 7.94 MHz        ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ;                                                ;
-; 16.26 MHz  ; 16.26 MHz       ; Clock                                                            ;                                                ;
-; 17.82 MHz  ; 17.82 MHz       ; clk_scki                                                         ;                                                ;
-; 211.82 MHz ; 204.04 MHz      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; limit due to minimum period restriction (tmin) ;
-; 445.43 MHz ; 402.09 MHz      ; int_osc_clk                                                      ; limit due to minimum period restriction (tmin) ;
+; 8.64 MHz   ; 8.64 MHz        ; Clock                                                            ;                                                ;
+; 17.74 MHz  ; 17.74 MHz       ; clk_scki                                                         ;                                                ;
+; 89.63 MHz  ; 89.63 MHz       ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ;                                                ;
+; 203.87 MHz ; 203.87 MHz      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ;                                                ;
+; 445.63 MHz ; 402.09 MHz      ; int_osc_clk                                                      ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+------------------------------------------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -238,13 +238,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------+---------+---------------+
 ; Clock                                                            ; Slack   ; End Point TNS ;
 +------------------------------------------------------------------+---------+---------------+
-; Clock                                                            ; -62.658 ; -5108.074     ;
-; clk_virtual                                                      ; -62.620 ; -541.086      ;
-; clk_scki                                                         ; -11.658 ; -11.658       ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; -10.390 ; -381.163      ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; -7.898  ; -17.084       ;
-; int_osc_clk                                                      ; 6.375   ; 0.000         ;
-; flash_se_neg_reg                                                 ; 55.614  ; 0.000         ;
+; clk_virtual                                                      ; -64.364 ; -542.830      ;
+; Clock                                                            ; -63.595 ; -5561.237     ;
+; clk_scki                                                         ; -12.595 ; -12.595       ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; -12.057 ; -403.300      ;
+; int_osc_clk                                                      ; 6.376   ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 10.083  ; 0.000         ;
+; flash_se_neg_reg                                                 ; 55.305  ; 0.000         ;
 +------------------------------------------------------------------+---------+---------------+
 
 
@@ -253,13 +253,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------+--------+---------------+
 ; Clock                                                            ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------+--------+---------------+
-; Clock                                                            ; 0.305  ; 0.000         ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 0.324  ; 0.000         ;
-; clk_scki                                                         ; 0.325  ; 0.000         ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; 0.325  ; 0.000         ;
-; int_osc_clk                                                      ; 0.448  ; 0.000         ;
-; flash_se_neg_reg                                                 ; 4.069  ; 0.000         ;
-; clk_virtual                                                      ; 56.749 ; 0.000         ;
+; Clock                                                            ; 0.287  ; 0.000         ;
+; clk_scki                                                         ; 0.324  ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; 0.324  ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 0.325  ; 0.000         ;
+; int_osc_clk                                                      ; 0.449  ; 0.000         ;
+; flash_se_neg_reg                                                 ; 4.636  ; 0.000         ;
+; clk_virtual                                                      ; 56.585 ; 0.000         ;
 +------------------------------------------------------------------+--------+---------------+
 
 
@@ -268,8 +268,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+-------------------+
 ; Clock    ; Slack  ; End Point TNS     ;
 +----------+--------+-------------------+
-; clk_scki ; 6.786  ; 0.000             ;
-; Clock    ; 25.991 ; 0.000             ;
+; clk_scki ; 7.746  ; 0.000             ;
+; Clock    ; 26.324 ; 0.000             ;
 +----------+--------+-------------------+
 
 
@@ -278,8 +278,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+-------------------+
 ; Clock    ; Slack ; End Point TNS     ;
 +----------+-------+-------------------+
-; Clock    ; 0.926 ; 0.000             ;
-; clk_scki ; 2.071 ; 0.000             ;
+; Clock    ; 0.927 ; 0.000             ;
+; clk_scki ; 2.158 ; 0.000             ;
 +----------+-------+-------------------+
 
 
@@ -289,13 +289,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock                                                                                                 ; Slack     ; End Point TNS ;
 +-------------------------------------------------------------------------------------------------------+-----------+---------------+
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; -0.933    ; -134.352      ;
-; int_osc_clk                                                                                           ; 4.078     ; 0.000         ;
-; Clock                                                                                                 ; 29.201    ; 0.000         ;
-; clk_scki                                                                                              ; 30.887    ; 0.000         ;
-; flash_se_neg_reg                                                                                      ; 60.396    ; 0.000         ;
-; uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; 90.686    ; 0.000         ;
+; int_osc_clk                                                                                           ; 4.081     ; 0.000         ;
+; Clock                                                                                                 ; 28.844    ; 0.000         ;
+; clk_scki                                                                                              ; 30.851    ; 0.000         ;
+; flash_se_neg_reg                                                                                      ; 60.394    ; 0.000         ;
+; uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; 90.681    ; 0.000         ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]                                      ; 244.884   ; 0.000         ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 10416.387 ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 10416.388 ; 0.000         ;
 +-------------------------------------------------------------------------------------------------------+-----------+---------------+
 
 
@@ -308,7 +308,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 13
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.692
-Worst Case Available Settling Time: 5.940 ns
+Worst Case Available Settling Time: 4.324 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.5
@@ -322,13 +322,13 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +------------------------------------------------------------------+---------+---------------+
 ; Clock                                                            ; Slack   ; End Point TNS ;
 +------------------------------------------------------------------+---------+---------------+
-; Clock                                                            ; -56.648 ; -2284.006     ;
-; clk_virtual                                                      ; -56.608 ; -499.346      ;
-; clk_scki                                                         ; -5.648  ; -5.648        ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; -3.729  ; -132.037      ;
-; int_osc_clk                                                      ; 7.675   ; 0.000         ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 9.774   ; 0.000         ;
-; flash_se_neg_reg                                                 ; 59.608  ; 0.000         ;
+; clk_virtual                                                      ; -57.449 ; -500.187      ;
+; Clock                                                            ; -57.048 ; -2298.863     ;
+; clk_scki                                                         ; -6.048  ; -6.048        ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; -4.525  ; -141.290      ;
+; int_osc_clk                                                      ; 7.676   ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 16.212  ; 0.000         ;
+; flash_se_neg_reg                                                 ; 59.480  ; 0.000         ;
 +------------------------------------------------------------------+---------+---------------+
 
 
@@ -337,13 +337,13 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +------------------------------------------------------------------+--------+---------------+
 ; Clock                                                            ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------+--------+---------------+
-; Clock                                                            ; 0.145  ; 0.000         ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 0.152  ; 0.000         ;
-; clk_scki                                                         ; 0.153  ; 0.000         ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; 0.153  ; 0.000         ;
-; int_osc_clk                                                      ; 0.170  ; 0.000         ;
-; flash_se_neg_reg                                                 ; 0.594  ; 0.000         ;
-; clk_virtual                                                      ; 53.542 ; 0.000         ;
+; Clock                                                            ; 0.113  ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] ; 0.113  ; 0.000         ;
+; clk_scki                                                         ; 0.152  ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] ; 0.153  ; 0.000         ;
+; int_osc_clk                                                      ; 0.171  ; 0.000         ;
+; flash_se_neg_reg                                                 ; 0.875  ; 0.000         ;
+; clk_virtual                                                      ; 53.571 ; 0.000         ;
 +------------------------------------------------------------------+--------+---------------+
 
 
@@ -352,8 +352,8 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +----------+--------+-------------------+
 ; Clock    ; Slack  ; End Point TNS     ;
 +----------+--------+-------------------+
-; clk_scki ; 9.289  ; 0.000             ;
-; Clock    ; 28.739 ; 0.000             ;
+; clk_scki ; 9.907  ; 0.000             ;
+; Clock    ; 29.035 ; 0.000             ;
 +----------+--------+-------------------+
 
 
@@ -362,8 +362,8 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +----------+-------+-------------------+
 ; Clock    ; Slack ; End Point TNS     ;
 +----------+-------+-------------------+
-; Clock    ; 0.414 ; 0.000             ;
-; clk_scki ; 0.495 ; 0.000             ;
+; Clock    ; 0.415 ; 0.000             ;
+; clk_scki ; 0.588 ; 0.000             ;
 +----------+-------+-------------------+
 
 
@@ -373,13 +373,13 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; Clock                                                                                                 ; Slack     ; End Point TNS ;
 +-------------------------------------------------------------------------------------------------------+-----------+---------------+
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; 1.692     ; 0.000         ;
-; int_osc_clk                                                                                           ; 4.082     ; 0.000         ;
-; Clock                                                                                                 ; 28.771    ; 0.000         ;
-; clk_scki                                                                                              ; 30.944    ; 0.000         ;
+; int_osc_clk                                                                                           ; 4.081     ; 0.000         ;
+; Clock                                                                                                 ; 28.632    ; 0.000         ;
+; clk_scki                                                                                              ; 30.920    ; 0.000         ;
 ; flash_se_neg_reg                                                                                      ; 60.465    ; 0.000         ;
-; uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; 90.689    ; 0.000         ;
+; uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; 90.679    ; 0.000         ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]                                      ; 244.902   ; 0.000         ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 10416.433 ; 0.000         ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 10416.445 ; 0.000         ;
 +-------------------------------------------------------------------------------------------------------+-----------+---------------+
 
 
@@ -392,7 +392,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 13
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.692
-Worst Case Available Settling Time: 9.314 ns
+Worst Case Available Settling Time: 8.557 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.5
@@ -406,23 +406,23 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +--------------------------------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
 ; Clock                                                                                                  ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +--------------------------------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack                                                                                       ; -63.667   ; 0.145  ; 6.674    ; 0.414   ; -0.933              ;
-;  Clock                                                                                                 ; -63.667   ; 0.145  ; 25.686   ; 0.414   ; 28.771              ;
-;  clk_scki                                                                                              ; -12.667   ; 0.153  ; 6.674    ; 0.495   ; 30.887              ;
-;  clk_virtual                                                                                           ; -63.627   ; 53.542 ; N/A      ; N/A     ; N/A                 ;
+; Worst-case Slack                                                                                       ; -65.418   ; 0.113  ; 7.746    ; 0.415   ; -0.933              ;
+;  Clock                                                                                                 ; -64.605   ; 0.113  ; 26.043   ; 0.415   ; 28.632              ;
+;  clk_scki                                                                                              ; -13.605   ; 0.152  ; 7.746    ; 0.588   ; 30.851              ;
+;  clk_virtual                                                                                           ; -65.418   ; 53.571 ; N/A      ; N/A     ; N/A                 ;
 ;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]                                      ; N/A       ; N/A    ; N/A      ; N/A     ; 244.781             ;
-;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; -10.429   ; 0.152  ; N/A      ; N/A     ; 10416.387           ;
-;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; -10.861   ; 0.153  ; N/A      ; N/A     ; -0.933              ;
-;  flash_se_neg_reg                                                                                      ; 55.419    ; 0.594  ; N/A      ; N/A     ; 60.387              ;
-;  int_osc_clk                                                                                           ; 6.141     ; 0.170  ; N/A      ; N/A     ; 4.078               ;
-;  uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; N/A       ; N/A    ; N/A      ; N/A     ; 90.685              ;
-; Design-wide TNS                                                                                        ; -6396.703 ; 0.0    ; 0.0      ; 0.0     ; -134.352            ;
-;  Clock                                                                                                 ; -5413.305 ; 0.000  ; 0.000    ; 0.000   ; 0.000               ;
-;  clk_scki                                                                                              ; -12.667   ; 0.000  ; 0.000    ; 0.000   ; 0.000               ;
-;  clk_virtual                                                                                           ; -549.017  ; 0.000  ; N/A      ; N/A     ; N/A                 ;
+;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 9.871     ; 0.153  ; N/A      ; N/A     ; 10416.388           ;
+;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; -12.472   ; 0.113  ; N/A      ; N/A     ; -0.933              ;
+;  flash_se_neg_reg                                                                                      ; 55.063    ; 0.875  ; N/A      ; N/A     ; 60.386              ;
+;  int_osc_clk                                                                                           ; 6.140     ; 0.171  ; N/A      ; N/A     ; 4.081               ;
+;  uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; N/A       ; N/A    ; N/A      ; N/A     ; 90.679              ;
+; Design-wide TNS                                                                                        ; -6970.394 ; 0.0    ; 0.0      ; 0.0     ; -134.352            ;
+;  Clock                                                                                                 ; -5978.696 ; 0.000  ; 0.000    ; 0.000   ; 0.000               ;
+;  clk_scki                                                                                              ; -13.605   ; 0.000  ; 0.000    ; 0.000   ; 0.000               ;
+;  clk_virtual                                                                                           ; -550.808  ; 0.000  ; N/A      ; N/A     ; N/A                 ;
 ;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]                                      ; N/A       ; N/A    ; N/A      ; N/A     ; 0.000               ;
-;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; -25.924   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
-;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; -395.790  ; 0.000  ; N/A      ; N/A     ; -134.352            ;
+;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 0.000     ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; -427.285  ; 0.000  ; N/A      ; N/A     ; -134.352            ;
 ;  flash_se_neg_reg                                                                                      ; 0.000     ; 0.000  ; N/A      ; N/A     ; 0.000               ;
 ;  int_osc_clk                                                                                           ; 0.000     ; 0.000  ; N/A      ; N/A     ; 0.000               ;
 ;  uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; N/A       ; N/A    ; N/A      ; N/A     ; 0.000               ;
@@ -590,7 +590,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +--------------+-----------------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; PIN13LED     ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
 ; ANA_UP       ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; I2C_ENABLE   ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; I2C_ENABLE   ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
 ; SCL          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
 ; SDA          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
 ; D13          ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
@@ -633,18 +633,18 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; A2           ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
 ; A1           ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
 ; A0           ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; DIG_IO_OE[0] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; DIG_IO_OE[1] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; DIG_IO_OE[2] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; DIG_IO_OE[0] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.07e-08 V                   ; 3.18 V              ; -0.115 V            ; 0.266 V                              ; 0.229 V                              ; 4.69e-10 s                  ; 6.38e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.07e-08 V                  ; 3.18 V             ; -0.115 V           ; 0.266 V                             ; 0.229 V                             ; 4.69e-10 s                 ; 6.38e-10 s                 ; No                        ; No                        ;
+; DIG_IO_OE[1] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; DIG_IO_OE[2] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
 ; DIG_IO_OE[3] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; DIG_IO_OE[4] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; DIG_IO_OE[5] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; SOIC7        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; SOIC6        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; SOIC5        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.09 V              ; -0.0046 V           ; 0.291 V                              ; 0.287 V                              ; 4.58e-09 s                  ; 4.9e-09 s                   ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.09 V             ; -0.0046 V          ; 0.291 V                             ; 0.287 V                             ; 4.58e-09 s                 ; 4.9e-09 s                  ; No                        ; No                        ;
-; SOIC3        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.09 V              ; -0.00486 V          ; 0.291 V                              ; 0.288 V                              ; 4.58e-09 s                  ; 4.89e-09 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.09 V             ; -0.00486 V         ; 0.291 V                             ; 0.288 V                             ; 4.58e-09 s                 ; 4.89e-09 s                 ; No                        ; No                        ;
-; SOIC2        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
-; SOIC1        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; DIG_IO_OE[4] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; DIG_IO_OE[5] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; SOIC7        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.126 V            ; 0.218 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.126 V           ; 0.218 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; SOIC6        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; SOIC5        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; SOIC3        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; SOIC2        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
+; SOIC1        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.09 V              ; -0.0046 V           ; 0.291 V                              ; 0.287 V                              ; 4.58e-09 s                  ; 4.9e-09 s                   ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.09 V             ; -0.0046 V          ; 0.291 V                             ; 0.287 V                             ; 4.58e-09 s                 ; 4.9e-09 s                  ; No                        ; No                        ;
 ; JT9          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.19 V              ; -0.128 V            ; 0.216 V                              ; 0.383 V                              ; 4.51e-10 s                  ; 4.73e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.19 V             ; -0.128 V           ; 0.216 V                             ; 0.383 V                             ; 4.51e-10 s                 ; 4.73e-10 s                 ; No                        ; No                        ;
 ; JT7          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.07e-08 V                   ; 3.18 V              ; -0.115 V            ; 0.266 V                              ; 0.229 V                              ; 4.69e-10 s                  ; 6.38e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.07e-08 V                  ; 3.18 V             ; -0.115 V           ; 0.266 V                             ; 0.229 V                             ; 4.69e-10 s                 ; 6.38e-10 s                 ; No                        ; No                        ;
 ; JT6          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.08e-08 V                   ; 3.18 V              ; -0.116 V            ; 0.266 V                              ; 0.229 V                              ; 4.69e-10 s                  ; 6.38e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 2.08e-08 V                  ; 3.18 V             ; -0.116 V           ; 0.266 V                             ; 0.229 V                             ; 4.69e-10 s                 ; 6.38e-10 s                 ; No                        ; No                        ;
@@ -661,7 +661,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +--------------+-----------------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; PIN13LED     ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
 ; ANA_UP       ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; I2C_ENABLE   ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; I2C_ENABLE   ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
 ; SCL          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
 ; SDA          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
 ; D13          ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
@@ -704,18 +704,18 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; A2           ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
 ; A1           ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
 ; A0           ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; DIG_IO_OE[0] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; DIG_IO_OE[1] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; DIG_IO_OE[2] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; DIG_IO_OE[0] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0624 V           ; 0.177 V                              ; 0.312 V                              ; 6.42e-10 s                  ; 6.7e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0624 V          ; 0.177 V                             ; 0.312 V                             ; 6.42e-10 s                 ; 6.7e-10 s                  ; No                        ; No                        ;
+; DIG_IO_OE[1] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; DIG_IO_OE[2] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
 ; DIG_IO_OE[3] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; DIG_IO_OE[4] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; DIG_IO_OE[5] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; SOIC7        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; SOIC6        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; SOIC5        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.09 V              ; -0.0026 V           ; 0.276 V                              ; 0.251 V                              ; 5.46e-09 s                  ; 6.08e-09 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.3e-06 V                   ; 3.09 V             ; -0.0026 V          ; 0.276 V                             ; 0.251 V                             ; 5.46e-09 s                 ; 6.08e-09 s                 ; No                        ; Yes                       ;
-; SOIC3        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.09 V              ; -0.00259 V          ; 0.276 V                              ; 0.25 V                               ; 5.46e-09 s                  ; 6.08e-09 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.3e-06 V                   ; 3.09 V             ; -0.00259 V         ; 0.276 V                             ; 0.25 V                              ; 5.46e-09 s                 ; 6.08e-09 s                 ; No                        ; Yes                       ;
-; SOIC2        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
-; SOIC1        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; DIG_IO_OE[4] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; DIG_IO_OE[5] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; SOIC7        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0682 V           ; 0.279 V                              ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0682 V          ; 0.279 V                             ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; SOIC6        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; SOIC5        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; SOIC3        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; SOIC2        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
+; SOIC1        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.09 V              ; -0.0026 V           ; 0.276 V                              ; 0.251 V                              ; 5.46e-09 s                  ; 6.08e-09 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.3e-06 V                   ; 3.09 V             ; -0.0026 V          ; 0.276 V                             ; 0.251 V                             ; 5.46e-09 s                 ; 6.08e-09 s                 ; No                        ; Yes                       ;
 ; JT9          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0684 V           ; 0.28 V                               ; 0.237 V                              ; 4.81e-10 s                  ; 6.4e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0684 V          ; 0.28 V                              ; 0.237 V                             ; 4.81e-10 s                 ; 6.4e-10 s                  ; Yes                       ; No                        ;
 ; JT7          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0624 V           ; 0.177 V                              ; 0.312 V                              ; 6.42e-10 s                  ; 6.7e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0624 V          ; 0.177 V                             ; 0.312 V                             ; 6.42e-10 s                 ; 6.7e-10 s                  ; No                        ; No                        ;
 ; JT6          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.3e-06 V                    ; 3.15 V              ; -0.0638 V           ; 0.177 V                              ; 0.312 V                              ; 6.42e-10 s                  ; 6.7e-10 s                   ; No                         ; No                         ; 3.08 V                      ; 1.3e-06 V                   ; 3.15 V             ; -0.0638 V          ; 0.177 V                             ; 0.312 V                             ; 6.42e-10 s                 ; 6.7e-10 s                  ; No                        ; No                        ;
@@ -732,7 +732,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +--------------+-----------------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; PIN13LED     ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; ANA_UP       ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; I2C_ENABLE   ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; I2C_ENABLE   ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; SCL          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; SDA          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; D13          ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
@@ -775,18 +775,18 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; A2           ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; A1           ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; A0           ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; DIG_IO_OE[0] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; DIG_IO_OE[1] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; DIG_IO_OE[2] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; DIG_IO_OE[0] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0257 V           ; 0.468 V                              ; 0.138 V                              ; 3.02e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0257 V          ; 0.468 V                             ; 0.138 V                             ; 3.02e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; DIG_IO_OE[1] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; DIG_IO_OE[2] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; DIG_IO_OE[3] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; DIG_IO_OE[4] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; DIG_IO_OE[5] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; SOIC7        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; SOIC6        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; SOIC5        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.48 V              ; -0.00721 V          ; 0.333 V                              ; 0.329 V                              ; 3.62e-09 s                  ; 4.03e-09 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.48 V             ; -0.00721 V         ; 0.333 V                             ; 0.329 V                             ; 3.62e-09 s                 ; 4.03e-09 s                 ; No                        ; Yes                       ;
-; SOIC3        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.48 V              ; -0.00711 V          ; 0.334 V                              ; 0.329 V                              ; 3.62e-09 s                  ; 4.03e-09 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.48 V             ; -0.00711 V         ; 0.334 V                             ; 0.329 V                             ; 3.62e-09 s                 ; 4.03e-09 s                 ; No                        ; Yes                       ;
-; SOIC2        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
-; SOIC1        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; DIG_IO_OE[4] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; DIG_IO_OE[5] ; 3.3-V LVTTL           ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; SOIC7        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; SOIC6        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; SOIC5        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; SOIC3        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; SOIC2        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; SOIC1        ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.48 V              ; -0.00721 V          ; 0.333 V                              ; 0.329 V                              ; 3.62e-09 s                  ; 4.03e-09 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.48 V             ; -0.00721 V         ; 0.333 V                             ; 0.329 V                             ; 3.62e-09 s                 ; 4.03e-09 s                 ; No                        ; Yes                       ;
 ; JT9          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
 ; JT7          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0257 V           ; 0.468 V                              ; 0.138 V                              ; 3.02e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0257 V          ; 0.468 V                             ; 0.138 V                             ; 3.02e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
 ; JT6          ; 3.3 V Schmitt Trigger ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.63 V              ; -0.0264 V           ; 0.468 V                              ; 0.142 V                              ; 3.02e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.63 V             ; -0.0264 V          ; 0.468 V                             ; 0.142 V                             ; 3.02e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
@@ -812,13 +812,12 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; clk_virtual                                                                                           ; Clock                                                                                                 ; 33           ; 0          ; 50         ; 0        ;
 ; Clock                                                                                                 ; Clock                                                                                                 ; > 2147483647 ; 192        ; 403        ; 138      ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]                                      ; Clock                                                                                                 ; 14           ; 1          ; 0          ; 0        ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; Clock                                                                                                 ; 136          ; 0          ; 0          ; 0        ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; Clock                                                                                                 ; 191672       ; 0          ; 6          ; 0        ;
 ; uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; Clock                                                                                                 ; 2            ; 0          ; 0          ; 0        ;
 ; undefined_altera_flash_read_state_clock                                                               ; Clock                                                                                                 ; 42           ; 42         ; 1          ; 1        ;
 ; Clock                                                                                                 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]                                      ; 42           ; 0          ; 0          ; 0        ;
-; Clock                                                                                                 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; > 2147483647 ; 0          ; 0          ; 0        ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; > 2147483647 ; 0          ; 0          ; 0        ;
+; Clock                                                                                                 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 406          ; 0          ; 0          ; 0        ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 328          ; 0          ; 0          ; 0        ;
 ; Clock                                                                                                 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; 693820       ; 0          ; 0          ; 0        ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; 2357         ; 0          ; 0          ; 0        ;
 ; Clock                                                                                                 ; flash_se_neg_reg                                                                                      ; 4            ; 0          ; 0          ; 0        ;
@@ -844,13 +843,12 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; clk_virtual                                                                                           ; Clock                                                                                                 ; 33           ; 0          ; 50         ; 0        ;
 ; Clock                                                                                                 ; Clock                                                                                                 ; > 2147483647 ; 192        ; 403        ; 138      ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]                                      ; Clock                                                                                                 ; 14           ; 1          ; 0          ; 0        ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; Clock                                                                                                 ; 136          ; 0          ; 0          ; 0        ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; Clock                                                                                                 ; 191672       ; 0          ; 6          ; 0        ;
 ; uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc ; Clock                                                                                                 ; 2            ; 0          ; 0          ; 0        ;
 ; undefined_altera_flash_read_state_clock                                                               ; Clock                                                                                                 ; 42           ; 42         ; 1          ; 1        ;
 ; Clock                                                                                                 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0]                                      ; 42           ; 0          ; 0          ; 0        ;
-; Clock                                                                                                 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; > 2147483647 ; 0          ; 0          ; 0        ;
-; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; > 2147483647 ; 0          ; 0          ; 0        ;
+; Clock                                                                                                 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 406          ; 0          ; 0          ; 0        ;
+; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2]                                      ; 328          ; 0          ; 0          ; 0        ;
 ; Clock                                                                                                 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; 693820       ; 0          ; 0          ; 0        ;
 ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4]                                      ; 2357         ; 0          ; 0          ; 0        ;
 ; Clock                                                                                                 ; flash_se_neg_reg                                                                                      ; 4            ; 0          ; 0          ; 0        ;
@@ -937,7 +935,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Sep 20 18:47:49 2020
+    Info: Processing started: Sun Oct 11 19:07:25 2020
 Info: Command: quartus_sta sno_top -c sno_16MHz
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -970,45 +968,45 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -63.667
+Info (332146): Worst-case setup slack is -65.418
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -63.667           -5413.305 Clock 
-    Info (332119):   -63.627            -549.017 clk_virtual 
-    Info (332119):   -12.667             -12.667 clk_scki 
-    Info (332119):   -10.861            -395.790 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
-    Info (332119):   -10.429             -25.924 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     6.141               0.000 int_osc_clk 
-    Info (332119):    55.419               0.000 flash_se_neg_reg 
-Info (332146): Worst-case hold slack is 0.344
+    Info (332119):   -65.418            -550.808 clk_virtual 
+    Info (332119):   -64.605           -5978.696 Clock 
+    Info (332119):   -13.605             -13.605 clk_scki 
+    Info (332119):   -12.472            -427.285 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
+    Info (332119):     6.140               0.000 int_osc_clk 
+    Info (332119):     9.871               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):    55.063               0.000 flash_se_neg_reg 
+Info (332146): Worst-case hold slack is 0.318
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.344               0.000 Clock 
-    Info (332119):     0.362               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     0.363               0.000 clk_scki 
-    Info (332119):     0.364               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
-    Info (332119):     0.474               0.000 int_osc_clk 
-    Info (332119):     4.630               0.000 flash_se_neg_reg 
-    Info (332119):    57.319               0.000 clk_virtual 
-Info (332146): Worst-case recovery slack is 6.674
+    Info (332119):     0.318               0.000 Clock 
+    Info (332119):     0.361               0.000 clk_scki 
+    Info (332119):     0.363               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
+    Info (332119):     0.364               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):     0.473               0.000 int_osc_clk 
+    Info (332119):     5.159               0.000 flash_se_neg_reg 
+    Info (332119):    57.122               0.000 clk_virtual 
+Info (332146): Worst-case recovery slack is 7.789
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     6.674               0.000 clk_scki 
-    Info (332119):    25.686               0.000 Clock 
-Info (332146): Worst-case removal slack is 1.010
+    Info (332119):     7.789               0.000 clk_scki 
+    Info (332119):    26.043               0.000 Clock 
+Info (332146): Worst-case removal slack is 1.009
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.010               0.000 Clock 
-    Info (332119):     2.216               0.000 clk_scki 
+    Info (332119):     1.009               0.000 Clock 
+    Info (332119):     2.424               0.000 clk_scki 
 Info (332146): Worst-case minimum pulse width slack is -0.933
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -0.933            -134.352 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
     Info (332119):     4.089               0.000 int_osc_clk 
-    Info (332119):    29.185               0.000 Clock 
-    Info (332119):    30.956               0.000 clk_scki 
-    Info (332119):    60.387               0.000 flash_se_neg_reg 
-    Info (332119):    90.685               0.000 uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc 
+    Info (332119):    29.046               0.000 Clock 
+    Info (332119):    30.929               0.000 clk_scki 
+    Info (332119):    60.386               0.000 flash_se_neg_reg 
+    Info (332119):    90.688               0.000 uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc 
     Info (332119):   244.781               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0] 
     Info (332119): 10416.394               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
 Info (332114): Report Metastability: Found 13 synchronizer chains.
@@ -1023,47 +1021,47 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info (332152): The following assignments are ignored by the derive_clock_uncertainty command
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -62.658
+Info (332146): Worst-case setup slack is -64.364
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -62.658           -5108.074 Clock 
-    Info (332119):   -62.620            -541.086 clk_virtual 
-    Info (332119):   -11.658             -11.658 clk_scki 
-    Info (332119):   -10.390            -381.163 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
-    Info (332119):    -7.898             -17.084 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     6.375               0.000 int_osc_clk 
-    Info (332119):    55.614               0.000 flash_se_neg_reg 
-Info (332146): Worst-case hold slack is 0.305
+    Info (332119):   -64.364            -542.830 clk_virtual 
+    Info (332119):   -63.595           -5561.237 Clock 
+    Info (332119):   -12.595             -12.595 clk_scki 
+    Info (332119):   -12.057            -403.300 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
+    Info (332119):     6.376               0.000 int_osc_clk 
+    Info (332119):    10.083               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):    55.305               0.000 flash_se_neg_reg 
+Info (332146): Worst-case hold slack is 0.287
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.305               0.000 Clock 
-    Info (332119):     0.324               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     0.325               0.000 clk_scki 
-    Info (332119):     0.325               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
-    Info (332119):     0.448               0.000 int_osc_clk 
-    Info (332119):     4.069               0.000 flash_se_neg_reg 
-    Info (332119):    56.749               0.000 clk_virtual 
-Info (332146): Worst-case recovery slack is 6.786
+    Info (332119):     0.287               0.000 Clock 
+    Info (332119):     0.324               0.000 clk_scki 
+    Info (332119):     0.324               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
+    Info (332119):     0.325               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):     0.449               0.000 int_osc_clk 
+    Info (332119):     4.636               0.000 flash_se_neg_reg 
+    Info (332119):    56.585               0.000 clk_virtual 
+Info (332146): Worst-case recovery slack is 7.746
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     6.786               0.000 clk_scki 
-    Info (332119):    25.991               0.000 Clock 
-Info (332146): Worst-case removal slack is 0.926
+    Info (332119):     7.746               0.000 clk_scki 
+    Info (332119):    26.324               0.000 Clock 
+Info (332146): Worst-case removal slack is 0.927
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.926               0.000 Clock 
-    Info (332119):     2.071               0.000 clk_scki 
+    Info (332119):     0.927               0.000 Clock 
+    Info (332119):     2.158               0.000 clk_scki 
 Info (332146): Worst-case minimum pulse width slack is -0.933
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -0.933            -134.352 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
-    Info (332119):     4.078               0.000 int_osc_clk 
-    Info (332119):    29.201               0.000 Clock 
-    Info (332119):    30.887               0.000 clk_scki 
-    Info (332119):    60.396               0.000 flash_se_neg_reg 
-    Info (332119):    90.686               0.000 uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc 
+    Info (332119):     4.081               0.000 int_osc_clk 
+    Info (332119):    28.844               0.000 Clock 
+    Info (332119):    30.851               0.000 clk_scki 
+    Info (332119):    60.394               0.000 flash_se_neg_reg 
+    Info (332119):    90.681               0.000 uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc 
     Info (332119):   244.884               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119): 10416.387               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119): 10416.388               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
 Info (332114): Report Metastability: Found 13 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1071,7 +1069,7 @@ Info (332114): Report Metastability: Found 13 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 13
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.692
-    Info (332114): Worst Case Available Settling Time: 5.940 ns
+    Info (332114): Worst Case Available Settling Time: 4.324 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.5
@@ -1085,47 +1083,47 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info (332152): The following assignments are ignored by the derive_clock_uncertainty command
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -56.648
+Info (332146): Worst-case setup slack is -57.449
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -56.648           -2284.006 Clock 
-    Info (332119):   -56.608            -499.346 clk_virtual 
-    Info (332119):    -5.648              -5.648 clk_scki 
-    Info (332119):    -3.729            -132.037 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
-    Info (332119):     7.675               0.000 int_osc_clk 
-    Info (332119):     9.774               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):    59.608               0.000 flash_se_neg_reg 
-Info (332146): Worst-case hold slack is 0.145
+    Info (332119):   -57.449            -500.187 clk_virtual 
+    Info (332119):   -57.048           -2298.863 Clock 
+    Info (332119):    -6.048              -6.048 clk_scki 
+    Info (332119):    -4.525            -141.290 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
+    Info (332119):     7.676               0.000 int_osc_clk 
+    Info (332119):    16.212               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):    59.480               0.000 flash_se_neg_reg 
+Info (332146): Worst-case hold slack is 0.113
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.145               0.000 Clock 
-    Info (332119):     0.152               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
-    Info (332119):     0.153               0.000 clk_scki 
-    Info (332119):     0.153               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
-    Info (332119):     0.170               0.000 int_osc_clk 
-    Info (332119):     0.594               0.000 flash_se_neg_reg 
-    Info (332119):    53.542               0.000 clk_virtual 
-Info (332146): Worst-case recovery slack is 9.289
+    Info (332119):     0.113               0.000 Clock 
+    Info (332119):     0.113               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
+    Info (332119):     0.152               0.000 clk_scki 
+    Info (332119):     0.153               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119):     0.171               0.000 int_osc_clk 
+    Info (332119):     0.875               0.000 flash_se_neg_reg 
+    Info (332119):    53.571               0.000 clk_virtual 
+Info (332146): Worst-case recovery slack is 9.907
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.289               0.000 clk_scki 
-    Info (332119):    28.739               0.000 Clock 
-Info (332146): Worst-case removal slack is 0.414
+    Info (332119):     9.907               0.000 clk_scki 
+    Info (332119):    29.035               0.000 Clock 
+Info (332146): Worst-case removal slack is 0.415
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.414               0.000 Clock 
-    Info (332119):     0.495               0.000 clk_scki 
+    Info (332119):     0.415               0.000 Clock 
+    Info (332119):     0.588               0.000 clk_scki 
 Info (332146): Worst-case minimum pulse width slack is 1.692
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.692               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[4] 
-    Info (332119):     4.082               0.000 int_osc_clk 
-    Info (332119):    28.771               0.000 Clock 
-    Info (332119):    30.944               0.000 clk_scki 
+    Info (332119):     4.081               0.000 int_osc_clk 
+    Info (332119):    28.632               0.000 Clock 
+    Info (332119):    30.920               0.000 clk_scki 
     Info (332119):    60.465               0.000 flash_se_neg_reg 
-    Info (332119):    90.689               0.000 uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc 
+    Info (332119):    90.679               0.000 uc_top_wrp_vlog_inst|flashload_inst|flash_inst|onchip_flash_0|altera_onchip_flash_block|ufm_block|osc 
     Info (332119):   244.902               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119): 10416.433               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
+    Info (332119): 10416.445               0.000 clocks_inst|pll_inst|altpll_component|auto_generated|pll1|clk[2] 
 Info (332114): Report Metastability: Found 13 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1133,7 +1131,7 @@ Info (332114): Report Metastability: Found 13 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 13
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.692
-    Info (332114): Worst Case Available Settling Time: 9.314 ns
+    Info (332114): Worst Case Available Settling Time: 8.557 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.5
@@ -1142,9 +1140,9 @@ Info (332114): Report Metastability: Found 13 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4963 megabytes
-    Info: Processing ended: Sun Sep 20 18:48:00 2020
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 4969 megabytes
+    Info: Processing ended: Sun Oct 11 19:07:37 2020
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:26
 
 
