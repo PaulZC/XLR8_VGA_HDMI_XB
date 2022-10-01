@@ -97,8 +97,7 @@ Sameer Puri's HDL Utils are dually-licensed under the MIT and Apache 2.0 license
 
 The parts written by Alorium Technology are licensed under the [MIT license](XLR8Build/LICENSE)
 
-The parts written by Paul are licensed under the beerware license:
-- _This code and connection guide is public domain but you buy me a beer if you use it and we meet someday_
+The parts written by Paul are licensed under the [MIT license](./LICENSE.md)
 
 
 Enjoy!
